@@ -48,7 +48,13 @@
     <!-- Formulaire détaillé (Site vitrine) -->
     <section id="form" class="py-12">
       <div class="max-w-5xl mx-auto px-4">
-        <form id="briefForm" class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10">
+        <form
+  id="briefForm"
+  data-endpoint="https://formspree.io/f/xkonewrj"
+  class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10"
+>
+
+          <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
           
           <!-- 1. Identité & objectifs -->
           <fieldset>
@@ -221,8 +227,6 @@
             <p class="text-xs text-gray-500">Données non partagées. Réponse sous 24h ouvrées.</p> 
           </div>
 
-          <p id="status" class="hidden text-sm"></p>
-
         </form>
       </div>
     </section>
@@ -294,4 +298,5 @@
   </script>
 </body>
 </html>
+
 
