@@ -269,6 +269,7 @@
   <script>
   const form = document.querySelector('form[data-endpoint]');
   const statusEl = document.getElementById('status');
+  const submitBtn = form?.querySelector('button[type="submit"]');
 
   if (!form || !statusEl) {
     console.error("Form ou status introuvable", { form, statusEl });
@@ -286,6 +287,11 @@
       statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
       statusEl.classList.remove("hidden");
 
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.classList.add("opacity-60", "cursor-not-allowed");
+      }
+
       try {
         const res = await fetch(endpoint, {
           method: "POST",
@@ -293,25 +299,39 @@
           headers: { "Accept": "application/json" }
         });
 
+        let data = null;
+        try { data = await res.json(); } catch (_) {}
+
         if (res.ok) {
           statusEl.textContent = "✅ Merci ! Demande envoyée.";
           statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
           form.reset();
         } else {
-          statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+          const msg = data?.errors?.map(e => e.message).join(" / ")
+                    || data?.message
+                    || `Erreur Formspree (${res.status})`;
+          statusEl.textContent = "❌ " + msg;
           statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+          console.error("Formspree error:", res.status, data);
         }
       } catch (err) {
-        statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
+        statusEl.textContent = "❌ Impossible d’envoyer (connexion / blocage navigateur).";
         statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
         console.error(err);
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
+        }
       }
     });
   }
 </script>
 
+
 </body>
 </html>
+
 
 
 
