@@ -215,7 +215,7 @@
               <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Contexte, contraintes, intégrations spécifiques (ERP, marketplace…), etc."></textarea>
             </div>
             <div class="flex items-start gap-3">
-              <input id="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+              <input id="consent" name="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
               <label for="consent" class="text-sm text-gray-600">J’accepte d’être recontacté à propos de ma demande de devis.</label>
             </div>
             <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -283,47 +283,54 @@
     </div>
   </footer>
 
-  <script>
-  const form = document.getElementById('quoteForm');
+<script>
+  const form = document.getElementById('briefForm'); // ✅ bon id
   const statusEl = document.getElementById('status');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  if (!form || !statusEl) {
+    console.error("Form ou status introuvable", { form, statusEl });
+  } else {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const endpoint = form.dataset.endpoint;
-    const formData = new FormData(form);
+      const endpoint = form.dataset.endpoint;
+      const formData = new FormData(form);
 
-    // infos utiles côté mail
-    formData.append("page", location.pathname);
-    formData.append("_subject", "Ortek — Nouvelle demande de devis (site vitrine)");
+      formData.append("page", location.href);
+      formData.append("_subject", "Ortek — Nouveau brief e-commerce");
 
-    statusEl.textContent = "Envoi en cours…";
-    statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
-    statusEl.classList.remove("hidden");
+      statusEl.textContent = "Envoi en cours…";
+      statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
+      statusEl.classList.remove("hidden");
 
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      });
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
 
-      if (res.ok) {
-        statusEl.textContent = "✅ Merci ! Demande envoyée. Réponse sous 24h ouvrées.";
-        statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
-        form.reset();
-      } else {
-        statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+        if (res.ok) {
+          statusEl.textContent = "✅ Merci ! Demande envoyée.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
+          form.reset();
+        } else {
+          statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        }
+      } catch (err) {
+        statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
         statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        console.error(err);
       }
-    } catch (err) {
-      statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
-      statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
-    }
-  });
+    });
+  }
 </script>
+
+  
 </body>
 </html>
+
 
 
 
