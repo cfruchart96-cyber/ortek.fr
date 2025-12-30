@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ortek — Tarifs</title>
+  <meta name="description" content="Formules claires pour site vitrine et boutique Shopify. Tarifs transparents, sans surprise.">
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light"><meta name="darkreader-lock">
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <!-- ================= Header ================= -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="/index.html" class="flex items-center gap-3">
+          <img src="image/logo.png" alt="Ortek" class="h-9 w-auto rounded-xl">
+          <span class="font-semibold tracking-tight">Ortek</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="offres.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
+          <a href="/tarifs.html" class="text-gray-900 font-medium">Tarifs</a>
+          <a href="/index.html#realisations" class="text-gray-600 hover:text-gray-900">Réalisations</a>
+          <a href="/index.html#about" class="text-gray-600 hover:text-gray-900">Qui sommes-nous</a>
+          <a href="/index.html#blog" class="text-gray-600 hover:text-gray-900">Blog</a>
+        </nav>
+        <div class="hidden md:block">
+          <a href="demanderundevis.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700">
+            Demander un devis
+          </a>
+        </div>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <nav id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm">
+          <a href="/offre.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Nos offres</a>
+          <a href="/tarifs.html" class="px-3 py-2 rounded-lg hover:bg-gray-50 font-medium text-gray-900">Tarifs</a>
+          <a href="/index.html#realisations" class="px-3 py-2 rounded-lg hover:bg-gray-50">Réalisations</a>
+          <a href="/index.html#about" class="px-3 py-2 rounded-lg hover:bg-gray-50">Qui sommes-nous</a>
+          <a href="/index.html#blog" class="px-3 py-2 rounded-lg hover:bg-gray-50">Blog</a>
+          <a href="demanderundevis.html" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center">Demander un devis</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="relative overflow-hidden">
+      <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+          <p class="text-center text-sm sm:text-base opacity-90">
+            Des formules simples et transparentes. Vous savez toujours ce que vous payez, et pourquoi.
+          </p>
+          <div class="mt-5 flex items-center justify-center gap-3">
+            <a href="#vitrine" class="rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-white hover:bg-white/20 backdrop-blur">
+              Site vitrine
+            </a>
+            <a href="#shopify" class="rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-white hover:bg-white/20 backdrop-blur">
+              Shopify / e-commerce
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Modèle économique ================= -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-xl sm:text-2xl font-semibold tracking-tight mb-4">Notre modèle économique</h2>
+        <div class="grid md:grid-cols-3 gap-4">
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">1) Conception</p>
+            <p class="text-sm text-gray-700">Site clair, rapide et prêt à convertir (structure, design, SEO de base, formulaires, pixels si besoin).</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">2) Livraison rapide</p>
+            <p class="text-sm text-gray-700">Mise en ligne en 7–10 jours ouvrés pour une vitrine standard. Vous validez avant publication.</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">3) Abonnement serein</p>
+            <p class="text-sm text-gray-700">Petit forfait mensuel couvrant hébergement, maintenance et support. Aucune mauvaise surprise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Site vitrine (Essentiel + Pro) ================= -->
+    <section id="vitrine" class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-xl sm:text-2xl font-semibold tracking-tight mb-4">Site vitrine</h2>
+
+        <!-- Pack Essentiel -->
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Pack Essentiel</p>
+              <h3 class="text-lg font-semibold">19,90 € <span class="text-gray-500 font-normal">/ mois</span></h3>
+              <p class="mt-2 text-sm text-gray-700">Présence rapide, propre et crédible. Idéal indépendants, micro-entreprises, artisans.</p>
+
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• 1 page unique (scroll fluide “one-page”)</li>
+                <li>• Formulaire de contact (email ou WhatsApp)</li>
+                <li>• Google Maps intégrée</li>
+                <li>• SEO basique (titres, métas, mots-clés)</li>
+                <li>• Design responsive premium</li>
+                <li>• Chargement rapide (&lt; 1s desktop)</li>
+                <li>• Maintenance incluse 3 premiers mois</li>
+              </ul>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="demanderundevis.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-white font-medium hover:bg-blue-700">
+                  Demander un devis vitrine
+                </a>
+                <a href="/offre.html" class="inline-flex items-center rounded-xl border border-gray-200 px-4 py-2.5 text-gray-700 hover:bg-gray-50">
+                  Voir l’offre
+                </a>
+              </div>
+
+              <p class="mt-3 text-xs text-gray-500">
+                1er mois : supplément possible si upsells (nom de domaine, cartes, rédaction, etc.).
+              </p>
+            </div>
+          </article>
+
+          <aside class="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+            <div class="divide-y divide-gray-100 text-sm">
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Création initiale</div>
+                <div class="px-4 py-3 font-medium">Incluse</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Hébergement & maintenance</div>
+                <div class="px-4 py-3 font-medium">19,90 € / mois</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Nom de domaine</div>
+                <div class="px-4 py-3">≈ 12 € / an (prix coûtant)</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Pages incluses</div>
+                <div class="px-4 py-3">One-page (présentation, services, contact)</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Options fréquentes</div>
+                <div class="px-4 py-3">Email pro, Blog, GMB optimisée, 2ᵉ page détaillée, maintenance annuelle</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+        <!-- Pack Professionnel -->
+        <div class="grid md:grid-cols-2 gap-6 mt-8">
+          <article class="rounded-2xl border border-blue-200 bg-white shadow-sm ring-1 ring-blue-100">
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Pack Professionnel</p>
+              <h3 class="text-lg font-semibold">29,90 € <span class="text-gray-500 font-normal">/ mois</span></h3>
+              <p class="mt-2 text-sm text-gray-700">Vitrine complète et optimisée pour convertir. Idéal artisans établis, professions libérales, restaurants, garages, etc.</p>
+
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• Jusqu’à 5 pages : Accueil, Services/Prestations, À propos, Réalisations/Galerie, Contact</li>
+                <li>• SEO local avancé (balises, structure Hn, sitemap)</li>
+                <li>• Fiche Google Business configurée</li>
+                <li>• Formulaire de devis complet</li>
+                <li>• Galerie photo / réalisations</li>
+                <li>• Optimisation mobile & conversion</li>
+                <li>• Performances (cache, images WebP)</li>
+                <li>• Mise à jour 1×/an incluse</li>
+                <li>• Hébergement inclus</li>
+              </ul>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="demanderundevis.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-white font-medium hover:bg-blue-700">
+                  Demander un devis vitrine
+                </a>
+                <a href="/offre.html" class="inline-flex items-center rounded-xl border border-gray-200 px-4 py-2.5 text-gray-700 hover:bg-gray-50">
+                  Voir l’offre
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <aside class="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+            <div class="divide-y divide-gray-100 text-sm">
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Création initiale</div>
+                <div class="px-4 py-3 font-medium">Incluse</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Hébergement & maintenance</div>
+                <div class="px-4 py-3 font-medium">29,90 € / mois</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Nom de domaine</div>
+                <div class="px-4 py-3">≈ 12 € / an (prix coûtant)</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Pages incluses</div>
+                <div class="px-4 py-3">Accueil, Services, À propos, Réalisations, Contact</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Options fréquentes</div>
+                <div class="px-4 py-3">Blog, prise de RDV, retouche logo, landing Ads, SEO campagne locale</div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Shopify / e-commerce ================= -->
+    <section id="shopify" class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-xl sm:text-2xl font-semibold tracking-tight mb-4">Boutique Shopify / e-commerce</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm">
+            <div class="p-6">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Mise en place Shopify</p>
+              <h3 class="text-lg font-semibold">Sur devis <span class="text-gray-500 font-normal">• dès 300 €</span></h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Installation, thème pro, catalogue (lot initial), paiements, livraisons, taxes, pixels & analytics. Pensé pour vendre vite et bien.
+              </p>
+
+              <ul class="mt-4 space-y-2 text-sm text-gray-700">
+                <li>• Setup complet (structure, design, pages clés)</li>
+                <li>• Pages produits (lot initial) + collections</li>
+                <li>• Paiements (Shopify Payments, Stripe, PayPal), 3x/4x</li>
+                <li>• Taxes, livraisons (Colissimo/Relay), mentions légales</li>
+                <li>• Pixels (Meta/TikTok) et Analytics (GA4)</li>
+                <li>• Automations e-mail / récupération paniers (selon besoin)</li>
+                <li>• Conseils optimisation conversion</li>
+              </ul>
+
+              <div class="mt-5 flex flex-wrap gap-3">
+                <a href="devisprojetshopify.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-white font-medium hover:bg-blue-700">
+                  Parler du projet
+                </a>
+                <a href="/offre.html" class="inline-flex items-center rounded-xl border border-gray-200 px-4 py-2.5 text-gray-700 hover:bg-gray-50">
+                  Voir l’offre
+                </a>
+              </div>
+
+              <p class="mt-3 text-xs text-gray-500">
+                Le chiffrage dépend du périmètre (nombre de produits, variantes, intégrations spécifiques).
+              </p>
+            </div>
+          </article>
+
+          <aside class="rounded-2xl border border-gray-200 bg-white shadow-sm overflow-hidden">
+            <div class="divide-y divide-gray-100 text-sm">
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Création / setup</div>
+                <div class="px-4 py-3">
+                  <a href="/projet.html" class="text-blue-600 hover:underline">dès 300 €</a>
+                  <span class="text-gray-500"> (selon nb. produits & options)</span>
+                </div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Abonnement Shopify</div>
+                <div class="px-4 py-3">Basic / Shopify / Advanced (payé à Shopify)</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Moyens de paiement</div>
+                <div class="px-4 py-3">Shopify Payments, Stripe, PayPal, 3x/4x</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Livraisons</div>
+                <div class="px-4 py-3">Colissimo, Mondial Relay, retrait, transporteurs</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Commissions</div>
+                <div class="px-4 py-3">Shopify + 2.2–3% / transaction (selon formule)</div>
+              </div>
+              <div class="grid grid-cols-2">
+                <div class="px-4 py-3 text-gray-600">Option Ortek</div>
+                <div class="px-4 py-3">Maintenance, SEO, automatisations — <em>sur devis</em></div>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ================= Footer ================= -->
+  <footer class="border-t border-gray-200 py-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
+      <div class="flex items-center gap-6 text-gray-600">
+        <a href="/offre.html" class="hover:text-gray-800">Nos offres</a>
+        <a href="/tarifs.html" class="hover:text-gray-800">Tarifs</a>
+        <a href="/devis.html" class="hover:text-gray-800">Demander un devis</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Year + mobile menu
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu')?.classList.toggle('hidden');
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ortek — Parler du projet</title>
+  <meta name="description" content="Brief projet : dites‑nous vos objectifs, vos produits et vos contraintes. Réponse personnalisée.">
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light"><meta name="darkreader-lock">
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+  <img src="image/logo.png" alt="Ortek" class="h-9 w-auto rounded-xl">
+  <span class="font-semibold tracking-tight">Ortek</span>
+</a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="/offre.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
+          
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <nav id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm">
+          <a href="offre.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Nos offres</a>
+         
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="py-16 text-center bg-gradient-to-b from-blue-50 to-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Demander un devis</h1>
+        <p class="mt-3 text-gray-600">Formulaire détaillé pour <strong>site vitrine</strong>. Cochez ce dont vous avez besoin, on chiffre proprement.</p>
+      </div>
+    </section>
+
+    <!-- Section : Visez plus grand ? -->
+<section class="mt-16 border-t border-gray-100 pt-12 text-center">
+  <div class="max-w-3xl mx-auto px-6">
+    <h2 class="text-2xl font-semibold mb-3">💡 Vous visez plus grand ?</h2>
+    <p class="text-gray-600 mb-6">
+      Vous souhaitez vendre en ligne avec <strong>Shopify</strong> ou un autre CMS e-commerce ?  
+      Nous avons un formulaire dédié pour cadrer ce type de projet plus complet.
+    </p>
+    <a href="devisprojetshopify.html" 
+       class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-6 py-3 text-white font-medium hover:bg-blue-700 transition">
+       Remplir le brief e-commerce
+    </a>
+  </div>
+</section>
+
+
+    <!-- Formulaire détaillé (Site vitrine) -->
+    <section id="form" class="py-12">
+      <div class="max-w-5xl mx-auto px-4">
+        <form id="quoteForm" class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10">
+
+          <!-- 1. Coordonnées -->
+          <fieldset>
+            <legend class="text-lg font-semibold">1) Vos coordonnées</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Nom / Entreprise <span class="text-red-500">*</span></label>
+                <input name="name" required type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. Garage Dupont" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">E‑mail <span class="text-red-500">*</span></label>
+                <input name="email" required type="email" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="vous@domaine.fr" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Téléphone</label>
+                <input name="phone" type="tel" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="06…" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Ville</label>
+                <input name="city" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Béthune…" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 2. Périmètre du site vitrine -->
+          <fieldset>
+            <legend class="text-lg font-semibold">2) Périmètre du site vitrine</legend>
+            <div class="mt-4 grid md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium">Pages souhaitées</label>
+                <div class="mt-2 grid grid-cols-2 gap-2 text-sm text-gray-700">
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Accueil" class="rounded"> Accueil</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Services" class="rounded"> Services</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Tarifs" class="rounded"> Tarifs</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Réalisations" class="rounded"> Réalisations</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="À propos" class="rounded"> À propos</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Contact" class="rounded"> Contact</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Blog" class="rounded"> Blog</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="F.A.Q." class="rounded"> F.A.Q.</label>
+                </div>
+                <label class="block text-sm font-medium mt-4">Autres pages</label>
+                <input name="pages_other" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. Zone d’intervention, Équipe…" />
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium">Fonctionnalités</label>
+                <div class="mt-2 grid grid-cols-2 gap-2 text-sm text-gray-700">
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Formulaire de contact" class="rounded"> Formulaire de contact</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Bouton WhatsApp / Appel" class="rounded"> Bouton WhatsApp / Appel</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Google Maps" class="rounded"> Google Maps</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Galerie photos" class="rounded"> Galerie photos</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Témoignages" class="rounded"> Témoignages</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Prise de rendez‑vous" class="rounded"> Prise de rendez‑vous</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Multilingue" class="rounded"> Multilingue</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="features" value="Blog" class="rounded"> Blog</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 3. Options & upsells -->
+          <fieldset>
+            <legend class="text-lg font-semibold">3) Options & upsells</legend>
+            <div class="mt-4 grid md:grid-cols-3 gap-6 text-sm text-gray-700">
+              <div>
+                <p class="font-medium mb-2">Technique</p>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Nom de domaine" class="rounded"> Achat du nom de domaine</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Hébergement" class="rounded"> Hébergement géré</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="E‑mail pro" class="rounded"> Adresse e‑mail pro</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Bannières cookies" class="rounded"> Bandeau cookies / RGPD</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Analytics" class="rounded"> GA4 / Pixels (Meta, TikTok)</label>
+              </div>
+              <div>
+                <p class="font-medium mb-2">Contenu & design</p>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Rédaction" class="rounded"> Rédaction / réécriture textes</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Photos" class="rounded"> Retouches photo / pack visuels</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Logo" class="rounded"> Création / retouche logo</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Carte de visite" class="rounded"> Cartes de visite</label>
+              </div>
+              <div>
+                <p class="font-medium mb-2">SEO & local</p>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Fiche Google Business" class="rounded"> Optimisation Google Business</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Pages de ville" class="rounded"> Pages de ville / zone d’intervention</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Schema" class="rounded"> Données structurées (Schema.org)</label>
+                <label class="flex items-center gap-2"><input type="checkbox" name="opts" value="Perf" class="rounded"> Optimisation performance (vitesse)</label>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 4. Style & références -->
+          <fieldset>
+            <legend class="text-lg font-semibold">4) Style & références</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Sites que vous aimez</label>
+                <input name="refs" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="URLs, marques…" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Ton souhaité</label>
+                <select name="tone" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Sobre & premium</option><option>Chaleureux & humain</option><option>Technique & précis</option><option>Autre</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 5. Budget & délai -->
+          <fieldset>
+            <legend class="text-lg font-semibold">5) Budget & délai</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Budget estimé</label>
+                <select name="budget" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>— À définir —</option><option>Moins de 300 €</option><option>300–600 €</option><option>600–1200 €</option><option>1200 € et +</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Délai souhaité</label>
+                <select name="timeline" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>— Flexible —</option><option>1–2 semaines</option><option>3–4 semaines</option><option>+ d’un mois</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 6. Message libre & consentement -->
+          <div class="grid gap-4">
+            <div>
+              <label class="block text-sm font-medium">Précisions complémentaires</label>
+              <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Contexte, contraintes, particularités…"></textarea>
+            </div>
+            <div class="flex items-start gap-3">
+              <input id="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+              <label for="consent" class="text-sm text-gray-600">J’accepte d’être recontacté à propos de ma demande de devis.</label>
+            </div>
+            <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </div>
+
+          <!-- Submit -->
+          <div class="flex items-center gap-3">
+            <button type="submit" class="inline-flex items-center rounded-xl bg-blue-600 px-5 py-2.5 text-white font-medium hover:bg-blue-700">Envoyer ma demande</button>
+            <p class="text-xs text-gray-500">Données non partagées. Réponse sous 24h ouvrées.</p>
+          </div>
+
+          <p id="status" class="hidden text-sm"></p>
+
+          <!-- Note tarifs -->
+          <div class="rounded-xl bg-blue-50 border border-blue-100 p-4 text-sm text-gray-700">
+            <p><strong>Info tarifs site vitrine :</strong> 19,90 € / mois. <em>1er mois :</em> supplément si upsells (nom de domaine, cartes, etc.). Nom de domaine facturé séparément.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION : Comment ça marche -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-semibold tracking-tight mb-6">Comment ça marche ?</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+      Chez <strong>Ortek</strong>, tout est pensé pour aller vite, sans compromis sur la qualité.  
+      Vous n’attendez pas des semaines : votre site est conçu, validé et livré en quelques jours seulement.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Étape 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">1️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Brief simple</h3>
+        <p class="text-gray-600 text-sm">Vous remplissez un mini formulaire (<a href="demanderundevis.html" class="text-blue-600 underline">Demande de devis</a>) pour décrire votre activité et vos besoins.  
+        On vous recontacte sous 24h.</p>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">2️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Création & validation</h3>
+        <p class="text-gray-600 text-sm">On conçoit votre site (structure, visuel, SEO local).  
+        Vous recevez un aperçu avant la mise en ligne pour valider chaque détail.</p>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">3️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Mise en ligne rapide</h3>
+        <p class="text-gray-600 text-sm">Votre site est publié sous 7 à 10 jours ouvrés.  
+        Hébergement, sécurité et maintenance sont déjà inclus dans l’abonnement.</p>
+      </div>
+    </div>
+
+    <p class="mt-12 text-gray-700">
+      💡 <em>Un seul interlocuteur, un seul tarif clair, et un site livré prêt à recevoir vos premiers visiteurs.</em>
+    </p>
+  </div>
+</section>
+
+  <footer class="border-t border-gray-200 py-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
+      <div class="flex items-center gap-6 text-gray-600">
+        <a href="/offre.html" class="hover:text-gray-800">Nos offres</a>
+        <a href="/devis.html" class="hover:text-gray-800">Demander un devis</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+
+    const form = document.getElementById('briefForm');
+    const statusEl = document.getElementById('status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Merci ! Brief reçu. On revient vers vous sous 24h ouvrées pour cadrer le projet.";
+      statusEl.className = 'text-green-700 bg-green-50 border border-green-200 rounded-xl p-3';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

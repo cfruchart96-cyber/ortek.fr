@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Qui sommes-nous – Ortek</title>
+  <meta name="description" content="Ortek est un studio web indépendant. Nous concevons des sites élégants, rapides et mesurables, pensés pour la conversion et le SEO local.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    /* --- Variables (cohérentes avec l'accueil sombre) --- */
+    :root{
+      --ink:#E8EEFF;             /* texte principal en sombre */
+      --muted:#A9B4C8;
+      --line:rgba(255,255,255,.10);
+      --card:rgba(255,255,255,.04);
+      --card2:rgba(255,255,255,.06);
+      --bg:#0B1328;              /* fond profond */
+      --brand:#0B1E3B;           /* bleu nuit */
+      --accent:#2563EB;          /* CTA */
+      --accent-2:#1D4ED8;
+      --success:#16A34A;
+      --radius:18px;
+      --shadow-sm:0 12px 28px rgba(0,0,0,.25);
+      --shadow-md:0 20px 48px rgba(0,0,0,.35);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+      color:var(--ink); background:
+        radial-gradient(1200px 600px at 75% 0%, rgba(37,99,235,.18), transparent 60%),
+        radial-gradient(900px 500px at 10% 90%, rgba(22,163,74,.10), transparent 60%),
+        linear-gradient(180deg,#0a1630 0%, #0B1E3B 55%, #0a1630 100%);
+      -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    }
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    .container{width:min(1080px,92%); margin-inline:auto}
+    section{padding:68px 0}
+    h1,h2,h3{letter-spacing:-.015em}
+    .lead{color:var(--muted); font-size:clamp(15px,2.2vw,18px)}
+
+    /* --- HERO ABOUT --- */
+    .about-hero{
+      position:relative; min-height:64vh; display:grid; place-items:center; overflow:hidden;
+    }
+    .about-hero::before{
+      content:""; position:absolute; inset:0;
+      background-image:url('about-hero.jpg'); /* optionnel */
+      background-size:cover; background-position:center;
+      opacity:.12; filter:blur(2px) saturate(1.05);
+    }
+    .about-hero .inner{position:relative; text-align:center; padding:96px 0 48px}
+    .eyebrow{
+      display:inline-flex; padding:.35rem .75rem; border-radius:999px;
+      border:1px solid var(--line); background:var(--card2);
+      text-transform:uppercase; letter-spacing:.08em; font-size:.76rem; font-weight:700; color:#cfe1ff;
+    }
+    .about-hero h1{margin:14px 0 10px; font-size:clamp(36px,5.4vw,62px); line-height:1.05}
+    .cta-row{display:flex; gap:12px; justify-content:center; flex-wrap:wrap; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.5rem;
+      padding:14px 18px; border-radius:12px; border:1px solid var(--line);
+      background:var(--accent); color:#fff; font-weight:700; box-shadow:var(--shadow-sm);
+      transition:all .18s ease;
+    }
+    .btn:is(:hover,:focus){background:var(--accent-2); transform:translateY(-1px)}
+    .btn-ghost{background:var(--card); color:var(--ink)}
+    .btn-ghost:hover{background:var(--card2)}
+
+    /* --- Manifesto --- */
+    .manifest{
+      background:linear-gradient(160deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+    }
+    .manifest-grid{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:22px; align-items:center;
+    }
+    .manifest-card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:20px 22px; box-shadow:var(--shadow-sm);
+    }
+    .manifest h2{margin:0 0 .4rem; font-size:clamp(22px,3.2vw,30px)}
+    .quote{
+      background:var(--card2); border:1px dashed var(--line); border-radius:var(--radius);
+      padding:22px; font-size:clamp(18px,3vw,22px)
+    }
+    .quote span{display:block; color:var(--muted); margin-top:.4rem; font-size:.95rem}
+
+    /* --- Valeurs --- */
+    .values{padding-top:56px}
+    .values-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .value{
+      background:var(--card); border:1px solid var(--line); border-radius:16px;
+      padding:18px; box-shadow:var(--shadow-sm); transition:transform .18s ease, border-color .18s;
+    }
+    .value:hover{transform:translateY(-3px); border-color:rgba(255,255,255,.18)}
+    .value .ico{
+      width:38px; height:38px; border-radius:12px; display:grid; place-items:center;
+      background:linear-gradient(145deg,#0f224d,#0b1e3b); border:1px solid rgba(255,255,255,.14)
+    }
+    .value h3{margin:8px 0 6px; font-size:1.05rem}
+    .value p{margin:0; color:var(--muted)}
+
+    /* --- Méthode --- */
+    .method{padding-top:12px}
+    .steps{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .step{background:var(--card); border:1px solid var(--line); border-radius:16px; padding:18px}
+    .step span{display:inline-block; font-weight:800; color:#cfe1ff; margin-bottom:6px}
+
+    /* --- Chiffres Clés & Logos --- */
+    .stats{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+    .stat{
+      background:var(--card2); border:1px solid var(--line); border-radius:14px; padding:16px;
+      text-align:center
+    }
+    .stat b{display:block; font-size:1.35rem}
+    .logos{
+      margin-top:18px; padding:16px; border:1px dashed var(--line);
+      border-radius:14px; display:grid; grid-template-columns:repeat(6,1fr); gap:12px; opacity:.9
+    }
+    .logos .lg{height:34px; background:var(--card); border:1px solid var(--line); border-radius:10px}
+
+    /* --- Timeline --- */
+    .timeline{
+      border-top:1px solid var(--line); border-bottom:1px solid var(--line);
+      background:linear-gradient(160deg, rgba(255,255,255,.03), rgba(255,255,255,.02));
+    }
+    .tl{position:relative; margin-top:6px}
+    .tl::before{
+      content:""; position:absolute; left:12px; top:0; bottom:0; width:2px; background:var(--line)
+    }
+    .tli{
+      position:relative; margin-left:38px; padding:10px 12px 12px; border-radius:12px;
+      background:var(--card); border:1px solid var(--line); box-shadow:var(--shadow-sm);
+    }
+    .tli::before{
+      content:""; position:absolute; left:-22px; top:14px; width:12px; height:12px; border-radius:50%;
+      background:#cfe1ff; box-shadow:0 0 0 4px rgba(207,225,255,.18)
+    }
+
+    /* --- Équipe --- */
+    .team-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px}
+    .member{
+      background:var(--card); border:1px solid var(--line); border-radius:16px; padding:16px; text-align:center
+    }
+    .avatar{
+      width:84px; height:84px; border-radius:50%; margin:0 auto 10px; overflow:hidden; background:#101a33;
+      border:1px solid rgba(255,255,255,.14)
+    }
+    .member small{color:var(--muted)}
+
+    /* --- CTA --- */
+    .cta{
+      text-align:center;
+      background:linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02));
+      border-top:1px solid var(--line)
+    }
+
+    /* --- Responsive --- */
+    @media (max-width:980px){
+      .manifest-grid{grid-template-columns:1fr}
+      .values-grid,.steps,.stats,.team-grid{grid-template-columns:1fr}
+      .logos{grid-template-columns:repeat(3,1fr)}
+    }
+  </style>
+</head>
+<body>
+  <!-- HERO -->
+   
+  <header class="about-hero">
+    <div class="container inner">
+      <span class="eyebrow">Ortek — Studio web indépendant</span>
+      <h1>Qui sommes-nous&nbsp;?</h1>
+      <p class="lead">Nous concevons des sites <strong>élégants</strong>, <strong>rapides</strong> et <strong>mesurables</strong>.  
+        Une approche artisanale, précise, au service de votre visibilité locale.</p>
+      <div class="cta-row">
+        <a class="btn" href="#valeurs">Nos valeurs</a>
+        <a class="btn-ghost btn" href="#equipe">Rencontrer l’équipe</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- MANIFESTE -->
+    <section class="manifest" id="manifeste">
+      <div class="container manifest-grid">
+        <div>
+          <h2>Notre manifeste</h2>
+          <p class="lead">Pas de bruit, pas de superflu. Un site est un <em>système</em> qui doit inspirer confiance, charger vite, être compris immédiatement et transformer une visite en action mesurable.</p>
+          <div class="manifest-card">
+            <ul>
+              <li>Clarté radicale des messages & architecture simple.</li>
+              <li>SEO local méthodique (Hn, schémas, pages de ville, Google Business).</li>
+              <li>Performance d’exécution (WebP, cache, LCP &lt; 1,8 s mobile).</li>
+              <li>Suivi GA4 + objectifs, évolutions légères incluses.</li>
+            </ul>
+          </div>
+        </div>
+        <blockquote class="quote">
+          « Simple. Durable. Évident. »
+          <span>— Notre ligne directrice</span>
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- VALEURS -->
+    <section class="values" id="valeurs">
+      <div class="container">
+        <h2>Nos valeurs</h2>
+        <p class="lead">Ce qui guide nos choix au quotidien.</p>
+        <div class="values-grid">
+          <article class="value">
+            <div class="ico">✨</div>
+            <h3>Exigence</h3>
+            <p>Chaque détail compte : typographie, micro-interactions, métriques.</p>
+          </article>
+          <article class="value">
+            <div class="ico">🧭</div>
+            <h3>Transparence</h3>
+            <p>Process clair, délais courts, suivi simple et résultats compréhensibles.</p>
+          </article>
+          <article class="value">
+            <div class="ico">🔒</div>
+            <h3>Sérénité</h3>
+            <p>Hébergement géré, SSL, sauvegardes, support prioritaire — sans surprise.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- MÉTHODE -->
+    <section class="method" id="methode">
+      <div class="container">
+        <h2>Notre méthode</h2>
+        <p class="lead">Une exécution courte, cadrée, mesurable.</p>
+        <div class="steps">
+          <div class="step"><span>01 — Cadrage </span> Audit express, messages clés, arborescence, planning.</div>
+          <div class="step"><span>02 — Design & build</span> HTML + Tailwing CSS, construis sous Visual Studio Code.</div>
+          <div class="step"><span>03 — Mise en ligne</span> Recette, GA4, performances, passage de relais + suivi.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHIFFRES + LOGOS -->
+    <section class="numbers" id="chiffres">
+      <div class="container">
+        <h2>Chiffres clés</h2>
+        <div class="stats">
+          <div class="stat"><b>7–10 j</b><small>Livraison d’une vitrine</small></div>
+          <div class="stat"><b>&lt; 1,8 s</b><small>LCP cible mobile</small></div>
+          <div class="stat"><b>97/100</b><small>Score Lighthouse</small></div>
+          <div class="stat"><b>24 mois</b><small>Abonnement Sérénité</small></div>
+        </div>
+        <div class="logos" aria-label="Ils nous font confiance">
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div>
+          <div class="lg"></div><div class="lg"></div><div class="lg"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIMELINE -->
+    <section class="timeline" id="histoire">
+      <div class="container">
+        <h2>Notre histoire</h2>
+        <div class="tl">
+          <div class="tli"><strong>2023</strong> — Naissance du studio Ortek, premiers sites vitrines locaux.</div>
+          <div class="tli"><strong>2024</strong> — Méthode SEO local durcie + hébergement géré.</div>
+          <div class="tli"><strong>2025</strong> — Offre Shopify cadrée, automatisations, montée en exigence.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ÉQUIPE -->
+    <section class="team" id="equipe">
+      <div class="container">
+        <h2>L’équipe</h2>
+        <p class="lead">Une petite équipe, proche, ultra-disponible.</p>
+        <div class="team-grid">
+          <article class="member">
+            <div class="avatar"><img src="portrait1.jpg" alt="Photo — T. Dupont"></div>
+            <h3>Thomas Dupont</h3>
+            <small>Fondateur — Design & perf</small>
+          </article>
+          <article class="member">
+            <div class="avatar"><img src="portrait2.jpg" alt="Photo — A. Martin"></div>
+            <h3>Anna Martin</h3>
+            <small>SEO & contenus</small>
+          </article>
+          <article class="member">
+            <div class="avatar"><img src="portrait3.jpg" alt="Photo — L. Bernard"></div>
+            <h3>Louis Bernard</h3>
+            <small>Shopify & intégrations</small>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta" id="contact">
+      <div class="container" style="text-align:center">
+        <h2>Parlons de votre projet</h2>
+        <p class="lead">Un site clair, rapide et mesurable — livré clé en main.</p>
+        <div class="cta-row" style="justify-content:center">
+          <a class="btn" href="demanderundevis.html">Demander un devis</a>
+          <a class="btn-ghost btn" href="/realisations">Voir nos réalisations</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- JSON-LD SEO (facultatif mais conseillé) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Ortek",
+    "url":"https://www.votredomaine.fr",
+    "logo":"https://www.votredomaine.fr/logo.png",
+    "sameAs":["https://www.facebook.com/…","https://www.instagram.com/…"],
+    "description":"Studio web indépendant : sites vitrines élégants, rapides et mesurables, SEO local et hébergement géré."
+  }
+  </script>
+</body>
+</html>

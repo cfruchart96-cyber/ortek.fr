@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Votre site pro livré clé en main – Ortek</title>
+  <meta name="description" content="Sites vitrines élégants et performants, SEO local, hébergement géré et accompagnement humain.">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      /* Palette (sobre, premium) */
+      --ink:#0B1220;
+      --muted:#5B6473;
+      --line:#E9EDF3;
+      --card:#FFFFFF;
+      --bg:#F6F8FC;
+
+      /* Brand Ortek-like */
+      --brand:#0B1E3B;          /* bleu nuit */
+      --brand-2:#132B5E;        /* variante */
+      --accent:#1E40AF;         /* bleu moyen */
+      --cta:#2563EB;            /* bleu action */
+      --cta-dark:#1D4ED8;
+      --success:#16A34A;
+
+      --radius:18px;
+      --shadow-sm:0 6px 20px rgba(10,25,50,.06);
+      --shadow-md:0 14px 40px rgba(10,25,50,.12);
+    }
+
+    /* Reset élégant */
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,'Helvetica Neue',Arial,sans-serif;
+      color:var(--ink);
+      background:var(--bg);
+      line-height:1.6;
+      -webkit-font-smoothing:antialiased;
+      text-rendering:optimizeLegibility;
+    }
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    .container{width:min(1100px,92%);margin-inline:auto}
+
+    /* ---------- HERO spectaculaire ---------- */
+    .hero{
+      position:relative;
+      min-height:92vh;
+      display:grid;
+      place-items:center;
+      overflow:hidden;
+      color:#fff;
+      isolation:isolate;
+      background:
+        radial-gradient(1200px 600px at 70% 10%, rgba(37,99,235,.10), transparent 60%),
+        radial-gradient(1200px 600px at 20% 90%, rgba(22,163,74,.06), transparent 60%),
+        linear-gradient(180deg,#0a1630 0%, #0B1E3B 60%, #0a1630 100%);
+    }
+    /* option image stylisée : remplacer url('hero.jpg') par ton visuel */
+    .hero::before{
+      content:"";
+      position:absolute; inset:0;
+      background-image:url('hero.jpg'); /* facultatif ; enlève cette ligne si pas d'image */
+      background-size:cover; background-position:center;
+      opacity:.15; filter:blur(2px) saturate(1.1);
+      z-index:-2;
+    }
+    .hero::after{
+      /* léger mouvement de lumière */
+      content:"";
+      position:absolute; inset:-20%;
+      background:radial-gradient(40% 30% at 60% 30%, rgba(255,255,255,.16), transparent 60%);
+      animation:floatLight 12s ease-in-out infinite alternate;
+      z-index:-1;
+    }
+    @keyframes floatLight{
+      from{transform:translate3d(-2%,1%,0) rotate(0.6deg)}
+      to{transform:translate3d(2%,-1%,0) rotate(-0.4deg)}
+    }
+
+    .hero-inner{text-align:center; padding:96px 0 72px}
+    .eyebrow{
+      display:inline-flex; align-items:center; gap:.5rem;
+      font-weight:600; letter-spacing:.08em; text-transform:uppercase;
+      font-size:.78rem; padding:.4rem .8rem; border-radius:999px;
+      background:rgba(255,255,255,.08); border:1px solid rgba(255,255,255,.15)
+    }
+    .hero h1{
+      margin:18px auto 12px;
+      font-size:clamp(34px,5.2vw,56px);
+      line-height:1.08; font-weight:700;
+      letter-spacing:-.02em;
+    }
+    .hero p{
+      margin:0 auto 28px;
+      max-width:800px; opacity:.88;
+      font-size:clamp(16px,2.2vw,18px);
+    }
+    .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
+      padding:14px 20px; border-radius:12px; font-weight:600;
+      border:1px solid transparent; transition:all .18s ease;
+      box-shadow:var(--shadow-sm)
+    }
+    .btn-primary{background:var(--cta); color:#fff}
+    .btn-primary:hover{background:var(--cta-dark); transform:translateY(-1px)}
+    .btn-ghost{background:rgba(255,255,255,.06); color:#fff; border-color:rgba(255,255,255,.18)}
+    .btn-ghost:hover{background:rgba(255,255,255,.12); transform:translateY(-1px)}
+    .scroll-indicator{
+      position:absolute; bottom:24px; left:50%; translate:-50% 0;
+      font-size:.85rem; opacity:.7
+    }
+
+    /* Canvas ORTEK : hauteur responsive (sans Tailwind) */
+    .hero-canvas-wrap{ width:100%; height:min(32vh, 420px); margin-bottom:8px }
+    @media (min-width:980px){ .hero-canvas-wrap{ height:min(42vh, 560px) } }
+
+    /* ---------- Confiance ---------- */
+    section{padding:64px 0}
+    .features{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .feat{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:18px 18px; box-shadow:var(--shadow-sm); display:flex; gap:12px; align-items:flex-start
+    }
+    .feat i{
+      width:38px; height:38px; border-radius:10px; display:grid; place-items:center;
+      background:linear-gradient(145deg, #eaf1ff, #ffffff);
+      border:1px solid #e3ebff; color:var(--accent); font-weight:700
+    }
+    .feat h3{margin:2px 0 4px; font-size:1rem}
+    .feat p{margin:0; color:var(--muted); font-size:.95rem}
+
+    /* ---------- Offres ---------- */
+    .offers-head{text-align:center; margin-bottom:18px}
+    .offers-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+    .card{
+      background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:22px; box-shadow:var(--shadow-sm); transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+    }
+    .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-md); border-color:#dfe6f3}
+    .eyebrow-muted{
+      text-transform:uppercase; letter-spacing:.08em; font-size:.72rem; font-weight:700; color:var(--muted)
+    }
+    .card h4{margin:.4rem 0 .6rem; font-size:1.35rem}
+    .card ul{margin:0 0 16px 1.1rem; padding:0}
+    .pill{
+      display:inline-flex; align-items:center; gap:.5rem; padding:.35rem .65rem;
+      font-size:.78rem; border:1px solid var(--line); border-radius:999px; background:#F8FAFF; margin:.25rem .25rem .5rem 0;
+    }
+    .btn-block{width:100%}
+    .btn-green{background:var(--success); color:#fff}
+    .btn-green:hover{filter:brightness(.96); transform:translateY(-1px)}
+
+    /* Accordéon pour Shopify + comparatif */
+    details{
+      margin-top:18px; background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+      padding:6px 10px 0;
+      box-shadow:var(--shadow-sm)
+    }
+    summary{
+      list-style:none; cursor:pointer; padding:12px 8px; font-weight:600;
+      display:flex; align-items:center; gap:10px
+    }
+    summary::marker{display:none}
+    summary span.badge{font-size:.78rem; color:var(--muted); font-weight:600}
+    .compare{
+      border-top:1px dashed var(--line); margin-top:8px; padding:18px 4px 14px
+    }
+    .table{
+      width:100%; border-collapse:collapse; font-size:.95rem
+    }
+    .table th,.table td{
+      text-align:left; padding:10px 8px; border-bottom:1px solid var(--line)
+    }
+    .table th{color:var(--muted); font-weight:600}
+    .check{color:#10B981;font-weight:900}
+    .cross{color:#EF4444;font-weight:900}
+
+    /* ---------- Story ---------- */
+    .story{
+      display:grid; grid-template-columns:1.1fr .9fr; gap:28px; align-items:center
+    }
+    .story .illus{
+      border-radius:22px; overflow:hidden; border:1px solid var(--line);
+      box-shadow:var(--shadow-md);
+      background:
+        radial-gradient(600px 220px at 70% 10%, rgba(37,99,235,.18), transparent 60%),
+        linear-gradient(160deg,#ffffff 0%, #F2F6FF 100%);
+      min-height:280px; position:relative;
+    }
+    .mockup{
+      position:absolute; inset:12% 10% 16% 10%;
+      background:#0f172a; border-radius:14px; box-shadow:0 8px 26px rgba(0,0,0,.25);
+      display:grid; place-items:center; color:#cbd5e1; font-size:.95rem;
+    }
+    .story h2{margin:0 0 .4rem; font-size:clamp(22px,3.6vw,32px)}
+    .story p{margin:0 0 1rem; color:var(--muted)}
+
+    /* ---------- Footer ---------- */
+    footer{
+      padding:36px 0 60px; color:#cbd5e1;
+      background:linear-gradient(180deg, #0B1E3B 0%, #0a1630 100%);
+    }
+    .footgrid{display:grid; grid-template-columns:1.2fr 1fr 1fr; gap:22px}
+    .footgrid a{color:#e5edff}
+    .mini{font-size:.92rem; opacity:.86}
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 980px){
+      .features{grid-template-columns:1fr}
+      .offers-grid{grid-template-columns:1fr}
+      .story{grid-template-columns:1fr; gap:18px}
+      .hero{min-height:82vh}
+      .footgrid{grid-template-columns:1fr}
+    }
+
+    /* ---------- Notre vision (section élitiste) ---------- */
+    .vision{
+      position:relative;
+      padding:68px 0 56px;
+      background:
+        radial-gradient(900px 260px at 80% 10%, rgba(37,99,235,.14), transparent 60%),
+        radial-gradient(700px 240px at 10% 90%, rgba(16,185,129,.10), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,.02));
+      border-top:1px solid rgba(255,255,255,.06);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .vision-head{ text-align:center; margin-bottom:26px }
+    .vision-head h2{ margin:0 0 .4rem; font-size:clamp(22px,3.2vw,28px); color:#fff }
+    .vision .lead{
+      margin:0 auto; max-width:820px; color:rgba(255,255,255,.76);
+      font-size:clamp(15px,2.2vw,17px)
+    }
+    .pillars{
+      display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:22px
+    }
+    .pillar{
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.08);
+      border-radius:18px; padding:18px 18px;
+      box-shadow:0 10px 32px rgba(0,0,0,.18);
+      transition:transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+      color:#dbe3ff;
+    }
+    .pillar:hover{ transform:translateY(-3px); border-color:rgba(255,255,255,.16) }
+    .pillar h3{ margin:6px 0 6px; color:#fff; font-size:1.05rem }
+    .pillar p{ margin:0; color:rgba(255,255,255,.72) }
+    .pillar .icon{
+      width:38px;height:38px;border-radius:12px;display:grid;place-items:center;
+      background:linear-gradient(145deg,#102247,#0B1E3B);
+      border:1px solid rgba(255,255,255,.14); color:#ffd68a; font-size:1rem;
+    }
+    .vision-grid{
+      display:grid; grid-template-columns:1.2fr 1fr; gap:18px; margin-top:22px
+    }
+    .vision-quote{
+      margin:0; padding:20px 22px; border-radius:18px;
+      background:rgba(255,255,255,.04);
+      border:1px dashed rgba(255,255,255,.12); color:#eaf0ff;
+      font-size:clamp(18px,3vw,22px); line-height:1.35;
+    }
+    .vision-quote span{
+      display:block; margin-top:.4rem; font-size:.9rem; color:rgba(255,255,255,.68)
+    }
+    .kpis{
+      display:grid; grid-template-columns:repeat(2,1fr); gap:12px
+    }
+    .kpi{
+      display:flex; flex-direction:column; align-items:flex-start;
+      padding:16px 16px; border-radius:16px;
+      background:rgba(255,255,255,.03);
+      border:1px solid rgba(255,255,255,.10);
+      box-shadow:0 8px 26px rgba(0,0,0,.18); color:#dfe7ff;
+    }
+    .kpi span{ font-weight:800; font-size:1.3rem; color:#fff; letter-spacing:.2px }
+    .kpi small{ opacity:.75 }
+    @media (max-width:980px){
+      .pillars{ grid-template-columns:1fr }
+      .vision-grid{ grid-template-columns:1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+
+    <!-- Canvas particules ORTEK (taille responsive) -->
+    <div class="hero-canvas-wrap">
+      <canvas id="heroParticles" style="width:100%;height:100%;display:block;pointer-events:none"></canvas>
+    </div>
+
+    <div class="container hero-inner" aria-label="En-tête principal">
+      <span class="eyebrow">Ortek • L'art du digital</span>
+      <h1>Votre site pro livré clé en main.</h1>
+      <p>Design épuré, SEO local, performances et accompagnement humain. Un site qui inspire confiance et convertit vos visiteurs en clients.</p>
+      <div class="cta-row" role="group" aria-label="Actions principales">
+        <a class="btn btn-primary" href="offres.html" aria-label="Aller aux offres">Découvrir nos offres</a>
+        <a class="btn btn-ghost" href="realisations.html">Voir nos réalisations</a>
+      </div>
+    </div>
+    <div class="scroll-indicator" aria-hidden="true">▼ Faites défiler</div>
+  </header>
+
+  <main>
+
+    <!-- NOTRE VISION -->
+    <section id="vision" aria-labelledby="vision-title" class="vision">
+      <div class="container">
+        <div class="vision-head">
+          <h2 id="vision-title">Notre vision</h2>
+          <p class="lead">
+            Un site n’est pas une carte de visite. C’est <strong>un système</strong> : clair,
+            rapide, mesurable. Notre promesse <em>élitiste</em> : chaque pixel sert la conversion.
+          </p>
+        </div>
+
+        <div class="pillars">
+          <article class="pillar">
+            <div class="icon">✨</div>
+            <h3>Clarté radicale</h3>
+            <p>Architecture simple, messages évidents, friction minimale.
+              Le visiteur comprend en 3 secondes pourquoi vous.</p>
+          </article>
+          <article class="pillar">
+            <div class="icon">🚀</div>
+            <h3>Performance mesurable</h3>
+            <p>Lighthouse, LCP, événements GA4. Pas d’approximation :
+              nous traquons, testons, optimisons.</p>
+          </article>
+          <article class="pillar">
+            <div class="icon">🎨</div>
+            <h3>Esthétique utile</h3>
+            <p>Beauté sobre, lisible, intemporelle. Le design sert l’objectif :
+              inspirer confiance et faire agir.</p>
+          </article>
+        </div>
+
+        <div class="vision-grid">
+          <blockquote class="vision-quote">
+            « Simple. Durable. Évident. »
+            <span>— Notre ligne directrice</span>
+          </blockquote>
+
+          <div class="kpis">
+            <div class="kpi"><span>97/100</span><small>Score Lighthouse vitrine</small></div>
+            <div class="kpi"><span>&lt; 1,8 s</span><small>LCP cible mobile</small></div>
+            <div class="kpi"><span>7–10 j</span><small>Livraison d’une vitrine</small></div>
+            <div class="kpi"><span>24 mois</span><small>Abonnement Sérénité</small></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Confiance -->
+    <section aria-labelledby="why">
+      <div class="container">
+        <h2 id="why" class="sr-only">Pourquoi nous choisir</h2>
+        <div class="features">
+          <article class="feat">
+            <i>⚡</i>
+            <div>
+              <h3>Rapide & optimisé</h3>
+              <p>Mobile-first, WebP, cache, lazy-load. Des temps de chargement qui boostent vos conversions.</p>
+            </div>
+          </article>
+          <article class="feat">
+            <i>📍</i>
+            <div>
+              <h3>SEO local performant</h3>
+              <p>Métas propres, Hn, schémas, Google Business. Votre activité visible là où sont vos clients.</p>
+            </div>
+          </article>
+          <article class="feat">
+            <i>🤝</i>
+            <div>
+              <h3>Suivi & sérénité</h3>
+              <p>Hébergement géré, SSL, sauvegardes et support prioritaire dans un abonnement simple.</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Offres -->
+    <section id="offres" aria-labelledby="offers-title">
+      <div class="container">
+        <div class="offers-head">
+          <h2 id="offers-title">Deux solutions selon vos besoins</h2>
+          <p class="mini">Choisissez la vitrine qui vous correspond. Transparence, vitesse, résultats.</p>
+        </div>
+
+        <div class="offers-grid" role="list">
+          <!-- Essentiel -->
+          <article class="card" role="listitem" aria-labelledby="pack-essentiel">
+            <div class="eyebrow-muted">Vitrine</div>
+            <h4 id="pack-essentiel">Essentiel</h4>
+            <ul>
+              <li>Design sobre & responsive (mobile-first)</li>
+              <li>Structure orientée conversion (CTA clairs)</li>
+              <li>Formulaire + bouton WhatsApp/Appel</li>
+              <li>SEO local de base (métas, Hn, maillage simple)</li>
+              <li>Performances soignées (WebP, cache, lazy)</li>
+            </ul>
+            <div class="pill">Livraison 7–10 j ouvrés</div>
+            <div class="pill">Hébergement & maintenance inclus</div>
+            <a class="btn btn-primary btn-block" href="demanderundevis.html">Demander un devis vitrine</a>
+          </article>
+
+          <!-- Pro -->
+          <article class="card" role="listitem" aria-labelledby="pack-pro">
+            <div class="eyebrow-muted">Vitrine</div>
+            <h4 id="pack-pro">Professionnel</h4>
+            <ul>
+              <li>Jusqu’à 5 pages (Accueil, Services, À propos, Réalisations, Contact)</li>
+              <li>Formulaire de devis complet + galerie</li>
+              <li>Google Business configuré + pages de ville (si besoin)</li>
+              <li>SEO local avancé (sitemaps, schémas, données)</li>
+              <li>Optimisations renforcées (WebP, cache, minify)</li>
+            </ul>
+            <div class="pill">Livraison 7–10 j ouvrés</div>
+            <div class="pill">Suivi & petites évolutions inclus</div>
+            <a class="btn btn-primary btn-block" href="demanderundevispro.html">Parler projet vitrine Pro</a>
+          </article>
+
+          <!-- Shopify -->
+          <article class="card" role="listitem" aria-labelledby="pack-shopify">
+            <div class="eyebrow-muted">E-commerce</div>
+            <h4 id="pack-shopify">Boutique Shopify</h4>
+            <ul>
+              <li>Parcours d’achat rapide, thème optimisé</li>
+              <li>Stripe/Shopify Payments, PayPal, 3x/4x</li>
+              <li>Taxes, livraisons & notifications paramétrées</li>
+              <li>Pixels (GA4, Meta, TikTok) + retargeting paniers</li>
+              <li>SEO e-commerce & schémas produits</li>
+            </ul>
+            <div class="pill">Cadrage produit & logistique</div>
+            <div class="pill">Accompagnement lancement</div>
+            <a class="btn btn-green btn-block" href="devisprojetshopify.html">Remplir le brief e-commerce</a>
+          </article>
+        </div>
+
+        <!-- Accordéon comparatif -->
+        <details>
+          <summary>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+            Voir le comparatif détaillé <span class="badge">(pages, SEO, paiement…)</span>
+          </summary>
+          <div class="compare">
+            <div class="container" style="padding:0">
+              <div style="overflow-x:auto">
+                <table class="table" aria-label="Tableau comparatif des offres">
+                  <thead>
+                    <tr>
+                      <th>Fonctionnalité</th>
+                      <th>Essentiel</th>
+                      <th>Pro</th>
+                      <th>Shopify</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr><td>Pages incluses</td><td>1 à 3</td><td>Jusqu’à 5</td><td>Illimité</td></tr>
+                    <tr><td>SEO local avancé</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                    <tr><td>Paiement en ligne</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
+                    <tr><td>Google Business</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                    <tr><td>Maintenance incluse</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mini" style="margin:.6rem 0 1rem">
+                💡 Quel que soit votre besoin, chaque site est livré clé en main, prêt à convertir et à performer localement.
+              </p>
+              <div class="feat" style="margin-bottom:14px">
+                <i>🛡️</i>
+                <div>
+                  <strong>Abonnement Sérénité</strong><br>
+                  Hébergement géré, SSL, sauvegardes, mises à jour et support prioritaire. <strong>Engagement minimal 24 mois</strong>, contrat clair et sans coûts cachés. Résiliation simple au terme.
+                </div>
+              </div>
+            </div>
+          </div>
+        </details>
+      </div>
+    </section>
+
+    <!-- Storytelling -->
+    <section aria-labelledby="story">
+      <div class="container story">
+        <div>
+          <h2 id="story">Nous créons des sites qui inspirent confiance.</h2>
+          <p>Un site doit être clair, rapide et mesurable. Chez Ortek, chaque détail compte : de la structure SEO aux micro-interactions, tout est pensé pour convertir.</p>
+          <ul style="margin:.6rem 0 1.2rem 1.1rem">
+            <li>Stratégie contenue & maillage interne</li>
+            <li>Suivi GA4, événements et objectifs</li>
+            <li>Support humain par WhatsApp + email</li>
+          </ul>
+          <div class="cta-row" style="justify-content:flex-start">
+            <a class="btn btn-primary" href="demanderundevis.html">Demander un devis</a>
+            <a class="btn" style="border:1px solid var(--line); background:#fff" href="#realisations">Voir les réalisations</a>
+          </div>
+        </div>
+        <div class="illus" aria-hidden="true">
+          <div class="mockup">Aperçu maquette / visuel épuré</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container footgrid">
+      <div>
+        <h3 style="margin:0 0 .4rem">Ortek</h3>
+        <p class="mini">Webdesign sobre, SEO local et performances mesurables. Votre visibilité locale, clé en main.</p>
+      </div>
+      <div>
+        <strong class="mini">Contact</strong><br>
+        <a href="mailto:contact@ortek.fr">contact@ortek.fr</a><br>
+        <a href="https://wa.me/330600000000" rel="nofollow noopener">WhatsApp direct</a>
+      </div>
+      <div>
+        <strong class="mini">Liens</strong><br>
+        <a href="offres.html">Offres</a><br>  <a href="#realisations">Réalisations</a><br>  <a href="demanderundevispro.html">Devis</a><br>  <a href="quisommesnous.html">Qui sommes-nous ?</a><br>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Optionnel : scroll doux sur les ancres
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', e=>{
+        const id=a.getAttribute('href').slice(1);
+        const el=document.getElementById(id);
+        if(el){ e.preventDefault(); el.scrollIntoView({behavior:'smooth',block:'start'}) }
+      })
+    });
+  </script>
+
+  <!-- Particules ORTEK (agrandi & densifié) -->
+  <script>
+  (() => {
+    const WORD = "ORTEK";      // le mot
+    const DENS = 4;            // densité (4 = + de points que 5)
+    const GATHER = 0.08;       // force de rassemblement
+    const FRICTION = 0.88;     // frottement
+    const STEP = 0.016;        // intégration
+    const R = 160;             // rayon onde souris (px)
+    const R2 = R*R;
+    const REPEL = 1.8;         // gain répulsion
+    const COLOR = 'rgba(173,216,255,0.95)'; // teinte des points
+
+    const c = document.getElementById('heroParticles');
+    if (!c) return;
+    const ctx = c.getContext('2d');
+
+    let W = 0, H = 0, target = [], dots = [];
+    let mx = -1e9, my = -1e9;  // souris hors zone par défaut
+
+    // Construire la cible (points) depuis un mot
+    function buildTarget(text, dens) {
+      const off = document.createElement('canvas');
+      // largeur = 90% du container (limité à 1200px)
+      const w = Math.min(1200, Math.floor(c.clientWidth * 0.98));
+      const h = Math.max(160, Math.floor(c.clientHeight)); // colle à la hauteur du canvas
+      off.width = w; off.height = h;
+
+      const ox = off.getContext('2d');
+      ox.fillStyle = '#fff';
+      ox.textAlign = 'center';
+      ox.textBaseline = 'middle';
+
+      // taille de police adaptative (agrandie)
+      const fontSize = Math.floor(Math.min(w * 0.28, h * 0.9));
+      ox.font = `900 ${fontSize}px Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial`;
+      ox.fillText(text, w/2, h/2);
+
+      const data = ox.getImageData(0,0,w,h).data;
+      const pts = [];
+      for (let y = 0; y < h; y += dens) {
+        for (let x = 0; x < w; x += dens) {
+          const i = (y*w + x) * 4;
+          if (data[i+3] > 128) {
+            // centre dans le canvas visible
+            const gx = (W - w)/2 + x;
+            const gy = (H - h)/2 + y;
+            pts.push({ gx, gy });
+          }
+        }
+      }
+      return pts;
+    }
+
+    // Redimensionner / reconstruire
+    function resize() {
+      W = c.width  = c.clientWidth;
+      H = c.height = c.clientHeight;
+      target = buildTarget(WORD, DENS);
+      // (re)crée des particules reparties aléatoirement
+      dots = target.map(t => ({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: 0, vy: 0,
+        a: 0.18 + Math.random()*0.6,
+        gx: t.gx, gy: t.gy
+      }));
+    }
+    resize();
+    window.addEventListener('resize', () => {
+      clearTimeout(window.__hp_rz);
+      window.__hp_rz = setTimeout(resize, 80);
+    });
+
+    // souris (sur toute la fenêtre)
+    window.addEventListener('pointermove', e => { mx = e.clientX; my = e.clientY; });
+    window.addEventListener('pointerleave', () => { mx = -1e9; my = -1e9; });
+
+    // loop
+    function loop() {
+      requestAnimationFrame(loop);
+      ctx.clearRect(0,0,W,H);
+
+      for (const d of dots) {
+        // attraction vers la cible
+        d.vx += (d.gx - d.x) * GATHER;
+        d.vy += (d.gy - d.y) * GATHER;
+
+        // répulsion douce de la souris
+        const rx = d.x - mx, ry = d.y - my;
+        const r2 = rx*rx + ry*ry;
+        if (r2 < R2) {
+          const repel = (R2 - r2)/R2;
+          const inv = 1/Math.sqrt(r2 + 0.001);
+          d.vx += (rx*inv) * repel * REPEL;
+          d.vy += (ry*inv) * repel * REPEL;
+        }
+
+        // frottement + intégration
+        d.vx *= FRICTION; d.vy *= FRICTION;
+        d.x += d.vx * STEP; d.y += d.vy * STEP;
+
+        // draw (légerement plus gros)
+        ctx.globalAlpha = d.a;
+        ctx.fillStyle = COLOR;
+        ctx.beginPath(); ctx.arc(d.x, d.y, 2.1, 0, Math.PI*2); ctx.fill();
+      }
+    }
+    loop();
+  })();
+  </script>
+
+</body>
+</html>

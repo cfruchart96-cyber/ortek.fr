@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ortek — Parler du projet e‑commerce</title>
+  <meta name="description" content="Brief e‑commerce : décrivez votre activité, vos produits, vos paiements et livraisons. Nous cadrons un projet Shopify performant.">
+  <link rel="icon" href="/favicon.ico" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light"><meta name="darkreader-lock">
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+  <img src="image/logo.png" alt="Ortek" class="h-9 w-auto rounded-xl">
+  <span class="font-semibold tracking-tight">Ortek</span>
+</a>
+
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="/offre.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
+          <a href="/devis.html" class="text-gray-600 hover:text-gray-900">Demander un devis</a>
+        </nav>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
+        </button>
+      </div>
+      <nav id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm">
+          <a href="/offre.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Nos offres</a>
+          <a href="/devis.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Demander un devis</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section class="py-16 text-center bg-gradient-to-b from-blue-50 to-white">
+      <div class="max-w-3xl mx-auto px-4">
+        <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Parlons de votre projet e‑commerce</h1>
+        <p class="mt-3 text-gray-600">Décrivez votre boutique (produits, paiements, livraisons, automations). On vous conseille et on chiffre proprement.</p>
+      </div>
+    </section>
+
+    <!-- Formulaire détaillé (Site vitrine) -->
+    <section id="form" class="py-12">
+      <div class="max-w-5xl mx-auto px-4">
+        <form id="briefForm" class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10">
+          
+          <!-- 1. Identité & objectifs -->
+          <fieldset>
+            <legend class="text-lg font-semibold">1. Identité & objectifs</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Nom de la marque / entreprise <span class="text-red-500">*</span></label>
+                <input name="brand" required type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. Maison Nova" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Secteur d’activité</label>
+                <input name="sector" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Cosmétique, prêt‑à‑porter, alimentaire…" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-sm font-medium">Cible principale</label>
+                <input name="audience" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Qui sont vos clients ? (âge, zone, B2B/B2C…)" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Objectif du site</label>
+                <select name="goal" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Vendre</option><option>Présenter</option><option>Fidéliser</option><option>Autre</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Style recherché</label>
+                <select name="style" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Sobriété premium</option><option>Fun & coloré</option><option>Naturel & épuré</option><option>Technique</option><option>Autre</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 2. Produits & offres -->
+          <fieldset>
+            <legend class="text-lg font-semibold">🛍️ 2. Produits & offres</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Type de produits / services</label>
+                <input name="product_type" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. T‑shirts, soins visage, ateliers…" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Nombre d’articles (approx.)</label>
+                <select name="product_count" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>1–10</option><option>11–50</option><option>51–200</option><option>200+</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Prix moyen</label>
+                <input name="avg_price" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. 29,90 €" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Variantes</label>
+                <input name="variants" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Tailles, couleurs, formats…" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Mode de livraison</label>
+                <select name="shipping" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Colissimo / La Poste</option><option>Mondial Relay</option><option>Retrait en boutique</option><option>Transporteur</option><option>À définir</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Politique de retours</label>
+                <input name="returns" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Delai, conditions…" />
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 3. Paiements & logistique -->
+          <fieldset>
+            <legend class="text-lg font-semibold">💳 3. Paiements & logistique</legend>
+            <div class="mt-4 grid sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Paiements souhaités</label>
+                <select name="payments" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Shopify Payments</option><option>Stripe</option><option>PayPal</option><option>3x/4x</option><option>À définir</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Zones de livraison</label>
+                <select name="zones" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>France</option><option>Europe</option><option>International</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Gestion du stock</label>
+                <select name="stock" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Moi‑même</option><option>Dropshipping</option><option>Mixte</option><option>À définir</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 4. Contenu & image -->
+          <fieldset>
+            <legend class="text-lg font-semibold">🎨 4. Contenu & image</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Logo & charte</label>
+                <select name="brand_assets" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Déjà prêts</option><option>À créer / à affiner</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Photos produits</label>
+                <select name="photos" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Disponibles</option><option>À produire</option><option>Mixte</option>
+                </select>
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-sm font-medium">Exemples de sites que vous aimez</label>
+                <input name="inspo" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Collez des liens (jusqu’à 3)" />
+              </div>
+              <div class="sm:col-span-2">
+                <label class="block text-sm font-medium">Pages à inclure</label>
+                <div class="mt-2 grid grid-cols-2 md:grid-cols-4 gap-2 text-sm text-gray-700">
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Accueil" class="rounded"> Accueil</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Boutique" class="rounded"> Boutique</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="À propos" class="rounded"> À propos</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Contact" class="rounded"> Contact</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="FAQ" class="rounded"> FAQ</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Blog" class="rounded"> Blog</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="CGV" class="rounded"> CGV</label>
+                  <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Mentions" class="rounded"> Mentions</label>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 5. Communication & suivi -->
+          <fieldset>
+            <legend class="text-lg font-semibold">🚀 5. Communication & suivi</legend>
+            <div class="mt-4 grid sm:grid-cols-3 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Réseaux sociaux</label>
+                <select name="socials" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Non</option><option>Oui (Instagram)</option><option>Oui (Facebook)</option><option>Oui (TikTok)</option><option>Oui (plusieurs)</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Blog / SEO / Newsletter</label>
+                <select name="growth" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Blog</option><option>SEO</option><option>Newsletter</option><option>Plusieurs</option><option>À définir</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Maintenance & mises à jour</label>
+                <select name="maintenance" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500">
+                  <option>Oui, je veux un accompagnement</option><option>Non</option><option>À discuter</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+
+          <!-- 6. Détails libres & consentement -->
+          <div class="grid gap-4">
+            <div>
+              <label class="block text-sm font-medium">Précisions complémentaires</label>
+              <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Contexte, contraintes, intégrations spécifiques (ERP, marketplace…), etc."></textarea>
+            </div>
+            <div class="flex items-start gap-3">
+              <input id="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+              <label for="consent" class="text-sm text-gray-600">J’accepte d’être recontacté à propos de ma demande de devis.</label>
+            </div>
+            <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+          </div>
+
+          <!-- Submit -->
+          <div class="flex items-center gap-3">
+            <button type="submit" class="inline-flex items-center rounded-xl bg-blue-600 px-5 py-2.5 text-white font-medium hover:bg-blue-700">Envoyer ma demande</button>
+            <p class="text-xs text-gray-500">Données non partagées. Réponse sous 24h ouvrées.</p> 
+          </div>
+
+          <p id="status" class="hidden text-sm"></p>
+
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION : Comment ça marche -->
+<section class="py-16 bg-gray-50 border-t border-gray-100">
+  <div class="max-w-6xl mx-auto px-6 text-center">
+    <h2 class="text-3xl font-semibold tracking-tight mb-6">Comment ça marche ?</h2>
+    <p class="text-gray-600 max-w-2xl mx-auto mb-12">
+      Chez <strong>Ortek</strong>, tout est pensé pour aller vite, sans compromis sur la qualité.  
+      Vous n’attendez pas des semaines : votre site est conçu, validé et livré en quelques jours seulement.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-6">
+      <!-- Étape 1 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">1️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Brief simple</h3>
+        <p class="text-gray-600 text-sm">Vous remplissez un mini formulaire (<a href="demanderundevis.html" class="text-blue-600 underline">Demande de devis</a>) pour décrire votre activité et vos besoins.  
+        On vous recontacte sous 24h.</p>
+      </div>
+
+      <!-- Étape 2 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">2️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Création & validation</h3>
+        <p class="text-gray-600 text-sm">On conçoit votre site (structure, visuel, SEO local).  
+        Vous recevez un aperçu avant la mise en ligne pour valider chaque détail.</p>
+      </div>
+
+      <!-- Étape 3 -->
+      <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
+        <div class="text-blue-600 text-3xl font-bold mb-3">3️⃣</div>
+        <h3 class="font-semibold text-lg mb-2">Mise en ligne rapide</h3>
+        <p class="text-gray-600 text-sm">Votre site est publié sous 7 à 10 jours ouvrés.  
+        Hébergement, sécurité et maintenance sont déjà inclus dans l’abonnement.</p>
+      </div>
+    </div>
+
+    <p class="mt-12 text-gray-700">
+      💡 <em>Un seul interlocuteur, un seul tarif clair, et un site livré prêt à recevoir vos premiers visiteurs.</em>
+    </p>
+  </div>
+</section>
+
+  <footer class="border-t border-gray-200 py-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
+      <div class="flex items-center gap-6 text-gray-600">
+        <a href="/offre.html" class="hover:text-gray-800">Nos offres</a>
+       
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+
+    const form = document.getElementById('briefForm');
+    const statusEl = document.getElementById('status');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      statusEl.textContent = "Merci ! Brief reçu. On revient vers vous sous 24h ouvrées pour cadrer le projet.";
+      statusEl.className = 'text-green-700 bg-green-50 border border-green-200 rounded-xl p-3';
+      form.reset();
+    });
+  </script>
+</body>
+</html>

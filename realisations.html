@@ -1,0 +1,238 @@
+<!-- Section “Démos Ortek” – autonome (copier/coller dans ton index). 
+     ✅ Fonctionne avec Tailwind CDN (ou ta build). 
+     Remplace les chemins des images et les liens vers tes pages/maquettes. -->
+
+<!-- Tailwind CDN (si tu n’as pas déjà Tailwind dans la page) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<section id="demos" class="relative overflow-hidden bg-neutral-950 text-white">
+  <!-- Décor doux en arrière-plan -->
+  <div class="pointer-events-none absolute inset-0 bg-gradient-to-b from-cyan-900/10 to-purple-900/10"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 py-16">
+    <!-- En-tête -->
+    <div class="flex flex-col items-start gap-6 md:flex-row md:items-end md:justify-between">
+      <div>
+        <p class="text-xs uppercase tracking-widest text-cyan-400/80">Exemples · Portefeuille</p>
+        <h2 class="mt-2 text-3xl font-semibold leading-tight md:text-4xl">Démos Ortek</h2>
+        <p class="mt-3 max-w-2xl text-neutral-300">Aperçu rapide du style, de la hiérarchie et de la clarté Ortek. Des maquettes propres, prêtes à être personnalisées à vos couleurs.</p>
+      </div>
+
+      <div class="flex gap-2">
+        <a href="#devis" class="rounded-xl border border-white/10 bg-white/5 px-4 py-2 text-sm backdrop-blur transition hover:bg-white/10">Demander un aperçu gratuit</a>
+        <a href="#contact" class="rounded-xl bg-cyan-500 px-4 py-2 text-sm font-medium text-neutral-950 transition hover:bg-cyan-400">Parler à un humain</a>
+      </div>
+    </div>
+
+    <!-- Carrousel (mobile) + Grille (desktop) -->
+    <div class="mt-10">
+      <!-- Wrapper carrousel (mobile) -->
+      <div class="-mx-6 block snap-x snap-mandatory overflow-x-auto pb-4 md:hidden">
+        <div class="flex gap-4 px-6">
+          <!-- Carte 1 -->
+          <article class="w-80 shrink-0 snap-center rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+            <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+              <img src="/images/demo-electricien.jpg" alt="Démo – Électricien" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+              <button data-modal-open="demo-electricien" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+                <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+              </button>
+            </div>
+            <div class="px-1 py-3">
+              <div class="mb-1 flex items-center gap-2">
+                <span class="rounded-full bg-cyan-500/15 px-2 py-0.5 text-[11px] font-medium text-cyan-300">Électricien</span>
+                <span class="text-xs text-neutral-400">Béthune +15 km</span>
+              </div>
+              <h3 class="text-lg font-semibold">Accueil vitrine – Électricien</h3>
+              <p class="mt-1 text-sm text-neutral-300">Hero, services, zone d’intervention, preuves, CTA.</p>
+              <div class="mt-3 flex gap-2">
+                <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+                <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 2 -->
+          <article class="w-80 shrink-0 snap-center rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+            <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+              <img src="/images/demo-plombier.jpg" alt="Démo – Plombier" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+              <button data-modal-open="demo-plombier" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+                <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+              </button>
+            </div>
+            <div class="px-1 py-3">
+              <div class="mb-1 flex items-center gap-2">
+                <span class="rounded-full bg-purple-500/15 px-2 py-0.5 text-[11px] font-medium text-purple-300">Plombier</span>
+                <span class="text-xs text-neutral-400">Intervention 7j/7</span>
+              </div>
+              <h3 class="text-lg font-semibold">Accueil vitrine – Plombier</h3>
+              <p class="mt-1 text-sm text-neutral-300">Hero urgentiste, prestations, avis, formulaire simple.</p>
+              <div class="mt-3 flex gap-2">
+                <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+                <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Carte 3 -->
+          <article class="w-80 shrink-0 snap-center rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+            <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+              <img src="/images/demo-garage.jpg" alt="Démo – Garage auto" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+              <button data-modal-open="demo-garage" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+                <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+              </button>
+            </div>
+            <div class="px-1 py-3">
+              <div class="mb-1 flex items-center gap-2">
+                <span class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300">Garage auto</span>
+                <span class="text-xs text-neutral-400">Entretien & diag</span>
+              </div>
+              <h3 class="text-lg font-semibold">Accueil vitrine – Garage</h3>
+              <p class="mt-1 text-sm text-neutral-300">Hero sobre, prestations, marques, prise de RDV.</p>
+              <div class="mt-3 flex gap-2">
+                <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+                <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <!-- Grille (desktop) -->
+      <div class="mt-2 hidden grid-cols-3 gap-6 md:grid">
+        <!-- Réutilise les cartes ci-dessus (x3) en version responsive -->
+        <!-- Carte 1 Desktop -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+            <img src="/images/demo-electricien.jpg" alt="Démo – Électricien" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+            <button data-modal-open="demo-electricien" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+              <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+            </button>
+          </div>
+          <div class="px-1 py-3">
+            <div class="mb-1 flex items-center gap-2">
+              <span class="rounded-full bg-cyan-500/15 px-2 py-0.5 text-[11px] font-medium text-cyan-300">Électricien</span>
+              <span class="text-xs text-neutral-400">Béthune +15 km</span>
+            </div>
+            <h3 class="text-lg font-semibold">Accueil vitrine – Électricien</h3>
+            <p class="mt-1 text-sm text-neutral-300">Hero, services, zone d’intervention, preuves, CTA.</p>
+            <div class="mt-3 flex gap-2">
+              <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+              <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 2 Desktop -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+            <img src="/images/demo-plombier.jpg" alt="Démo – Plombier" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+            <button data-modal-open="demo-plombier" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+              <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+            </button>
+          </div>
+          <div class="px-1 py-3">
+            <div class="mb-1 flex items-center gap-2">
+              <span class="rounded-full bg-purple-500/15 px-2 py-0.5 text-[11px] font-medium text-purple-300">Plombier</span>
+              <span class="text-xs text-neutral-400">Intervention 7j/7</span>
+            </div>
+            <h3 class="text-lg font-semibold">Accueil vitrine – Plombier</h3>
+            <p class="mt-1 text-sm text-neutral-300">Hero urgentiste, prestations, avis, formulaire simple.</p>
+            <div class="mt-3 flex gap-2">
+              <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+              <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+            </div>
+          </div>
+        </article>
+
+        <!-- Carte 3 Desktop -->
+        <article class="rounded-2xl border border-white/10 bg-white/5 p-3 backdrop-blur">
+          <div class="group relative aspect-[16/10] overflow-hidden rounded-xl">
+            <img src="/images/demo-garage.jpg" alt="Démo – Garage auto" class="h-full w-full object-cover transition group-hover:scale-[1.03]" loading="lazy"/>
+            <button data-modal-open="demo-garage" class="absolute inset-0 grid place-items-center bg-black/0 opacity-0 transition group-hover:bg-black/30 group-hover:opacity-100">
+              <span class="rounded-lg bg-white px-3 py-1.5 text-sm font-medium text-neutral-900">Aperçu</span>
+            </button>
+          </div>
+          <div class="px-1 py-3">
+            <div class="mb-1 flex items-center gap-2">
+              <span class="rounded-full bg-emerald-500/15 px-2 py-0.5 text-[11px] font-medium text-emerald-300">Garage auto</span>
+              <span class="text-xs text-neutral-400">Entretien & diag</span>
+            </div>
+            <h3 class="text-lg font-semibold">Accueil vitrine – Garage</h3>
+            <p class="mt-1 text-sm text-neutral-300">Hero sobre, prestations, marques, prise de RDV.</p>
+            <div class="mt-3 flex gap-2">
+              <a href="#" class="rounded-lg border border-white/10 px-3 py-1.5 text-sm hover:bg-white/5">Voir maquette</a>
+              <a href="#devis" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Avoir mon aperçu</a>
+            </div>
+          </div>
+        </article>
+      </div>
+
+      <!-- Bandeau “+15 autres métiers” -->
+      <div class="mt-8 flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-white/10 bg-white/5 p-4 text-sm text-neutral-300">
+        <div class="flex items-center gap-3">
+          <span class="inline-grid h-8 w-8 place-items-center rounded-full bg-cyan-500/15 text-cyan-300">+</span>
+          <p>Également disponibles : peintre, couvreur, paysagiste, menuisier, boulanger, coiffeur…</p>
+        </div>
+        <a href="#catalogue" class="rounded-lg border border-white/10 px-3 py-1.5 font-medium hover:bg-white/5">Voir le catalogue</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modales d’aperçu (lightbox simple) -->
+  <div id="modal-backdrop" class="invisible fixed inset-0 z-50 grid place-items-center bg-black/80 opacity-0 transition">
+    <div class="relative w-[92vw] max-w-5xl rounded-2xl bg-neutral-950 p-3 shadow-2xl ring-1 ring-white/10">
+      <button id="modal-close" class="absolute right-3 top-3 rounded-md bg-white/10 p-2 text-white hover:bg-white/20">✕</button>
+      <img id="modal-image" src="" alt="Aperçu démo" class="h-[72vh] w-full rounded-xl object-contain"/>
+      <div class="mt-3 flex items-center justify-between gap-2 px-1">
+        <div class="text-sm text-neutral-300" id="modal-caption">Aperçu</div>
+        <a id="modal-link" href="#" target="_blank" rel="noopener" class="rounded-lg bg-cyan-500 px-3 py-1.5 text-sm font-medium text-neutral-950 hover:bg-cyan-400">Ouvrir la maquette</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // —— Lightbox minimaliste ——
+  const backdrop = document.getElementById('modal-backdrop');
+  const modalImg = document.getElementById('modal-image');
+  const modalCaption = document.getElementById('modal-caption');
+  const modalLink = document.getElementById('modal-link');
+  const closeBtn = document.getElementById('modal-close');
+
+  function openModal({ src, alt, link }) {
+    modalImg.src = src; modalImg.alt = alt || 'Aperçu démo';
+    modalCaption.textContent = alt || 'Aperçu démo';
+    modalLink.href = link || '#';
+    backdrop.classList.remove('invisible');
+    requestAnimationFrame(() => backdrop.classList.remove('opacity-0'));
+  }
+  function closeModal(){
+    backdrop.classList.add('opacity-0');
+    backdrop.addEventListener('transitionend', () => {
+      backdrop.classList.add('invisible');
+      modalImg.src = '';
+    }, { once:true });
+  }
+  closeBtn?.addEventListener('click', closeModal);
+  backdrop?.addEventListener('click', (e) => { if(e.target === backdrop) closeModal(); });
+  document.addEventListener('keydown', (e) => { if(e.key === 'Escape') closeModal(); });
+
+  // Attache sur tous les boutons d’aperçu
+  document.querySelectorAll('[data-modal-open]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.getAttribute('data-modal-open');
+      const card = btn.closest('article');
+      const img = card.querySelector('img');
+      // Lien cible (remplace par l’URL de ta maquette si dispo)
+      const target = card.querySelector('a[href]')?.getAttribute('href') || '#';
+      openModal({ src: img.src, alt: img.alt, link: target });
+    });
+  });
+</script>
+
+<!-- Astuces d’intégration :
+1) Remplace /images/demo-*.jpg par tes captures HD (1920×1080). 
+2) Les liens “Voir maquette” peuvent pointer vers une page HTML statique, un Figma public, ou une URL unique générée pour chaque prospect.
+3) La section fonctionne seule : carrousel (mobile) + grille (desktop) + modales.
+4) Pour un rendu encore plus premium, exporte tes captures sur fond sombre, léger vignettage + micro glow cyan.
+-->

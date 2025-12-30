@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="robots" content="noindex,nofollow" />
+  <title>Ortek — Coin des Curieux</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="relative min-h-screen bg-[#0b0f14] text-slate-100 overflow-hidden">
+
+  <!-- Halo orb qui suit le curseur -->
+  <div id="orb" class="pointer-events-none fixed -translate-x-1/2 -translate-y-1/2 w-[420px] h-[420px] rounded-full blur-3xl opacity-40"
+       style="background: radial-gradient(closest-side, rgba(100,200,255,.35), rgba(0,0,0,0) 70%);"></div>
+
+  <!-- Canvas effets -->
+  <canvas id="fx" class="fixed inset-0 pointer-events-none"></canvas>
+  <canvas id="particles" class="fixed inset-0 pointer-events-none"></canvas>
+
+  <!-- Topbar -->
+  <div class="absolute top-4 left-4 right-4 flex justify-between items-center text-xs text-slate-400 select-none z-20">
+    <a href="/" class="border border-white/10 rounded-xl px-3 py-1 bg-white/5 hover:bg-white/10 text-slate-300 font-medium transition">← Retour</a>
+    <span>Astuce : <kbd class="px-1 py-0.5 bg-white/5 rounded border border-white/10 text-[10px]">?</kbd> / <kbd class="px-1 py-0.5 bg-white/5 rounded border border-white/10 text-[10px]">♥</kbd> — et essaye le code secret 😉</span>
+  </div>
+
+  <!-- Bandeau Insider (caché au départ) -->
+  <div id="insider" class="hidden fixed top-16 left-1/2 -translate-x-1/2 z-30">
+    <div class="flex items-center gap-3 px-4 py-2 rounded-2xl border border-emerald-400/30 bg-emerald-500/10 shadow-xl">
+      <span class="text-emerald-300 font-semibold">Insider Unlock</span>
+      <span class="text-slate-300">Code :</span>
+      <code class="px-2 py-1 rounded bg-black/30 border border-white/10 text-emerald-200">INSIDER-10</code>
+      <span class="text-slate-400 text-xs">— -10% réservé aux curieux</span>
+    </div>
+  </div>
+
+  <!-- Carte centrale -->
+  <main class="relative z-10 flex items-center justify-center min-h-screen px-4">
+    <section class="w-[92vw] max-w-3xl rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-[0_20px_60px_rgba(0,0,0,0.45)] p-8 md:p-12 text-center">
+      <h1 class="text-transparent bg-clip-text bg-gradient-to-r from-indigo-300 via-sky-400 to-cyan-300 text-4xl md:text-5xl font-bold mb-3">
+        Bien joué, curieux·se ✨
+      </h1>
+      <p class="text-slate-400 mb-6 leading-relaxed">
+        Tu fais partie des <strong>1 %</strong> qui explorent au-delà des boutons visibles.<br>
+        Chez <span class="font-semibold text-sky-300">Ortek</span>, on aime la curiosité créative. Regarde bien 👇
+      </p>
+
+      <!-- Demo slate -->
+      <div class="mx-auto mb-8 w-full aspect-[16/9] max-w-3xl rounded-2xl border border-white/10 bg-gradient-to-br from-[#0b1322] to-[#0b1322] relative overflow-hidden">
+        <!-- mini overlays doux -->
+        <div class="absolute inset-0 opacity-90 blur-2xl pointer-events-none
+                    bg-[radial-gradient(280px_280px_at_85%_20%,rgba(255,255,255,.12),transparent_60%),radial-gradient(220px_220px_at_20%_85%,rgba(99,102,241,.25),transparent_60%)]"></div>
+        <!-- titre subtil en bas -->
+        <div class="absolute bottom-3 left-4 text-xs text-white/50">ORTEK — Particle Signature</div>
+      </div>
+
+      <!-- CTA -->
+      <div class="flex items-center justify-center gap-3 flex-wrap">
+        <a id="dl" href="#" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/5 hover:border-sky-400/60 transition font-semibold text-slate-100 shadow-lg">
+          ⬇️ Télécharger le fond d’écran
+        </a>
+        <button id="burst" class="inline-flex items-center gap-2 px-5 py-3 rounded-xl border border-white/10 bg-white/5 hover:border-indigo-400/60 transition font-semibold text-slate-100 shadow-lg">
+          🎉 Rejouer les confettis
+        </button>
+      </div>
+
+      <p class="mt-4 text-xs text-slate-500">
+        Tip : bouge la souris — les particules te suivent. Tape <kbd class="px-1 py-0.5 bg-white/5 rounded border border-white/10 text-[10px]">↑↑↓↓←→←→BA</kbd> pour un bonus.
+      </p>
+    </section>
+  </main>
+
+  <script>
+    /* ===== Halo orb ===== */
+    const orb = document.getElementById('orb');
+    window.addEventListener('pointermove', (e) => {
+      // légère inertie
+      orb.style.transform = `translate(${e.clientX - window.innerWidth/2}px, ${e.clientY - window.innerHeight/2}px)`;
+    });
+
+    /* ===== Confetti minimal (déjà optimisé) ===== */
+    const c = document.getElementById('fx'), x = c.getContext('2d');
+    let W, H, P=[];
+    function size(){ W=c.width=innerWidth; H=c.height=innerHeight } window.addEventListener('resize', size); size();
+    function burst(n=180){
+      for(let i=0;i<n;i++){
+        P.push({x:W/2,y:H*0.35,r:3+Math.random()*3,vx:(Math.random()*2-1)*4.2,vy:-Math.random()*6-2,g:0.12+Math.random()*0.05,a:1,h:(Math.random()*360)|0});
+      }
+    }
+    function loopC(){
+      requestAnimationFrame(loopC);
+      x.clearRect(0,0,W,H);
+      P.forEach(p=>{
+        p.vy+=p.g; p.x+=p.vx; p.y+=p.vy; p.a*=0.985;
+        x.globalAlpha=Math.max(p.a,0);
+        x.fillStyle=`hsl(${p.h} 85% 60%)`;
+        x.beginPath(); x.arc(p.x,p.y,p.r,0,Math.PI*2); x.fill();
+      });
+      P=P.filter(p=>p.a>0&&p.y<H+20);
+    }
+    loopC();
+    window.addEventListener('load', ()=>burst(200));
+    window.addEventListener('keydown', e=>{ if(['?','h','♥'].includes(e.key.toLowerCase())) burst(180) });
+    document.getElementById('burst').addEventListener('click', ()=>burst(200));
+
+    <!-- ===== Particle text ORTEK — mode DVD court ===== -->
+
+const pc=document.getElementById("particles"),px=pc.getContext("2d");pc.width=innerWidth;pc.height=innerHeight;
+function genPts(txt,d=6){const c=document.createElement("canvas"),w=Math.min(1920,innerWidth*1|0);c.width=w;c.height=220;const x=c.getContext("2d");
+x.fillStyle="#fff";x.textAlign="center";x.textBaseline="middle";x.font=`900 ${w*.28|0}px Inter`;x.fillText(txt,w/2,c.height/2+10);
+const img=x.getImageData(0,0,w,c.height).data,p=[];let minx=1e9,miny=1e9,maxx=-1e9,maxy=-1e9;
+for(let y=0;y<c.height;y+=d)for(let xx=0;xx<w;xx+=d){const i=(y*w+xx)*4;if(img[i+3]>128){p.push({x:xx,y});if(xx<minx)minx=xx;if(y<miny)miny=y;if(xx>maxx)maxx=xx;if(y>maxy)maxy=y;}}
+return{p,box:{w:maxx-minx,h:maxy-miny}}}
+let L=genPts("ORTEK",6),D=L.p.map(q=>({x:Math.random()*innerWidth,y:Math.random()*innerHeight,vx:0,vy:0,a:.2+Math.random()*.6,lx:q.x,ly:q.y}));
+let bx=innerWidth*.2,by=innerHeight*.3,bvx=150,bvy=120,hue=200,mx=innerWidth/2,my=innerHeight/2;addEventListener("pointermove",e=>{mx=e.clientX;my=e.clientY});
+function anim(){requestAnimationFrame(anim);px.clearRect(0,0,pc.width,pc.height);
+bx+=bvx*.016;by+=bvy*.016;const pad=20,maxX=innerWidth-L.box.w-pad,maxY=innerHeight-L.box.h-pad;
+let bounce=!1;if(bx<pad||bx>maxX){bvx*=-1;bx=Math.max(pad,Math.min(bx,maxX));bounce=!0}
+if(by<pad||by>maxY){bvy*=-1;by=Math.max(pad,Math.min(by,maxY));bounce=!0}if(bounce)hue=(hue+60)%360;
+for(const d of D){const gx=d.lx+bx,gy=d.ly+by,dx=gx-d.x,dy=gy-d.y;d.vx+=dx*.02;d.vy+=dy*.02;
+const rx=d.x-mx,ry=d.y-my,r2=rx*rx+ry*ry;if(r2<190*190){const r=(190*190-r2)/(190*190),inv=1/Math.sqrt(r2+.001);d.vx+=rx*inv*r*1.8;d.vy+=ry*inv*r*1.8}
+d.vx*=.88;d.vy*=.88;d.x+=d.vx*.016;d.y+=d.vy*.016;px.globalAlpha=d.a;px.fillStyle=`hsl(${hue} 85% 60%)`;
+px.beginPath();px.arc(d.x,d.y,1.8,0,Math.PI*2);px.fill()}}
+anim();
+</script>
+
+
+    /* ===== Export wallpaper (canvas Offscreen-like) ===== */
+    const dl = document.getElementById('dl');
+    dl.addEventListener('click', e=>{
+      e.preventDefault();
+      const off = document.createElement('canvas'); const ow=1920, oh=1080;
+      off.width=ow; off.height=oh; const ox=off.getContext('2d');
+
+      const bg = ox.createLinearGradient(0,0,0,oh);
+      bg.addColorStop(0,'#0e1726'); bg.addColorStop(1,'#0a101a'); ox.fillStyle=bg; ox.fillRect(0,0,ow,oh);
+
+      const rg = ox.createRadialGradient(ow*0.2, 0, 0, ow*0.2, 0, ow*0.9);
+      rg.addColorStop(0,'#0ea5e9'); rg.addColorStop(.5,'#0b1322'); rg.addColorStop(1,'#0b1322');
+      ox.globalCompositeOperation='screen'; ox.fillStyle=rg; ox.fillRect(0,0,ow,oh);
+
+      function glow(cx,cy,r,rgba){
+        const g = ox.createRadialGradient(cx,cy,0,cx,cy,r);
+        g.addColorStop(0,rgba); g.addColorStop(1,'rgba(0,0,0,0)');
+        ox.fillStyle=g; ox.beginPath(); ox.arc(cx,cy,r,0,Math.PI*2); ox.fill();
+      }
+      glow(ow*0.85, oh*0.2, 220, 'rgba(255,255,255,.18)');
+      glow(ow*0.25, oh*0.85, 170, 'rgba(99,102,241,.30)');
+
+      ox.globalCompositeOperation='source-over';
+      ox.fillStyle='rgba(255,255,255,.85)';
+      ox.font='600 42px Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial';
+      ox.fillText('Ortek — Minimal Wallpaper', 48, oh-64);
+
+      const url = off.toDataURL('image/png');
+      const a = document.createElement('a'); a.href=url; a.download='Ortek-Wallpaper.png'; a.click();
+    });
+
+    /* ===== Konami code -> Insider banner ===== */
+    const konami = ['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA'];
+    let idx=0;
+    window.addEventListener('keydown', (e)=>{
+      if(e.code === konami[idx]){ idx++; if(idx===konami.length){ idx=0; showInsider(); } }
+      else idx = (e.code === konami[0]) ? 1 : 0;
+    });
+    function showInsider(){
+      const el = document.getElementById('insider');
+      el.classList.remove('hidden');
+      burst(160);
+      setTimeout(()=>el.classList.add('hidden'), 8000);
+    }
+  </script>
+</body>
+</html>
