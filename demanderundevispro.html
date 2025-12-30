@@ -60,7 +60,15 @@
     <!-- Formulaire -->
     <section class="py-4">
       <div class="max-w-5xl mx-auto px-4">
-        <form id="briefForm" class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10">
+        <form
+  id="briefForm"
+  data-endpoint="https://formspree.io/f/xkonewrj"
+  class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10"
+>
+
+          <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
+
+
           <input type="hidden" name="pack" value="Vitrine — Professionnel 24,90€/mois">
 
           <!-- 1. Coordonnées -->
@@ -235,7 +243,6 @@
             <p><strong>Info tarifs Vitrine Pro :</strong> 24,90 € / mois. <em>1er mois :</em> supplément si upsells (nom de domaine, cartes, rédaction, etc.). Nom de domaine facturé séparément (≈12 €/an).</p>
           </div>
 
-          <p id="status" class="hidden text-sm"></p>
         </form>
       </div>
     </section>
@@ -260,18 +267,50 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
+  const form = document.querySelector('form[data-endpoint]');
+  const statusEl = document.getElementById('status');
 
-    // démo : message de confirmation local (remplace par ton envoi réel)
-    const form = document.getElementById('briefForm');
-    const statusEl = document.getElementById('status');
-    form.addEventListener('submit', (e) => {
+  if (!form || !statusEl) {
+    console.error("Form ou status introuvable", { form, statusEl });
+  } else {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
-      statusEl.textContent = "Merci ! Brief reçu pour le pack Professionnel (24,90€/mois). On revient vers vous sous 24h ouvrées.";
-      statusEl.className = 'text-green-700 bg-green-50 border border-green-200 rounded-xl p-3';
-      form.reset();
+
+      const endpoint = form.dataset.endpoint;
+      const formData = new FormData(form);
+
+      formData.append("page", location.href);
+      formData.append("_subject", "Ortek — Nouveau formulaire");
+
+      statusEl.textContent = "Envoi en cours…";
+      statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
+      statusEl.classList.remove("hidden");
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          statusEl.textContent = "✅ Merci ! Demande envoyée.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
+          form.reset();
+        } else {
+          statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        }
+      } catch (err) {
+        statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        console.error(err);
+      }
     });
-  </script>
+  }
+</script>
+
 </body>
 </html>
+
 
