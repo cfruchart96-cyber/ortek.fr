@@ -55,7 +55,29 @@
 >
 
           <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
-          
+
+           <!-- 1. Coordonnées -->
+          <fieldset>
+            <legend class="text-lg font-semibold">Vos coordonnées</legend>
+            <div class="mt-4 grid sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block text-sm font-medium">Nom / Entreprise <span class="text-red-500">*</span></label>
+                <input name="name" required type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Ex. Garage Dupont" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">E-mail <span class="text-red-500">*</span></label>
+                <input name="email" required type="email" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="vous@domaine.fr" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Téléphone</label>
+                <input name="phone" type="tel" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="06…" />
+              </div>
+              <div>
+                <label class="block text-sm font-medium">Ville</label>
+                <input name="city" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Béthune…" />
+              </div>
+            </div>
+          </fieldset>
           <!-- 1. Identité & objectifs -->
           <fieldset>
             <legend class="text-lg font-semibold">1. Identité & objectifs</legend>
@@ -330,6 +352,7 @@
   
 </body>
 </html>
+
 
 
 
