@@ -266,71 +266,50 @@
     </div>
   </footer>
 
-  <script>
-  const form = document.querySelector('form[data-endpoint]');
+ <script>
+  const form = document.getElementById('quoteForm');
   const statusEl = document.getElementById('status');
-  const submitBtn = form?.querySelector('button[type="submit"]');
 
-  if (!form || !statusEl) {
-    console.error("Form ou status introuvable", { form, statusEl });
-  } else {
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
 
-      const endpoint = form.dataset.endpoint;
-      const formData = new FormData(form);
+    const endpoint = form.dataset.endpoint;
+    const formData = new FormData(form);
 
-      formData.append("page", location.href);
-      formData.append("_subject", "Ortek — Nouveau formulaire");
+    // infos utiles côté mail
+    formData.append("page", location.pathname);
+    formData.append("_subject", "Ortek — Nouvelle demande de devis (site vitrine)");
 
-      statusEl.textContent = "Envoi en cours…";
-      statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
-      statusEl.classList.remove("hidden");
+    statusEl.textContent = "Envoi en cours…";
+    statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
+    statusEl.classList.remove("hidden");
 
-      if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.classList.add("opacity-60", "cursor-not-allowed");
-      }
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
 
-      try {
-        const res = await fetch(endpoint, {
-          method: "POST",
-          body: formData,
-          headers: { "Accept": "application/json" }
-        });
-
-        let data = null;
-        try { data = await res.json(); } catch (_) {}
-
-        if (res.ok) {
-          statusEl.textContent = "✅ Merci ! Demande envoyée.";
-          statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
-          form.reset();
-        } else {
-          const msg = data?.errors?.map(e => e.message).join(" / ")
-                    || data?.message
-                    || `Erreur Formspree (${res.status})`;
-          statusEl.textContent = "❌ " + msg;
-          statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
-          console.error("Formspree error:", res.status, data);
-        }
-      } catch (err) {
-        statusEl.textContent = "❌ Impossible d’envoyer (connexion / blocage navigateur).";
+      if (res.ok) {
+        statusEl.textContent = "✅ Merci ! Demande envoyée. Réponse sous 24h ouvrées.";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
+        form.reset();
+      } else {
+        statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
         statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
-        console.error(err);
-      } finally {
-        if (submitBtn) {
-          submitBtn.disabled = false;
-          submitBtn.classList.remove("opacity-60", "cursor-not-allowed");
-        }
       }
-    });
-  }
+    } catch (err) {
+      statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
+      statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+    }
+  });
 </script>
 
 
 </body>
 </html>
+
 
 
 
