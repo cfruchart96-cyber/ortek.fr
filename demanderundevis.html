@@ -64,10 +64,13 @@
     <!-- Formulaire détaillé (Site vitrine) -->
     <section id="form" class="py-12">
       <div class="max-w-5xl mx-auto px-4">
-        <form id="quoteForm"
-  data-endpoint="https://formspree.io/f/xkonewrj"
-  class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10"
->
+        <form 
+            id="quoteForm"
+              data-endpoint="https://formspree.io/f/xkonewrj"
+              class="bg-white rounded-2xl border border-gray-200 shadow-sm p-6 space-y-10"
+              >
+
+          <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
 
           <!-- 1. Coordonnées -->
           <fieldset>
@@ -275,19 +278,47 @@
   </footer>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
-    document.getElementById('menuBtn')?.addEventListener('click',()=>document.getElementById('mobileMenu').classList.toggle('hidden'));
+  const form = document.getElementById('quoteForm');
+  const statusEl = document.getElementById('status');
 
-    const form = document.getElementById('briefForm');
-    const statusEl = document.getElementById('status');
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      statusEl.textContent = "Merci ! Brief reçu. On revient vers vous sous 24h ouvrées pour cadrer le projet.";
-      statusEl.className = 'text-green-700 bg-green-50 border border-green-200 rounded-xl p-3';
-      form.reset();
-    });
-  </script>
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const endpoint = form.dataset.endpoint;
+    const formData = new FormData(form);
+
+    // infos utiles côté mail
+    formData.append("page", location.pathname);
+    formData.append("_subject", "Ortek — Nouvelle demande de devis (site vitrine)");
+
+    statusEl.textContent = "Envoi en cours…";
+    statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
+    statusEl.classList.remove("hidden");
+
+    try {
+      const res = await fetch(endpoint, {
+        method: "POST",
+        body: formData,
+        headers: { "Accept": "application/json" }
+      });
+
+      if (res.ok) {
+        statusEl.textContent = "✅ Merci ! Demande envoyée. Réponse sous 24h ouvrées.";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
+        form.reset();
+      } else {
+        statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+      }
+    } catch (err) {
+      statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
+      statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+    }
+  });
+</script>
+
 </body>
 </html>
+
 
 
