@@ -203,7 +203,7 @@
               <textarea name="message" rows="5" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Contexte, contraintes, particularités…"></textarea>
             </div>
             <div class="flex items-start gap-3">
-              <input id="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
+              <input id="consent" name="consent" required type="checkbox" class="mt-1 rounded border-gray-300 text-blue-600 focus:ring-blue-500" />
               <label for="consent" class="text-sm text-gray-600">J’accepte d’être recontacté à propos de ma demande de devis.</label>
             </div>
             <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
@@ -214,8 +214,6 @@
             <button type="submit" class="inline-flex items-center rounded-xl bg-blue-600 px-5 py-2.5 text-white font-medium hover:bg-blue-700">Envoyer ma demande</button>
             <p class="text-xs text-gray-500">Données non partagées. Réponse sous 24h ouvrées.</p>
           </div>
-
-          <p id="status" class="hidden text-sm"></p>
 
           <!-- Note tarifs -->
           <div class="rounded-xl bg-blue-50 border border-blue-100 p-4 text-sm text-gray-700">
@@ -319,6 +317,7 @@
 
 </body>
 </html>
+
 
 
 
