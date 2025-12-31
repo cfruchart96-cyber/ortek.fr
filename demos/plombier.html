@@ -1,1 +1,411 @@
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Plombier à Béthune — Dépannage 7j/7, Devis gratuit</title>
+  <meta name="description" content="Plombier à Béthune et alentours : dépannage urgences, fuites, débouchage, chauffe-eau, salles de bain. Devis gratuit, intervention rapide." />
+  <meta name="robots" content="index, follow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>html{scroll-behavior:smooth} body{font-family:Inter,system-ui,Arial} .container{max-width:1100px}</style>
+
+  <!-- Données structurées LocalBusiness / Plumber -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Plumber",
+    "name": "Plombier Express Béthune",
+    "image": "https://dummyimage.com/200x200/1d4ed8/ffffff.png&text=PEB",
+    "telephone": "03 21 12 34 56",
+    "email": "contact@plombier-express-bethune.fr",
+    "url": "https://tediweb.fr/demo/plombier-express-bethune",
+    "address": {"@type": "PostalAddress","streetAddress": "12 Rue de la République","addressLocality": "Béthune","postalCode": "62400","addressCountry": "FR"},
+    "areaServed": ["Béthune", "Bruay-la-Buissière", "Lens"],
+    "openingHours": ["Mo-Fr 08:00-19:00", "Sa 09:00-17:00"],
+    "priceRange": "€€",
+    "sameAs": ["#", "#"]
+  }
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900">
+  <!-- Bandeau urgence -->
+  <div class="w-full bg-red-600 text-white text-center py-2 text-sm">
+    Urgence 24/7 — Appelez maintenant : <a href="tel:03 21 12 34 56" class="font-semibold underline tracking-wide">03 21 12 34 56</a>
+  </div>
+
+  <!-- Header -->
+  <header class="border-b bg-white/80 backdrop-blur sticky top-0 z-40">
+    <div class="mx-auto container px-4 flex items-center justify-between h-16">
+      <div class="flex items-center gap-3">
+        <img src="https://dummyimage.com/200x200/1d4ed8/ffffff.png&text=PEB" alt="Logo Plombier Express Béthune" class="h-9 w-9 rounded-xl ring-1 ring-slate-200 object-cover"/>
+        <div class="leading-tight">
+          <div class="font-extrabold tracking-tight">Plombier Express Béthune</div>
+          <div class="text-xs text-slate-500">Plombier à Béthune & alentours</div>
+        </div>
+      </div>
+      <!-- Nav toujours visible (mobile -> scroll horizontal si besoin) -->
+      <nav class="flex items-center gap-5 text-sm overflow-x-auto">
+        <a href="#services" class="hover:text-blue-700 whitespace-nowrap">Services</a>
+        <a href="#tarifs" class="hover:text-blue-700 whitespace-nowrap">Tarifs</a>
+        <a href="#zone" class="hover:text-blue-700 whitespace-nowrap">Zone</a>
+        <a href="#avis" class="hover:text-blue-700 whitespace-nowrap">Avis</a>
+        <a href="#devis" class="hover:text-blue-700 whitespace-nowrap">Contact</a>
+      </nav>
+      <a href="#devis" class="hidden md:inline-flex items-center px-4 py-2 rounded-xl bg-blue-700 text-white font-semibold shadow hover:bg-blue-800" data-analytics="cta_devis_header">Demander un devis</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="mx-auto container px-4 pt-10 pb-12 grid md:grid-cols-2 gap-8 items-center">
+    <div>
+      <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Plombier à <span class="text-blue-700">Béthune</span> — intervention rapide, travail garanti</h1>
+      <p class="mt-4 text-slate-600 text-lg">Dépannage, recherche de fuite, débouchage, chauffe‑eau, installation et rénovation de salle de bain. Devis gratuit et transparent.</p>
+      <div class="mt-6 flex flex-wrap gap-3">
+        <a href="#devis" class="px-5 py-3 rounded-xl bg-blue-700 text-white font-semibold shadow hover:bg-blue-800" data-analytics="cta_devis_hero">Obtenir un devis</a>
+        <a href="tel:03 21 12 34 56" class="px-5 py-3 rounded-xl bg-white ring-1 ring-slate-200 font-semibold hover:ring-slate-300">📞 03 21 12 34 56</a>
+      </div>
+      <ul class="mt-6 grid grid-cols-2 gap-3 text-sm">
+        <li class="flex items-center gap-2">✅ Devis gratuit</li>
+        <li class="flex items-center gap-2">✅ Dépannage 24/7</li>
+        <li class="flex items-center gap-2">✅ Garantie décennale</li>
+        <li class="flex items-center gap-2">✅ Paiement CB / virement</li>
+      </ul>
+    </div>
+    <div class="relative">
+      <img src="https://images.unsplash.com/photo-1565538810643-b5bdb714032a?q=80&w=1400&auto=format&fit=crop" alt="Plombier en intervention" class="rounded-2xl shadow-xl ring-1 ring-slate-200"/>
+      <div class="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow p-4 ring-1 ring-slate-200">
+        <div class="text-sm font-semibold">⏱️ Délai moyen</div>
+        <div class="text-2xl font-extrabold text-blue-700">30–90 min</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="bg-white py-12">
+    <div class="mx-auto container px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Nos services</h2>
+      <p class="text-slate-600 mt-2">Toutes vos interventions de plomberie, petit et gros travaux.</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Dépannage & fuites</h3>
+          <p class="text-sm text-slate-600 mt-2">Recherche de fuite, réparation, joints, robinets, WC qui fuient ou chasse d’eau défectueuse.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Débouchage</h3>
+          <p class="text-sm text-slate-600 mt-2">Évier, lavabo, douche, baignoire, WC, colonne. Haute pression si nécessaire.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Chauffe‑eau</h3>
+          <p class="text-sm text-slate-600 mt-2">Pose, remplacement, entretien, détartrage, résistance, anode.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Salle de bain</h3>
+          <p class="text-sm text-slate-600 mt-2">Création & rénovation : douche italienne, baignoire, mobilier, robinetterie, étanchéité.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Cuisine & appareils</h3>
+          <p class="text-sm text-slate-600 mt-2">Alimentation et évacuation LV/LL, osmoseur, adoucisseur, siphons.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <h3 class="font-bold text-lg">Urgences 24/7</h3>
+          <p class="text-sm text-slate-600 mt-2">Interventions de nuit et week‑end sur devis approuvé au téléphone.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section id="tarifs" class="py-12">
+    <div class="mx-auto container px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Tarifs clairs</h2>
+      <p class="text-slate-600 mt-2">Devis gratuit — déplacement offert si travaux réalisés.</p>
+      <div class="grid md:grid-cols-3 gap-6 mt-8">
+        <div class="rounded-2xl ring-1 ring-slate-200 bg-white p-6">
+          <div class="text-sm font-semibold text-slate-500">Dépannage</div>
+          <div class="mt-2 text-3xl font-extrabold">49€ HT</div>
+          <div class="text-sm text-slate-500">Main d’œuvre / 30 min</div>
+          <ul class="mt-4 text-sm space-y-2">
+            <li>✔️ Déplacement <span class="text-slate-500">— selon zone</span></li>
+            <li>✔️ Diagnostic & réparation simple</li>
+            <li>✔️ Devis avant travaux</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-2 ring-blue-700 bg-white p-6 relative">
+          <div class="absolute -top-3 right-4 text-xs bg-blue-700 text-white px-2 py-1 rounded">Populaire</div>
+          <div class="text-sm font-semibold text-slate-500">Débouchage</div>
+          <div class="mt-2 text-3xl font-extrabold">129€ HT</div>
+          <div class="text-sm text-slate-500">À partir de</div>
+          <ul class="mt-4 text-sm space-y-2">
+            <li>✔️ Évier / lavabo / douche</li>
+            <li>✔️ Matériel pro</li>
+            <li>✔️ Garantie résultat</li>
+          </ul>
+        </div>
+        <div class="rounded-2xl ring-1 ring-slate-200 bg-white p-6">
+          <div class="text-sm font-semibold text-slate-500">Chauffe‑eau</div>
+          <div class="mt-2 text-3xl font-extrabold">Sur devis</div>
+          <div class="text-sm text-slate-500">Pose / remplacement</div>
+          <ul class="mt-4 text-sm space-y-2">
+            <li>✔️ Marques reconnues</li>
+            <li>✔️ Garantie fabricant</li>
+            <li>✔️ Mise en service</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-6 text-sm text-slate-500">TVA 10% pour l'habitation selon conditions. Déplacement selon zones.</div>
+    </div>
+  </section>
+
+  <!-- Preuves & logos -->
+  <section class="bg-white py-12">
+    <div class="mx-auto container px-4 grid md:grid-cols-3 gap-6 items-center">
+      <div class="md:col-span-2">
+        <h2 class="text-2xl md:text-3xl font-extrabold">Pourquoi nous choisir ?</h2>
+        <ul class="mt-4 grid sm:grid-cols-2 gap-3 text-sm">
+          <li>🛠️ 10+ ans d’expérience</li>
+          <li>🧾 Devis & prix transparents</li>
+          <li>🧰 Matériel pro & pièces certifiées</li>
+          <li>🛡️ Assurance & garantie</li>
+        </ul>
+      </div>
+      <div class="rounded-2xl ring-1 ring-slate-200 p-4 bg-slate-50 text-sm">
+        <div class="font-semibold">Documents</div>
+        <ul class="mt-2 list-disc pl-5 space-y-1">
+          <li>Attestation d’assurance RC & décennale</li>
+          <li>N° SIRET : 12345678900012</li>
+          <li>Mentions légales & CGV</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone -->
+  <section id="zone" class="py-12">
+    <div class="mx-auto container px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Zone d’intervention</h2>
+      <p class="text-slate-600 mt-2">Basé à Béthune. Intervention dans un rayon de 30 km : Bruay-la-Buissière, Lens, Arras…</p>
+      <div class="mt-6 rounded-2xl overflow-hidden ring-1 ring-slate-200">
+        <iframe title="Zone d'intervention" src="https://www.google.com/maps?q=Béthune&output=embed" class="w-full h-[360px]"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section id="avis" class="bg-white py-12">
+    <div class="mx-auto container px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Avis clients</h2>
+      <div class="grid md:grid-cols-3 gap-6 mt-6">
+        <figure class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50 text-sm">
+          <div class="font-semibold">Sophie M.</div>
+          <blockquote class="mt-2 text-slate-700">"Intervention rapide et efficace pour une fuite sous l’évier. Prix clair, je recommande."</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50 text-sm">
+          <div class="font-semibold">Karim B.</div>
+          <blockquote class="mt-2 text-slate-700">"Débouchage WC un dimanche soir, super pro et équipé, problème réglé en 30 min."</blockquote>
+        </figure>
+        <figure class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50 text-sm">
+          <div class="font-semibold">Élodie R.</div>
+          <blockquote class="mt-2 text-slate-700">"Pose d’un chauffe‑eau neuf, chantier propre et conseils utiles. Très satisfaite."</blockquote>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devis / Contact rapide -->
+  <section id="devis" class="py-12">
+    <div class="mx-auto container px-4 grid md:grid-cols-2 gap-8 items-start">
+      <div>
+        <h2 class="text-2xl md:text-3xl font-extrabold">Demande de devis</h2>
+        <p class="text-slate-600 mt-2">Réponse sous 2h ouvrées. Pour une urgence, appelez directement.</p>
+        <form id="devisForm" action="https://formspree.io/f/xyzzdemo" method="POST" class="mt-6 space-y-4 bg-white p-6 rounded-2xl ring-1 ring-slate-200">
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium">Nom*</label>
+              <input type="text" name="nom" required class="mt-1 w-full rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2" />
+            </div>
+            <div>
+              <label class="text-sm font-medium">Téléphone*</label>
+              <input type="tel" name="telephone" required class="mt-1 w-full rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2" />
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label class="text-sm font-medium">Ville*</label>
+              <input type="text" name="ville" required class="mt-1 w-full rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2" />
+            </div>
+            <div>
+              <label class="text-sm font-medium">Type de travaux*</label>
+              <select name="type" required class="mt-1 w-full rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2">
+                <option value="Dépannage">Dépannage</option>
+                <option value="Débouchage">Débouchage</option>
+                <option value="Chauffe-eau">Chauffe‑eau</option>
+                <option value="Salle de bain">Salle de bain</option>
+                <option value="Autre">Autre</option>
+              </select>
+            </div>
+          </div>
+          <div>
+            <label class="text-sm font-medium">Description</label>
+            <textarea name="description" rows="4" class="mt-1 w-full rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2" placeholder="Expliquez votre besoin"></textarea>
+          </div>
+          <input type="hidden" name="page" value="plombier-Béthune" />
+          <button type="submit" class="w-full px-5 py-3 rounded-xl bg-blue-700 text-white font-semibold shadow hover:bg-blue-800" data-analytics="cta_envoi_formulaire">Envoyer ma demande</button>
+          <p id="formMsg" class="text-sm text-green-700 hidden mt-2">Merci ! Votre demande a bien été envoyée.</p>
+        </form>
+        <p class="text-xs text-slate-500 mt-3">En envoyant ce formulaire, vous acceptez notre <a href="#" class="underline">politique de confidentialité</a>. Conformément au RGPD, vous pouvez exercer vos droits à tout moment.</p>
+      </div>
+      <div class="bg-white p-6 rounded-2xl ring-1 ring-slate-200">
+        <h3 class="font-bold text-lg">Coordonnées</h3>
+        <ul class="mt-3 text-sm space-y-2">
+          <li>📞 <a href="tel:03 21 12 34 56" class="underline">03 21 12 34 56</a></li>
+          <li>✉️ <a href="mailto:contact@plombier-express-bethune.fr" class="underline">contact@plombier-express-bethune.fr</a></li>
+          <li>📍 12 Rue de la République — Béthune</li>
+          <li>🕓 Lun–Ven 8h–19h • Sam 9h–17h</li>
+        </ul>
+        <div class="mt-4 flex gap-3">
+          <a href="https://wa.me/33621123456" class="px-4 py-2 rounded-xl ring-1 ring-slate-200">WhatsApp</a>
+          <a href="#" class="px-4 py-2 rounded-xl ring-1 ring-slate-200">Facebook</a>
+        </div>
+        <div class="mt-6 rounded-xl bg-slate-50 p-4 text-sm">
+          <div class="font-semibold">Astuce pro</div>
+          <p class="mt-1 text-slate-600">Coupez l’arrivée d’eau en cas de fuite et photographiez la zone : cela accélère le diagnostic.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="bg-white py-12">
+    <div class="mx-auto container px-4">
+      <h2 class="text-2xl md:text-3xl font-extrabold">Questions fréquentes</h2>
+      <div class="mt-6 grid md:grid-cols-2 gap-6 text-sm">
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <div class="font-semibold">Intervenez‑vous le week‑end ?</div>
+          <p class="mt-2 text-slate-600">Oui, une astreinte est possible 24/7 pour les urgences. Un devis est validé au téléphone avant déplacement.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <div class="font-semibold">Est‑il possible d’avoir un devis gratuit ?</div>
+          <p class="mt-2 text-slate-600">Toujours. Nous vous envoyons un devis clair avant toute intervention.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <div class="font-semibold">Quels moyens de paiement ?</div>
+          <p class="mt-2 text-slate-600">CB, virement, espèces. Facture fournie pour assurances.</p>
+        </div>
+        <div class="p-6 rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+          <div class="font-semibold">Travail garanti ?</div>
+          <p class="mt-2 text-slate-600">Oui, pièces certifiées et garantie main d’œuvre selon devis.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t bg-white">
+    <div class="mx-auto container px-4 py-8 text-sm text-slate-600 grid md:grid-cols-3 gap-6">
+      <div>
+        <div class="font-bold">Plombier Express Béthune</div>
+        <div>Plombier — Béthune</div>
+      </div>
+      <div>
+        <div class="font-semibold">Légal</div>
+        <ul class="mt-2 space-y-1">
+          <li><a href="#" class="underline">Mentions légales</a></li>
+          <li><a href="#" class="underline">Politique de confidentialité</a></li>
+          <li><a href="#" class="underline">CGV</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-semibold">Newsletter</div>
+        <form class="mt-2 flex gap-2">
+          <input type="email" placeholder="Votre email" class="flex-1 rounded-xl border-slate-300 ring-1 ring-transparent focus:ring-blue-700 focus:outline-none px-3 py-2"/>
+          <button class="px-4 py-2 rounded-xl bg-blue-700 text-white">OK</button>
+        </form>
+      </div>
+    </div>
+    <div class="text-center text-xs text-slate-500 pb-6">© <span id="year"></span> Plombier Express Béthune. Tous droits réservés.</div>
+  </footer>
+
+  <!-- Bandeau cookies simple (si GA4) -->
+  <div id="cookieBanner" class="fixed bottom-4 left-1/2 -translate-x-1/2 max-w-xl w-[92%] bg-white ring-1 ring-slate-200 shadow-xl rounded-2xl p-4 hidden">
+    <div class="text-sm">Nous utilisons des cookies de mesure d’audience pour améliorer le site. <a href="#" class="underline">En savoir plus</a></div>
+    <div class="mt-3 flex gap-2 justify-end">
+      <button id="cookieDecline" class="px-3 py-1.5 rounded-xl ring-1 ring-slate-200">Refuser</button>
+      <button id="cookieAccept" class="px-3 py-1.5 rounded-xl bg-blue-700 text-white">Accepter</button>
+    </div>
+  </div>
+
+  <script>
+    // Année footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Confirmation formulaire (si Formspree renvoie 200)
+    const form = document.getElementById('devisForm');
+    const msg = document.getElementById('formMsg');
+    if (form) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const res = await fetch(form.action, { method: 'POST', body: new FormData(form), headers: { 'Accept': 'application/json' } });
+        if (res.ok) {
+          form.reset();
+          msg.classList.remove('hidden');
+          if (window.gtag) gtag('event', 'form_submit', { form_id: 'devis_plombier' });
+        } else {
+          alert("Une erreur est survenue. Réessayez.");
+        }
+      });
+    }
+
+    // Tracking clics CTA
+    document.querySelectorAll('[data-analytics]')?.forEach(el => {
+      el.addEventListener('click', () => {
+        const eventName = el.getAttribute('data-analytics');
+        if (window.gtag) gtag('event', 'click', { element: eventName });
+      });
+    });
+
+    // Cookie banner (simple)
+    const cookieKey = 'consent_analytics_v1';
+    const banner = document.getElementById('cookieBanner');
+    const accepted = localStorage.getItem(cookieKey);
+    if (!accepted) banner.classList.remove('hidden');
+    document.getElementById('cookieAccept').onclick = () => { localStorage.setItem(cookieKey, 'yes'); banner.classList.add('hidden'); };
+    document.getElementById('cookieDecline').onclick = () => { localStorage.setItem(cookieKey, 'no'); banner.classList.add('hidden'); };
+
+    // Barre de prévisualisation visible seulement si ?demo=1
+    if (window.location.search.includes('demo=1')) {
+      const style = document.createElement('style');
+      style.textContent = `.preview-bar{position:fixed;bottom:16px;left:16px;z-index:50;display:flex;gap:8px;background:#0f172a;color:#fff;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,.2);} .preview-bar button{border:0;background:transparent;color:#fff;padding:8px 12px;border-radius:12px;cursor:pointer;font:600 12px/1 Inter,system-ui,Arial} .preview-bar button.active{background:#1d4ed8}`;
+      document.head.appendChild(style);
+      const bar = document.createElement('div');
+      bar.className = 'preview-bar';
+      bar.innerHTML = `
+        <button data-vp="360">Mobile</button>
+        <button data-vp="768">Tablet</button>
+        <button data-vp="1024">Laptop</button>
+        <button data-vp="1280" class="active">Desktop</button>
+        <button data-vp="device">Auto</button>`;
+      document.body.appendChild(bar);
+
+      const meta = document.querySelector('meta[name="viewport"]');
+      const buttons = bar.querySelectorAll('[data-vp]');
+      const setActive = (el)=>{buttons.forEach(b=>b.classList.remove('active')); el.classList.add('active');};
+      buttons.forEach(btn=>{
+        btn.addEventListener('click',()=>{
+          const v = btn.getAttribute('data-vp');
+          if(v === 'device'){
+            meta.setAttribute('content','width=device-width, initial-scale=1');
+          } else {
+            meta.setAttribute('content',`width=${v}, initial-scale=1`);
+          }
+          setActive(btn);
+          window.scrollTo({top:0,behavior:'smooth'});
+        });
+      });
+    }
+  </script>
+</body>
+</html>
