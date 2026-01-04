@@ -305,18 +305,26 @@
   </footer>
 
 <script>
-  const form = document.getElementById('briefForm'); // ✅ bon id
+  /* =========================
+     FORMULAIRE (briefForm)
+  ========================== */
+  const form = document.getElementById('briefForm');
   const statusEl = document.getElementById('status');
 
-  if (!form || !statusEl) {
-    console.error("Form ou status introuvable", { form, statusEl });
-  } else {
+  if (form && statusEl) {
     form.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const endpoint = form.dataset.endpoint;
-      const formData = new FormData(form);
 
+      if (!endpoint) {
+        statusEl.textContent = "❌ Erreur technique : endpoint manquant.";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        statusEl.classList.remove("hidden");
+        return;
+      }
+
+      const formData = new FormData(form);
       formData.append("page", location.href);
       formData.append("_subject", "Ortek — Nouveau brief e-commerce");
 
@@ -346,11 +354,32 @@
       }
     });
   }
+
+  /* =========================
+     MENU MOBILE (BURGER)
+  ========================== */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
 </script>
+
 
   
 </body>
 </html>
+
 
 
 
