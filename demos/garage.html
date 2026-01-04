@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Béthune Garage – Entretien, révision & pneus – Béthune et alentours</title>
+  <meta name="description" content="Béthune Garage à Béthune : entretien constructeur sans perte de garantie, révision, pneus, climatisation, freinage, diagnostic électronique, carrosserie et dépannage." />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Béthune Garage – Entretien, révision & pneus – Béthune et alentours" />
+  <meta property="og:description" content="Garage auto à Béthune. Devis rapide, RDV facile, accueil pros & particuliers." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://mon-garage.fr" />
+  <meta property="og:image" content="/og-image.jpg" />
+
+  <!-- Schema.org LocalBusiness (AutoRepair) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoRepair",
+    "name": "Béthune Garage",
+    "image": "https://mon-garage.fr/og-image.jpg",
+    "telephone": "+33600000000",
+    "email": "maildedemo@garage.fr",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rue du Pot Bertin",
+      "addressLocality": "Béthune",
+      "postalCode": "62400",
+      "addressCountry": "FR"
+    },
+    "openingHours": ["Mo-Sa 09:00-19:00"],
+    "areaServed": ["Béthune", "Bruay-la-Buissière", "Lens"]
+  }
+  </script>
+
+  <!-- Tailwind Play CDN (no build) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Personnalisez rapidement vos couleurs de marque ici
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              DEFAULT: '#0ea5e9', // Primaire HEX
+              50: '#f0f9ff',
+              100: '#e0f2fe'
+            },
+            accent: '#0f172a' // Secondaire HEX
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Petits raffinements pour un rendu premium */
+    .glass { backdrop-filter: blur(6px); background: rgba(255,255,255,0.08); }
+    .container { max-width: 1120px; }
+  </style>
+</head>
+<body class="bg-slate-950 text-slate-100 antialiased">
+  <!-- Topbar -->
+  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-white/5">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#" class="flex items-center gap-3">
+        <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-brand text-slate-900 font-bold">BG</span>
+        <div>
+          <div class="font-semibold">Béthune Garage</div>
+          <div class="text-xs text-slate-400">Entretien, révision & pneus – Béthune et alentours</div>
+        </div>
+      </a>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="hover:text-brand">Services</a>
+        <a href="#tarifs" class="hover:text-brand">Tarifs</a>
+        <a href="#zone" class="hover:text-brand">Zone</a>
+        <a href="#avis" class="hover:text-brand">Avis</a>
+        <a href="#contact" class="hover:text-brand">Contact</a>
+        <a href="tel:+33600000000" class="ml-2 inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="call">Appeler</a>
+      </nav>
+      <button class="md:hidden inline-flex items-center rounded-xl border border-white/10 px-3 py-2" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div id="mobileMenu" class="hidden md:hidden border-b border-white/5 bg-slate-950/95">
+    <nav class="container mx-auto px-4 py-3 grid gap-3 text-sm">
+      <a href="#services" class="hover:text-brand">Services</a>
+      <a href="#tarifs" class="hover:text-brand">Tarifs</a>
+      <a href="#zone" class="hover:text-brand">Zone</a>
+      <a href="#avis" class="hover:text-brand">Avis</a>
+      <a href="#contact" class="hover:text-brand">Contact</a>
+      <a href="tel:+33600000000" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="call-mobile">Appeler</a>
+    </nav>
+  </div>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <img src="images/hero.jpg.jpg" alt="Garage automobile premium à Béthune" class="absolute inset-0 h-full w-full object-cover opacity-20" loading="lazy" />
+    <div class="relative container mx-auto px-4 py-20 md:py-28">
+      <div class="max-w-2xl">
+        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Votre garage auto premium à <span class="text-brand">Béthune</span></h1>
+        <p class="mt-4 text-slate-300">Entretien constructeur sans perte de garantie, révision, pneus, freinage, climatisation, diagnostic électronique, carrosserie et plus.</p>
+        <div class="mt-6 flex flex-wrap gap-3">
+          <a href="#devis" class="rounded-2xl bg-brand px-5 py-3 font-semibold text-slate-900" data-cta="devis">Demander un devis</a>
+          <a href="#contact" class="rounded-2xl border border-white/10 px-5 py-3" data-cta="rdv">Prendre RDV</a>
+          <a href="tel:+33600000000" class="rounded-2xl border border-brand/40 px-5 py-3 text-brand" data-cta="call-hero">Appeler</a>
+        </div>
+        <div class="mt-6 flex items-center gap-3 text-sm text-slate-300">
+          <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1">★ 4,7/5 — Google</span>
+          <span class="hidden md:inline">•</span>
+          <span>Particuliers • Pros • Flottes</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Preuves rapides -->
+  <section class="container mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="glass rounded-2xl p-4 text-center">
+      <div class="text-3xl">⏱️</div>
+      <div class="mt-2 text-sm">Devis en 2h ouvrées</div>
+    </div>
+    <div class="glass rounded-2xl p-4 text-center">
+      <div class="text-3xl">🛠️</div>
+      <div class="mt-2 text-sm">Entretien constructeur</div>
+    </div>
+    <div class="glass rounded-2xl p-4 text-center">
+      <div class="text-3xl">🧰</div>
+      <div class="mt-2 text-sm">Diag. multimarques</div>
+    </div>
+    <div class="glass rounded-2xl p-4 text-center">
+      <div class="text-3xl">🛡️</div>
+      <div class="mt-2 text-sm">RC Pro & partenaires</div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Services</h2>
+    <p class="mt-2 text-slate-300">Tout pour votre véhicule, sans perte de garantie.</p>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <ul class="space-y-3 text-slate-200">
+        <li>• Entretien constructeur (avec/sans perte de garantie)</li>
+        <li>• Révision, vidange, filtres</li>
+        <li>• Pneus (montage/équilibrage), géométrie/parallélisme</li>
+        <li>• Freinage (plaquettes, disques, liquide)</li>
+        <li>• Climatisation (recharge, traceur, désinfection)</li>
+        <li>• Diagnostic électronique</li>
+      </ul>
+      <ul class="space-y-3 text-slate-200">
+        <li>• Distribution / Embrayage</li>
+        <li>• CT – Pré-contrôle</li>
+        <li>• Carrosserie / Peinture</li>
+        <li>• Dépannage / Remorquage</li>
+        <li>• Cartes grises / Préparation vente</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Offres phares / Tarifs -->
+  <section id="tarifs" class="bg-slate-900/40 border-t border-white/5">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Offres phares</h2>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <div class="rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold">Révision standard</h3>
+          <p class="mt-2 text-sm text-slate-300">Huile + filtre + contrôles 30 pts</p>
+          <div class="mt-4 text-3xl font-extrabold">dès 149€</div>
+          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-revision">Demander un devis</a>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold">Pack pneus + géométrie</h3>
+          <p class="mt-2 text-sm text-slate-300">Montage/équilibrage + parallélisme</p>
+          <div class="mt-4 text-3xl font-extrabold">sur devis</div>
+          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-pneus">Demander un devis</a>
+        </div>
+        <div class="rounded-2xl border border-white/10 p-6">
+          <h3 class="font-semibold">Recharge climatisation</h3>
+          <p class="mt-2 text-sm text-slate-300">Traceur + désinfection en option</p>
+          <div class="mt-4 text-3xl font-extrabold">à partir de 69€</div>
+          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-clim">Demander un devis</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone d'intervention -->
+  <section id="zone" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Zone de service</h2>
+    <p class="mt-2 text-slate-300">Béthune et alentours : Bruay-la-Buissière, Lens, Noeux-les-Mines…</p>
+    <div class="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
+      <div class="rounded-2xl overflow-hidden border border-white/10">
+        <iframe title="Carte Google" loading="lazy" class="w-full h-72 md:h-full"
+          src="https://www.google.com/maps?q=Rue%20du%20Pot%20Bertin%2C%20B%C3%A9thune&output=embed"></iframe>
+      </div>
+      <ul class="space-y-3 text-slate-200 self-center">
+        <li>• Ville principale : Béthune</li>
+        <li>• Cibles : particuliers / pros / flottes</li>
+        <li>• Devis réponse sous 2h ouvrées</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Avis & preuves -->
+  <section id="avis" class="bg-slate-900/40 border-t border-white/5">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Ils nous font confiance</h2>
+      <div class="mt-2 text-slate-300">Note Google : <strong>4,7/5</strong> (128 avis)</div>
+      <div class="mt-8 grid gap-6 md:grid-cols-3">
+        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
+          « Accueil top, révision rapide et prix nickel. »<br/><span class="text-slate-400">— Matthieu D.</span>
+        </blockquote>
+        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
+          « Géométrie impeccable, plus de tirage à droite. »<br/><span class="text-slate-400">— Sofia L.</span>
+        </blockquote>
+        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
+          « Intervention pro sur flotte utilitaire, RAS. »<br/><span class="text-slate-400">— TransNord</span>
+        </blockquote>
+      </div>
+      <div class="mt-10 flex flex-wrap items-center gap-4 opacity-80">
+        <img src="images/axa.png" alt="AXA" class="h-8" loading="lazy"/>
+        <img src="images/maaf.png" alt="MAAF" class="h-8" loading="lazy"/>
+        <img src="images/allianz.png" alt="Allianz" class="h-8" loading="lazy"/>
+        <img src="images/" alt="Partenaire" class="h-8" loading="lazy"/>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact / Formulaire -->
+  <section id="contact" class="container mx-auto px-4 py-16">
+    <h2 class="text-2xl md:text-3xl font-bold">Contact & Devis</h2>
+    <div class="mt-8 grid gap-8 md:grid-cols-2">
+      <div class="rounded-2xl border border-white/10 p-6">
+        <div class="space-y-2 text-slate-300">
+          <div>📍 Rue du Pot Bertin, 62400 Béthune</div>
+          <div>📞 <a class="text-brand" href="tel:+33600000000">06 00 00 00 00</a></div>
+          <div>✉️ <a class="text-brand" href="mailto:maildedemo@garage.fr">maildedemo@garage.fr</a></div>
+          <div>🕘 9h – 19h du lundi au samedi</div>
+        </div>
+      </div>
+
+      <form id="devis" action="https://formspree.io/f/XXXXdemo" method="POST" class="rounded-2xl border border-white/10 p-6 space-y-4" data-form="devis">
+        <div>
+          <label class="block text-sm mb-1">Nom</label>
+          <input type="text" name="name" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Téléphone</label>
+          <input type="tel" name="phone" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Immatriculation (option)</label>
+          <input type="text" name="immatriculation" class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
+        </div>
+        <div>
+          <label class="block text-sm mb-1">Message</label>
+          <textarea name="message" rows="4" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand"></textarea>
+        </div>
+        <button type="submit" class="w-full rounded-2xl bg-brand px-5 py-3 font-semibold text-slate-900" data-cta="send-form">Envoyer</button>
+        <p class="text-xs text-slate-400">En envoyant ce formulaire, vous acceptez notre <a href="#legal" class="underline">politique de confidentialité</a>.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- Mentions légales & RGPD -->
+  <section id="legal" class="bg-slate-900/40 border-t border-white/5">
+    <div class="container mx-auto px-4 py-16">
+      <h2 class="text-2xl md:text-3xl font-bold">Mentions légales</h2>
+      <div class="mt-4 grid gap-6 md:grid-cols-2 text-sm text-slate-300">
+        <div>
+          <p><strong>Raison sociale :</strong> Béthune Garage</p>
+          <p><strong>SIREN :</strong> 01212121212121</p>
+          <p><strong>RC Pro :</strong> 21 254 258 245</p>
+          <p><strong>Hébergement :</strong> OVH / o2switch / Netlify (démo)</p>
+        </div>
+        <div>
+          <p>Politique de confidentialité : vos données sont utilisées pour vous recontacter, conformément au RGPD. Aucune revente. Droit d'accès et de suppression sur demande : <a href="mailto:maildedemo@garage.fr" class="underline">maildedemo@garage.fr</a>.</p>
+          <p class="mt-2">Cookies : uniquement pour la mesure d'audience (GA4) si vous l'acceptez.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-white/5">
+    <div class="container mx-auto px-4 py-8 text-sm text-slate-400 flex flex-wrap items-center justify-between gap-4">
+      <div>© <span id="year"></span> Béthune Garage — Tous droits réservés.</div>
+      <div class="flex items-center gap-4">
+        <a href="#legal" class="hover:text-brand">Mentions légales</a>
+        <a href="#" class="hover:text-brand">Politique de confidentialité</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Cookie banner (simple) -->
+  <div id="cookieBanner" class="fixed bottom-4 inset-x-4 md:inset-x-auto md:right-4 md:max-w-xl z-50 hidden">
+    <div class="rounded-2xl border border-white/10 bg-slate-900/95 p-4 text-sm">
+      <p>Nous utilisons des cookies pour mesurer l'audience (GA4). <a href="#legal" class="underline">En savoir plus</a>.</p>
+      <div class="mt-3 flex gap-2 justify-end">
+        <button id="cookieDecline" class="rounded-xl border border-white/10 px-3 py-1">Refuser</button>
+        <button id="cookieAccept" class="rounded-xl bg-brand text-slate-900 px-3 py-1 font-semibold">Accepter</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts: menus, année, cookies & GA4 events -->
+  <script>
+    // Année
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
+
+    // Cookie banner (consent minimaliste)
+    const cookieKey = 'ga4_consent';
+    const cookieBanner = document.getElementById('cookieBanner');
+    const acceptBtn = document.getElementById('cookieAccept');
+    const declineBtn = document.getElementById('cookieDecline');
+
+    const consent = localStorage.getItem(cookieKey);
+    if (!consent) cookieBanner.classList.remove('hidden');
+
+    function setConsent(value) {
+      localStorage.setItem(cookieKey, value);
+      cookieBanner.classList.add('hidden');
+      if (value === 'granted') initGA4();
+    }
+
+    if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent('granted'));
+    if (declineBtn) declineBtn.addEventListener('click', () => setConsent('denied'));
+
+    // GA4 (chargé uniquement si consentement) + events CTA/Form
+    function initGA4() {
+      if (window.gtagInitialized) return;
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      window.gtag = gtag;
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX'); // <-- Remplacer par votre ID GA4
+
+      // Track clics CTA
+      document.querySelectorAll('[data-cta]').forEach(el => {
+        el.addEventListener('click', () => {
+          gtag('event', 'cta_click', { label: el.getAttribute('data-cta') });
+        });
+      });
+
+      // Track envoi formulaire
+      const form = document.querySelector('[data-form="devis"]');
+      if (form) form.addEventListener('submit', () => {
+        gtag('event', 'form_submit', { label: 'devis' });
+      });
+
+      window.gtagInitialized = true;
+    }
+
+    if (consent === 'granted') initGA4();
+  </script>
+</body>
+</html>
