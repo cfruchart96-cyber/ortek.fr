@@ -21,7 +21,7 @@
           <span class="font-semibold tracking-tight">Ortek</span>
         </a>
         <nav class="hidden md:flex items-center gap-8 text-sm">
-          <a href="/offre.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
+          <a href="offres.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
         </nav>
         <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Menu">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -262,53 +262,86 @@
   <footer class="border-t border-gray-200 py-8 text-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
       <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
-      <a href="/offre.html" class="text-gray-600 hover:text-gray-800">Nos offres</a>
+      <a href="offres.html" class="text-gray-600 hover:text-gray-800">Nos offres</a>
     </div>
   </footer>
 
- <script>
-  const form = document.getElementById('quoteForm');
+<script>
+  /* =========================
+     FORMULAIRE (briefForm)
+  ========================== */
+  const form = document.getElementById('briefForm');
   const statusEl = document.getElementById('status');
 
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault();
+  if (form && statusEl) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
 
-    const endpoint = form.dataset.endpoint;
-    const formData = new FormData(form);
+      const endpoint = form.dataset.endpoint;
 
-    // infos utiles côté mail
-    formData.append("page", location.pathname);
-    formData.append("_subject", "Ortek — Nouvelle demande de devis (site vitrine)");
-
-    statusEl.textContent = "Envoi en cours…";
-    statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
-    statusEl.classList.remove("hidden");
-
-    try {
-      const res = await fetch(endpoint, {
-        method: "POST",
-        body: formData,
-        headers: { "Accept": "application/json" }
-      });
-
-      if (res.ok) {
-        statusEl.textContent = "✅ Merci ! Demande envoyée. Réponse sous 24h ouvrées.";
-        statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
-        form.reset();
-      } else {
-        statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+      if (!endpoint) {
+        statusEl.textContent = "❌ Erreur technique : endpoint manquant.";
         statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        statusEl.classList.remove("hidden");
+        return;
       }
-    } catch (err) {
-      statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
-      statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
-    }
-  });
+
+      const formData = new FormData(form);
+      formData.append("page", location.href);
+      formData.append("_subject", "Ortek — Nouveau brief e-commerce");
+
+      statusEl.textContent = "Envoi en cours…";
+      statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
+      statusEl.classList.remove("hidden");
+
+      try {
+        const res = await fetch(endpoint, {
+          method: "POST",
+          body: formData,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          statusEl.textContent = "✅ Merci ! Demande envoyée.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-green-50 border-green-200 text-green-800";
+          form.reset();
+        } else {
+          statusEl.textContent = "❌ Erreur lors de l’envoi. Réessayez.";
+          statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        }
+      } catch (err) {
+        statusEl.textContent = "❌ Impossible d’envoyer (connexion).";
+        statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
+        console.error(err);
+      }
+    });
+  }
+
+  /* =========================
+     MENU MOBILE (BURGER)
+  ========================== */
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+
+  if (menuBtn && mobileMenu) {
+    menuBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Fermer le menu quand on clique sur un lien
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+      });
+    });
+  }
 </script>
+
 
 
 </body>
 </html>
+
 
 
 
