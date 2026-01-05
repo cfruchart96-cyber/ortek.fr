@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CF Transport — Remorque fermée · Transport de véhicules discret & assuré</title>
+  <meta name="description" content="Transport premium en remorque fermée. Discret, assuré, ponctuel. Devis instantané et réservation en ligne du lundi au jeudi." />
+  <link rel="canonical" href="https://cf-transport.local/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="CF Transport — Remorque fermée · Transport de véhicules" />
+  <meta property="og:description" content="Discrétion, assurance, ponctualité. Réservez votre créneau du lundi au jeudi. Devis instantané." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://cf-transport.local/" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#0B1220" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            ink: '#0B1220',
+            stone: {
+              25: '#0f172a',
+              50: '#111827',
+              75: '#1f2937'
+            },
+            gold: '#C8AE7D'
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'Arial', 'sans-serif'],
+            display: ['DM Serif Display', 'serif']
+          },
+          boxShadow: {
+            soft: '0 8px 30px rgba(0,0,0,0.25)'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    /* Subtle noise for premium feel */
+    .noise:before{content:"";position:absolute;inset:0;background-image:url(image/ChatGPT\ Image\ 28\ sept.\ 2025\,\ 20_26_45.png);pointer-events:none}
+  </style>
+  <!-- Preload hero background for better LCP -->
+  <link rel="preload" as="im" href="image/ChatGPT Image 28 sept. 2025, 20_26_45.png" type="image/png">
+</head>
+<body class="min-h-screen bg-ink text-white antialiased">
+  <!-- Topbar -->
+  <div class="w-full bg-black/50 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-2 flex items-center justify-between text-sm">
+      <span class="text-white/80">📍 Hauts‑de‑France · Longue distance sur devis</span>
+      <div class="hidden sm:flex items-center gap-5">
+        <a href="#reserver" class="text-white/90 hover:text-gold transition">Réserver en ligne</a>
+        <a href="tel:+33700000000" class="inline-flex items-center gap-2"><span class="font-semibold">07 00 00 00 00</span> 📞</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-ink/70 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-3">
+        <div class="w-11 h-11 rounded-2xl bg-white text-ink grid place-items-center font-black shadow-soft">CF</div>
+        <div>
+          <p class="font-semibold leading-tight">CF Transport</p>
+          <p class="text-xs text-white/60">Remorque fermée · Discret & assuré</p>
+        </div>
+      </div>
+      <nav class="hidden md:flex items-center gap-6 text-sm">
+        <a href="#services" class="text-white/80 hover:text-gold">Services</a>
+        <a href="#devis" class="text-white/80 hover:text-gold">Devis</a>
+        <a href="#tarifs" class="text-white/80 hover:text-gold">Tarifs</a>
+        <a href="#reserver" class="text-white/80 hover:text-gold">Réserver</a>
+        <a href="#faq" class="text-white/80 hover:text-gold">FAQ</a>
+        <a href="#contact" class="text-white/80 hover:text-gold">Contact</a>
+      </nav>
+      <a href="#reserver" class="hidden md:inline-flex items-center gap-2 rounded-2xl px-4 py-2 bg-gold text-ink font-semibold shadow-soft hover:opacity-90 transition">Réserver (Lun→Jeu)</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="relative overflow-hidden">
+    <!-- BG image (hero) -->
+    <div class="absolute inset-0 -z-10 bg-cover bg-center" style="background-image:url('./image/ChatGPT Image 28 sept, 2025, 20 46 45.png');"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(120%_120%_at_80%_-10%,rgba(200,174,125,0.18)_0,transparent_50%),linear-gradient(180deg,#0B1220_0%,#121826_100%)]"></div>
+    <div class="noise absolute inset-0"></div>
+    <div class="relative max-w-7xl mx-auto px-4 md:px-6 py-16 md:py-24">
+      <div class="grid md:grid-cols-2 gap-10 items-center">
+        <div>
+          <h1 class="font-display text-4xl md:text-6xl leading-[1.05] tracking-tight"><span class="text-white">Transport de véhicules</span> en <span class="text-gold">remorque fermée</span></h1>
+          <p class="mt-5 text-white/80 text-lg md:text-xl">Service <span class="text-white">discret</span>, <span class="text-white">assuré</span> et <span class="text-white">ponctuel</span>. Créneaux du <strong>lundi au jeudi</strong>. Devis instantané. Péages au réel.</p>
+          <div class="mt-7 flex flex-wrap gap-3">
+            <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">✔️ RC Pro & assurance transport</span>
+            <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">🕒 Créneaux 2h / 3h / 4h</span>
+            <span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">🔒 Discrétion totale</span>
+          </div>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="#devis" class="rounded-2xl px-5 py-3 bg-gold text-ink font-semibold shadow-soft hover:opacity-90 transition">Devis instantané</a>
+            <a href="#reserver" class="rounded-2xl px-5 py-3 border border-white/20 text-white hover:bg-white/5 transition">Réserver un créneau</a>
+          </div>
+        </div>
+        <div class="rounded-3xl border border-white/15 bg-white/5 p-6 shadow-soft">
+          <h3 class="text-lg font-semibold">Récap express</h3>
+          <ul class="mt-3 text-sm text-white/85 space-y-2">
+            <li>📅 Disponibilités : <strong>lundi → jeudi</strong> (8h–18h)</li>
+            <li>💶 Tarif clair : prise en charge + €/km + options</li>
+            <li>🧾 Péages : au réel (ou option d’inclusion)</li>
+            <li>📍 Zone : Hauts‑de‑France + longues distances</li>
+          </ul>
+          <div class="mt-4 text-xs text-white/60">Vendredi & samedi : réservés à une autre activité.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section id="services" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <h2 class="font-display text-3xl md:text-4xl">Services</h2>
+    <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Transfert véhicule roulant</h3>
+        <p class="text-sm text-white/80 mt-1">Chargement rapide, arrimage pro, respect des délais.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Véhicule non roulant</h3>
+        <p class="text-sm text-white/80 mt-1">Treuil & cales. Gestion des pannes, immobilisations ou sinistres.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Remorque fermée (discrétion)</h3>
+        <p class="text-sm text-white/80 mt-1">À l’abri des regards & intempéries. Idéal véhicules haut de gamme.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Longue distance</h3>
+        <p class="text-sm text-white/80 mt-1">France & pays limitrophes sur devis avec planification dédiée.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Attente & papiers</h3>
+        <p class="text-sm text-white/80 mt-1">15 min offertes, puis facturation simple par tranches de 30 min.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Assurance & conformité</h3>
+        <p class="text-sm text-white/80 mt-1">RC Pro & assurance transport. Facture détaillée.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devis instantané -->
+  <section id="devis" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <div class="grid lg:grid-cols-2 gap-6 items-stretch">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-semibold">Devis instantané</h2>
+        <p class="text-white/80 mt-1">Entrez vos adresses pour calculer le <strong>kilométrage</strong>, la <strong>durée</strong> et une <strong>estimation</strong>. Un créneau adapté vous sera recommandé (2h, 3h ou 4h).</p>
+        <form id="devisForm" class="mt-6 space-y-4" onsubmit="event.preventDefault(); calculerDevis();">
+          <div>
+            <label class="block text-sm font-medium mb-1" for="origin">Adresse de départ</label>
+            <input id="origin" type="text" class="w-full rounded-xl bg-white/10 border border-white/20 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Ex : 62400 Béthune, 496 Rue F.D. Roosevelt" required />
+          </div>
+          <div>
+            <label class="block text-sm font-medium mb-1" for="destination">Adresse d’arrivée</label>
+            <input id="destination" type="text" class="w-full rounded-xl bg-white/10 border border-white/20 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold" placeholder="Ex : 59000 Lille, 12 Av. de la Gare" required />
+          </div>
+          <div class="grid sm:grid-cols-2 gap-4">
+            <label class="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-3 py-2">
+              <input id="nonRoulant" type="checkbox" class="h-4 w-4" />
+              <span>Véhicule <strong>non roulant</strong></span>
+            </label>
+            <label class="flex items-center gap-3 rounded-xl border border-white/20 bg-white/5 px-3 py-2">
+              <input id="remorque" type="checkbox" class="h-4 w-4" />
+              <span><strong>Remorque fermée</strong> (discrétion + assurance)</span>
+            </label>
+          </div>
+          <div class="grid sm:grid-cols-3 gap-4">
+            <div>
+              <label class="block text-sm font-medium mb-1" for="attente">Attente sur place (min)</label>
+              <input id="attente" type="number" min="0" step="5" class="w-full rounded-xl bg-white/10 border border-white/20 px-3 py-2" placeholder="0" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" for="tauxKm">Taux €/km</label>
+              <input id="tauxKm" type="number" min="0" step="0.01" class="w-full rounded-xl bg-white/10 border border-white/20 px-3 py-2" value="1.20" />
+            </div>
+            <div>
+              <label class="block text-sm font-medium mb-1" for="fraisDepart">Frais de départ</label>
+              <input id="fraisDepart" type="number" min="0" step="0.01" class="w-full rounded-xl bg-white/10 border border-white/20 px-3 py-2" value="35" />
+            </div>
+          </div>
+          <div class="flex flex-wrap items-center gap-3">
+            <button type="submit" class="rounded-2xl px-5 py-2.5 bg-gold text-ink font-semibold shadow-soft hover:opacity-90 transition">Calculer le devis</button>
+            <button type="button" class="rounded-2xl px-5 py-2.5 border border-white/20 hover:bg-white/5" onclick="reinit()">Réinitialiser</button>
+          </div>
+        </form>
+      </div>
+
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="text-lg font-semibold">Résultat & récapitulatif</h3>
+        <p class="text-white/80 mt-1">Montant indicatif. Péages éventuels en sus.</p>
+        <div id="slotReco" class="mt-2 hidden"><span class="inline-flex items-center gap-2 text-xs px-3 py-1 rounded-full bg-white/10 border border-white/15">Créneau recommandé : <span id="slotRecoLabel" class="font-semibold"></span></span></div>
+        <div id="resume" class="mt-4 text-sm text-white/85 space-y-1 hidden"></div>
+        <div id="prix" class="mt-4 hidden">
+          <div class="border-t border-white/10 pt-4 mt-4">
+            <h4 class="font-semibold">Détail du calcul</h4>
+            <ul id="detail" class="mt-2 text-sm list-disc list-inside space-y-1"></ul>
+          </div>
+          <div class="border-t border-white/10 pt-4 mt-4 flex items-center justify-between">
+            <span class="text-lg font-semibold">Total estimé</span>
+            <span id="total" class="text-2xl font-bold"></span>
+          </div>
+          <div class="mt-6 flex flex-col sm:flex-row gap-3">
+            <a id="btnBooking" class="rounded-2xl px-5 py-2.5 bg-gold text-ink font-semibold shadow-soft hover:opacity-90 transition" href="#reserver">Réserver (Lun→Jeu)</a>
+            <button class="rounded-2xl px-5 py-2.5 border border-white/20 hover:bg-white/5" onclick="copierRécap()">Copier le récapitulatif</button>
+          </div>
+        </div>
+        <div class="mt-6 text-xs text-white/60">Barème : minimum 79 € · 15 min d’attente offertes puis 15 €/30 min · Remorque fermée +15 % · Non roulant +25 %.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section id="tarifs" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <h2 class="font-display text-3xl md:text-4xl">Tarifs clairs</h2>
+    <div class="mt-8 grid md:grid-cols-3 gap-6">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Base</h3>
+        <ul class="text-sm text-white/85 mt-2 space-y-1">
+          <li>Frais de départ : <strong>35 €</strong></li>
+          <li>Prix au km : <strong>1,20 €</strong> (≤150 km), puis <strong>1,05 €</strong></li>
+          <li>Minimum de facturation : <strong>79 €</strong></li>
+          <li>Péages : au réel (ou option d’inclusion)</li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Options</h3>
+        <ul class="text-sm text-white/85 mt-2 space-y-1">
+          <li>Remorque fermée : <strong>+15 %</strong></li>
+          <li>Véhicule non roulant : <strong>+25 %</strong></li>
+          <li>Attente >15 min : <strong>15 € / 30 min</strong></li>
+        </ul>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Exemple (Béthune → Lille)</h3>
+        <p class="text-sm text-white/85 mt-2">~62 km, roulant, sans péages :</p>
+        <p class="text-2xl font-bold mt-2 text-gold">≈ 109 €</p>
+        <p class="text-xs text-white/60 mt-1">(35 + 62×1,20)</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Réservation (Google Calendar) -->
+  <section id="reserver" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <h2 class="font-display text-3xl md:text-4xl">Réserver un créneau (lundi → jeudi)</h2>
+    <p class="text-white/80 mt-1">Vendredi & samedi : non réservable. Délai de réservation minimum : 4 h. Quota journalier limité.</p>
+    <div class="mt-6 rounded-3xl overflow-hidden border border-white/10 bg-white/5 shadow-soft">
+      <!-- Google Calendar Appointment Scheduling begin -->
+      <iframe src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3quTZfGX3aHPAlIzRok9wOOFZXKJzmuysw0ROeSSoyDra6ydggQoSqRQKhKUbQuq2XWsfbI0tr?gv=true" style="border: 0" width="100%" height="760" frameborder="0"></iframe>
+      <!-- end Google Calendar Appointment Scheduling -->
+    </div>
+    <div class="mt-3">
+      <a class="inline-flex items-center gap-2 rounded-2xl px-4 py-2 border border-white/20 hover:bg-white/5" target="_blank" rel="noopener" href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ3quTZfGX3aHPAlIzRok9wOOFZXKJzmuysw0ROeSSoyDra6ydggQoSqRQKhKUbQuq2XWsfbI0tr?gv=true">Ouvrir en plein écran</a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <h2 class="font-display text-3xl md:text-4xl">FAQ</h2>
+    <div class="mt-8 grid md:grid-cols-2 gap-6">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Pourquoi pas de réservation le vendredi/samedi ?</h3>
+        <p class="text-sm text-white/80 mt-2">Ces jours sont réservés à une autre activité. Le transport est ouvert du lundi au jeudi pour garantir ponctualité & qualité.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Puis‑je inclure les péages ?</h3>
+        <p class="text-sm text-white/80 mt-2">Oui, sur option. Sinon ils sont facturés au réel, ticket à l’appui.</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Longues distances ?</h3>
+        <p class="text-sm text-white/80 mt-2">Oui, sur devis. Réservation dédiée (créneau 4 h conseillé).</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Acompte & annulation ?</h3>
+        <p class="text-sm text-white/80 mt-2">Possibilité d’acompte (via lien de paiement). Annulation : >48 h remboursé (hors frais) · 24–48 h : acompte conservé · <24 h : acompte + 50 % du solde.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="max-w-7xl mx-auto px-4 md:px-6 py-14">
+    <div class="grid md:grid-cols-2 gap-6 items-stretch">
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h2 class="text-xl font-semibold">Contact</h2>
+        <p class="text-sm text-white/80 mt-2">Besoin d’un conseil rapide ou d’un devis spécial ?</p>
+        <div class="mt-4 flex flex-col gap-3">
+          <a class="rounded-2xl px-5 py-3 bg-gold text-ink font-semibold shadow-soft hover:opacity-90 transition" href="tel:+33700000000">Appeler : 07 00 00 00 00</a>
+          <a class="rounded-2xl px-5 py-3 border border-white/20 hover:bg-white/5" href="#devis">Faire un devis instantané</a>
+        </div>
+        <p class="text-xs text-white/60 mt-3">Horaires : Lun→Jeu, 8h–18h</p>
+      </div>
+      <div class="rounded-3xl border border-white/10 bg-white/5 p-6">
+        <h3 class="font-semibold">Mentions & assurances</h3>
+        <ul class="mt-3 text-sm text-white/85 space-y-2">
+          <li>RC Pro & assurance transport (références sur facture)</li>
+          <li>Facturation détaillée & péages au réel</li>
+          <li>Zone : Hauts‑de‑France (Béthune, Lens, Arras, Lille, etc.)</li>
+          <li>Longues distances : sur devis & planification</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <footer class="max-w-7xl mx-auto px-4 md:px-6 pb-14 text-center text-xs text-white/60">
+    © <span id="year"></span> CF Transport — SIREN 000 000 000 — Mentions légales · CGV
+  </footer>
+
+  <!-- JSON‑LD LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "CF Transport",
+    "description": "Transport de véhicules en remorque fermée. Discret & assuré. Réservation du lundi au jeudi, devis instantané.",
+    "areaServed": "Hauts-de-France",
+    "telephone": "+33700000000",
+    "url": "https://cf-transport.local/",
+    "priceRange": "€€",
+    "openingHours": ["Mo-Th 08:00-18:00"],
+    "sameAs": []
+  }
+  </script>
+
+  <!-- Logic JS (devis + Google Maps Distance Matrix via JS API) -->
+  <script>
+    // ⚙️ CONFIG
+    const GOOGLE_API_KEY = "VOTRE_CLE_API_GOOGLE"; // Activez Maps JavaScript API + Places, restreignez par referrer
+    const MINIMUM = 79;
+    const SURCHARGE_REMORQUE = 0.15;
+    const SURCHARGE_NON_ROULANT = 0.25;
+    const TARIF_ATTENTE_PAR_30 = 15;
+
+    const el = (id) => document.getElementById(id);
+    function fmtEuros(n){ return new Intl.NumberFormat('fr-FR',{style:'currency',currency:'EUR'}).format(n); }
+    function minutesToBlocks(min){ const excess=Math.max(0,min-15); return Math.ceil(excess/30); }
+    function reinit(){ el('devisForm').reset(); el('resume').classList.add('hidden'); el('prix').classList.add('hidden'); el('slotReco').classList.add('hidden'); }
+
+    let __dmService;
+    (function waitForMaps(){ const int=setInterval(()=>{ if(window.google && google.maps && google.maps.places){ clearInterval(int); __dmService=new google.maps.DistanceMatrixService(); new google.maps.places.Autocomplete(el('origin')); new google.maps.places.Autocomplete(el('destination')); } },200); })();
+
+    function recommendSlot(km, nonRoulant, remorque){ let base= km<=50?2 : km<=120?3 : 4; let bonus=0; if(nonRoulant) bonus+=1; if(remorque) bonus+=0.5; const hours=Math.min(4, Math.ceil(base+bonus)); const label = hours===2? '2h – Local (≤50 km)' : hours===3? '3h – Régional (51–120 km)' : '4h – Longue distance (≥121 km ou options)'; return {hours,label}; }
+
+    async function getDistance(origin, destination){ return new Promise((resolve,reject)=>{ if(!__dmService) return reject(new Error('API Maps non prête')); __dmService.getDistanceMatrix({ origins:[origin], destinations:[destination], travelMode: google.maps.TravelMode.DRIVING, unitSystem: google.maps.UnitSystem.METRIC }, (res,status)=>{ if(status!=='OK') return reject(new Error('API Maps indisponible')); const e=res.rows?.[0]?.elements?.[0]; if(!e||e.status!=='OK') return reject(new Error('Adresse introuvable')); resolve({ km: e.distance.value/1000, minutes: Math.round(e.duration.value/60), labelDistance: e.distance.text, labelDuree: e.duration.text }); }); }); }
+
+    async function calculerDevis(){
+      const origin = el('origin').value.trim();
+      const destination = el('destination').value.trim();
+      const nonRoulant = el('nonRoulant').checked;
+      const remorque = el('remorque').checked;
+      const attente = parseInt(el('attente').value || '0', 10);
+      const tauxKm = parseFloat(el('tauxKm').value || '1.2');
+      const fraisDepart = parseFloat(el('fraisDepart').value || '35');
+      if(!origin||!destination) return;
+      try{
+        const { km, minutes, labelDistance, labelDuree } = await getDistance(origin, destination);
+        const distanceCost = km * tauxKm; let base = fraisDepart + distanceCost; const remorqueFee = remorque ? base*SURCHARGE_REMORQUE : 0; const nonRoulantFee = nonRoulant ? base*SURCHARGE_NON_ROULANT : 0; const attenteBlocks = minutesToBlocks(attente); const attenteFee = attenteBlocks * TARIF_ATTENTE_PAR_30; let total = base + remorqueFee + nonRoulantFee + attenteFee; if(total<MINIMUM) total=MINIMUM;
+        const reco = recommendSlot(km, nonRoulant, remorque); document.getElementById('slotRecoLabel').textContent = reco.label; document.getElementById('slotReco').classList.remove('hidden');
+        document.getElementById('resume').innerHTML = `<div><strong>Départ :</strong> ${origin}</div><div><strong>Arrivée :</strong> ${destination}</div><div><strong>Parcours :</strong> ${labelDistance} · ${labelDuree}</div><div><strong>Options :</strong> ${remorque? 'Remorque fermée':'Classique'} · ${nonRoulant? 'Non roulant':'Roulant'} · Attente ${attente||0} min</div>`; document.getElementById('resume').classList.remove('hidden');
+        const detail=[ `Frais de départ : ${fmtEuros(fraisDepart)}`, `Distance (${km.toFixed(1)} km × ${fmtEuros(tauxKm)}/km) : ${fmtEuros(distanceCost)}`, remorque? `Remorque fermée (+15 %) : ${fmtEuros(remorqueFee)}`:null, nonRoulant? `Véhicule non roulant (+25 %) : ${fmtEuros(nonRoulantFee)}`:null, attente>15? `Attente (${attenteBlocks} × 30 min) : ${fmtEuros(attenteFee)}`:`Attente : 0 € (≤ 15 min offertes)` ].filter(Boolean); document.getElementById('detail').innerHTML = detail.map(li=>`<li>${li}</li>`).join(''); document.getElementById('total').textContent = fmtEuros(total); document.getElementById('prix').classList.remove('hidden');
+        window.__lastRecap = [`Départ: ${origin}`,`Arrivée: ${destination}`,`Parcours: ${labelDistance} · ${labelDuree}`,`Options: ${remorque?'Remorque fermée':'Classique'}, ${nonRoulant?'Non roulant':'Roulant'}, Attente ${attente||0} min`,`Créneau recommandé: ${reco.label}`,`Total estimé: ${fmtEuros(total)}`].join('
+');
+        document.querySelector('a#btnBooking').scrollIntoView({behavior:'smooth', block:'center'});
+      }catch(e){ alert(e.message || 'Erreur lors du calcul. Vérifiez vos adresses.'); }
+    }
+
+    function copierRécap(){ if(!window.__lastRecap) return; navigator.clipboard.writeText(window.__lastRecap).then(()=> alert('Récapitulatif copié.')); }
+
+    document.addEventListener('DOMContentLoaded', ()=>{ document.getElementById('year').textContent = new Date().getFullYear(); });
+  </script>
+
+  <!-- Google Maps JS API (Places + Distance Matrix) -->
+  <script async defer src="https://maps.googleapis.com/maps/api/js?key=VOTRE_CLE_API_GOOGLE&libraries=places"></script>
+</body>
+</html>
