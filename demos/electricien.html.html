@@ -1,0 +1,1046 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Électricien Paris | Dépannage & Rénovation – Voltéo BAT</title>
+  <meta name="description" content="Électricien à Paris : dépannage 24/7, mise aux normes, rénovation, tableau électrique. Devis transparent et intervention rapide." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+ <style>:root{
+  --bg: #0b0f17;
+  --bg2:#0e1422;
+  --card:#0f172a;
+  --soft:#f2efe9;
+  --text:#e9eefb;
+  --muted: rgba(233,238,251,.72);
+  --line: rgba(255,255,255,.10);
+  --accent:#ff6a00;         /* orange premium */
+  --accent2:#ff8a3d;
+  --shadow: 0 18px 45px rgba(0,0,0,.35);
+  --radius: 18px;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+  color: var(--text);
+  background: #0a0f18;
+  line-height: 1.45;
+}
+
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+
+.container{
+  width:min(1160px, 92vw);
+  margin-inline:auto;
+}
+
+.muted{color:var(--muted)}
+.fine{font-size:.9rem}
+
+.pill{
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  padding:.35rem .6rem;
+  border-radius:999px;
+  font-size:.85rem;
+}
+
+/* Topbar */
+.topbar{
+  background: rgba(0,0,0,.35);
+  border-bottom:1px solid var(--line);
+  backdrop-filter: blur(10px);
+}
+.topbar__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.55rem 0;
+}
+.topbar__left, .topbar__right{
+  display:flex;align-items:center;gap:.8rem;
+}
+.toplink{
+  font-size:.92rem;
+  color: rgba(233,238,251,.85);
+}
+.toplink:hover{color:#fff}
+
+/* Header */
+.header{
+  position:sticky;
+  top:0;
+  z-index:30;
+  background: rgba(10,15,24,.65);
+  backdrop-filter: blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.header__inner{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  padding: .85rem 0;
+  gap:1rem;
+}
+
+.brand{
+  display:flex;align-items:center;gap:.75rem;
+}
+.brand__logo{
+  width:46px;height:46px;
+  display:grid;place-items:center;
+  border-radius:14px;
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--line);
+}
+.brand__logo svg{color:#fff;opacity:.92}
+.brand__name{font-weight:800;letter-spacing:.3px}
+.brand__tag{display:block;font-size:.85rem;color:var(--muted)}
+
+.nav{
+  display:flex;align-items:center;gap:1.15rem;
+}
+.nav a{font-weight:600;font-size:.95rem;color:rgba(233,238,251,.85)}
+.nav a:hover{color:#fff}
+
+.burger{
+  display:none;
+  width:44px;height:44px;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  border-radius:12px;
+  cursor:pointer;
+}
+.burger span{
+  display:block;
+  height:2px;
+  width:18px;
+  margin:4px auto;
+  background:#fff;
+  border-radius:999px;
+  opacity:.9;
+}
+
+.mobile{
+  border-top:1px solid var(--line);
+  padding: .9rem 0 1.1rem;
+}
+.mobile a{
+  display:block;
+  padding:.65rem 4vw;
+  color:rgba(233,238,251,.9);
+  font-weight:650;
+}
+.mobile a.btn{margin: .4rem 4vw .2rem}
+.mobile__tel{opacity:.95}
+
+/* Buttons */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  gap:.55rem;
+  padding: .88rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: linear-gradient(180deg, var(--accent2), var(--accent));
+  color:#120b05;
+  font-weight:800;
+  box-shadow: 0 10px 25px rgba(255,106,0,.18);
+  transition: transform .15s ease, filter .15s ease;
+}
+.btn:hover{transform: translateY(-1px); filter: brightness(1.02)}
+.btn:active{transform: translateY(0)}
+
+.btn--ghost{
+  background: rgba(255,255,255,.04);
+  border-color: var(--line);
+  color:#fff;
+  box-shadow:none;
+}
+.btn--ghost:hover{background: rgba(255,255,255,.06)}
+.btn--small{padding:.68rem .95rem; font-weight:800; font-size:.95rem}
+
+/* Hero */
+.hero{
+  position:relative;
+  min-height: 520px;
+  display:flex;
+  align-items:stretch;
+  overflow:hidden;
+  border-bottom:1px solid var(--line);
+}
+.hero__bg{
+  position:absolute;inset:0;
+  background:
+    radial-gradient(900px 500px at 75% 40%, rgba(255,106,0,.22), transparent 60%),
+    radial-gradient(900px 500px at 30% 30%, rgba(0,208,255,.13), transparent 60%),
+    linear-gradient(180deg, rgba(0,0,0,.2), rgba(0,0,0,.55)),
+    url("https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?auto=format&fit=crop&w=2400&q=70");
+  background-size: cover;
+  background-position: center;
+  filter: saturate(1.05) contrast(1.05);
+  transform: scale(1.04);
+}
+.hero__overlay{
+  position:absolute;inset:0;
+  background: linear-gradient(90deg, rgba(6,10,18,.92) 0%, rgba(6,10,18,.72) 40%, rgba(6,10,18,.25) 75%, rgba(6,10,18,.12) 100%);
+}
+
+.hero__inner{
+  position:relative;
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 2.2rem;
+  padding: 4rem 0 3.3rem;
+}
+.hero__content h1{
+  margin:0 0 .75rem;
+  font-size: clamp(2rem, 2.6vw + 1.2rem, 3.25rem);
+  letter-spacing: -.02em;
+  line-height:1.05;
+}
+.kicker{
+  display:block;
+  font-size: .95rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: rgba(233,238,251,.72);
+  margin-bottom:.5rem;
+}
+.accent{color: var(--accent)}
+.lead{
+  margin:0 0 1.35rem;
+  color: rgba(233,238,251,.82);
+  font-size: 1.06rem;
+  max-width: 52ch;
+}
+.hero__cta{display:flex;gap:.75rem;flex-wrap:wrap;margin-bottom:1.4rem}
+
+.hero__trust{
+  display:flex;gap:.85rem;flex-wrap:wrap;
+}
+.trust{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.75rem .85rem;
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  border-radius: 16px;
+}
+.trust__icon{font-size:1.15rem}
+.trust__text strong{display:block;font-size:1rem}
+.trust__text span{display:block;font-size:.88rem;color:var(--muted)}
+
+.hero__right{display:flex;justify-content:flex-end;align-items:flex-start}
+.hero__card{
+  width:min(390px, 100%);
+  padding: 1.25rem 1.25rem 1.05rem;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: rgba(10,15,24,.65);
+  box-shadow: var(--shadow);
+}
+.hero__card h3{margin:.1rem 0 .25rem}
+.hero__actions{display:flex;gap:.6rem;flex-wrap:wrap;margin:.85rem 0}
+.divider{height:1px;background:var(--line);margin:1rem 0}
+.bullets{margin:.6rem 0 0;padding-left:1.05rem;color:rgba(233,238,251,.85)}
+.bullets li{margin:.35rem 0}
+
+/* Sections */
+.section{padding: 4.2rem 0; background: #0a0f18}
+.section--soft{background: var(--soft); color:#101524}
+.section--soft .muted{color: rgba(16,21,36,.70)}
+.section__head{
+  text-align:center;
+  margin-bottom: 2.1rem;
+}
+.section__head h2{
+  margin:0 0 .5rem;
+  font-size: clamp(1.55rem, 1vw + 1.2rem, 2.25rem);
+  letter-spacing:-.02em;
+}
+.section__head p{margin:0}
+
+.grid{
+  display:grid;
+  gap: 1.1rem;
+}
+.grid--3{grid-template-columns: repeat(3, 1fr);}
+
+.card{
+  border-radius: var(--radius);
+  border:1px solid rgba(0,0,0,.08);
+  background: #fff;
+  padding: 1.2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+}
+.section:not(.section--soft) .card{
+  background: rgba(255,255,255,.04);
+  border:1px solid var(--line);
+  color: var(--text);
+  box-shadow: var(--shadow);
+}
+
+/* Engagement cards */
+.card__icon{
+  width:42px;height:42px;border-radius:14px;
+  display:grid;place-items:center;
+  background: rgba(255,106,0,.15);
+  border:1px solid rgba(255,106,0,.22);
+  margin-bottom:.75rem;
+  font-size:1.1rem;
+}
+
+/* Services */
+.service{
+  padding: 1.2rem;
+  border-radius: var(--radius);
+  border:1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  box-shadow: var(--shadow);
+}
+.service h3{margin:.35rem 0 .5rem}
+.service p{margin:.25rem 0 .85rem;color: rgba(233,238,251,.78)}
+.service ul{margin:0;padding-left:1.05rem;color:rgba(233,238,251,.88)}
+.service li{margin:.28rem 0}
+
+.service__top{
+  display:flex;align-items:center;justify-content:space-between;gap:.8rem;
+}
+.service__badge{
+  font-size:.82rem;
+  padding:.28rem .55rem;
+  border-radius:999px;
+  border:1px solid rgba(255,106,0,.28);
+  background: rgba(255,106,0,.14);
+  color: rgba(255,255,255,.92);
+  font-weight:750;
+}
+
+/* Pricing */
+.pricing{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 1.1rem;
+}
+.price{
+  border-radius: var(--radius);
+  background: #fff;
+  border:1px solid rgba(0,0,0,.08);
+  padding: 1.25rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,.06);
+  position:relative;
+}
+.price__value{
+  margin:.55rem 0 .9rem;
+  font-size: 1.9rem;
+  font-weight:900;
+  letter-spacing:-.02em;
+  color:#0f1628;
+}
+.price__value span{
+  display:block;
+  font-size:.9rem;
+  font-weight:650;
+  color: rgba(15,22,40,.60);
+  margin-bottom:.1rem;
+}
+.price ul{margin:.2rem 0 1.1rem;padding-left:1.05rem;color: rgba(15,22,40,.80)}
+.price li{margin:.3rem 0}
+.price--featured{
+  border:1px solid rgba(255,106,0,.35);
+  box-shadow: 0 18px 45px rgba(255,106,0,.12);
+  transform: translateY(-4px);
+}
+.price__tag{
+  position:absolute;
+  top: 12px; right: 12px;
+  font-size:.82rem;
+  padding:.25rem .55rem;
+  border-radius:999px;
+  background: rgba(255,106,0,.18);
+  border:1px solid rgba(255,106,0,.35);
+  color:#0f1628;
+  font-weight:800;
+}
+.section--soft .btn--ghost{
+  color:#0f1628;
+  border-color: rgba(15,22,40,.18);
+  background: rgba(15,22,40,.03);
+}
+
+/* Zone */
+.zone{
+  display:grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 1.1rem;
+  align-items:stretch;
+}
+.zone__map iframe{
+  width:100%;
+  height: 100%;
+  min-height: 340px;
+  border:0;
+  border-radius: 14px;
+}
+
+/* Reviews */
+.review__stars{letter-spacing:.12em;color: var(--accent); font-weight:900}
+.review p{margin:.6rem 0 1rem}
+.review__who{display:flex;gap:.6rem;align-items:center}
+
+/* Devis layout */
+.devis{
+  display:grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: 1.1rem;
+  align-items:flex-start;
+}
+.form{position:relative; overflow:hidden}
+.form__grid{
+  display:grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .9rem;
+}
+label span{display:block;font-size:.92rem;color: rgba(233,238,251,.78);margin:0 0 .35rem}
+.section--soft label span{color: rgba(15,22,40,.65)}
+
+input, select, textarea{
+  width:100%;
+  padding: .9rem .95rem;
+  border-radius: 14px;
+  border: 1px solid var(--line);
+  background: rgba(255,255,255,.04);
+  color: #fff;
+  outline:none;
+}
+.section--soft input, .section--soft select, .section--soft textarea{
+  background:#fff;
+  border:1px solid rgba(0,0,0,.12);
+  color:#111827;
+}
+textarea{resize: vertical}
+input:focus, select:focus, textarea:focus{
+  border-color: rgba(255,106,0,.55);
+  box-shadow: 0 0 0 4px rgba(255,106,0,.12);
+}
+.span-2{grid-column: 1 / -1}
+
+.form__actions{
+  display:flex;align-items:center;justify-content:space-between;gap:1rem;
+  margin-top: 1rem;
+  flex-wrap:wrap;
+}
+.callout{display:flex;flex-direction:column;gap:.65rem}
+
+/* Toast success */
+.toast{
+  position:absolute;
+  left: 16px; right: 16px; bottom: 16px;
+  display:flex;align-items:flex-start;gap:.8rem;
+  padding: 1rem 1rem;
+  border-radius: 16px;
+  border:1px solid rgba(0,0,0,.08);
+  background: #fff;
+  color:#0f1628;
+  box-shadow: 0 18px 45px rgba(0,0,0,.14);
+  transform: translateY(14px);
+  opacity:0;
+  pointer-events:none;
+  transition: transform .22s ease, opacity .22s ease;
+}
+.toast.is-show{
+  transform: translateY(0);
+  opacity:1;
+  pointer-events:auto;
+}
+.toast__dot{
+  width:12px;height:12px;border-radius:50%;
+  background: var(--accent);
+  margin-top:.25rem;
+}
+.toast__text span{display:block;color: rgba(15,22,40,.65); font-size:.92rem}
+.toast__close{
+  margin-left:auto;
+  border:0;
+  background: transparent;
+  cursor:pointer;
+  font-size:1.05rem;
+  opacity:.7;
+}
+.toast__close:hover{opacity:1}
+
+/* Footer */
+.footer{
+  padding: 2.1rem 0;
+  border-top:1px solid var(--line);
+  background: #070b12;
+}
+.footer__inner{
+  display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;
+  flex-wrap:wrap;
+}
+.footer__links{display:flex;gap:1rem;flex-wrap:wrap}
+.footer__links a{color: rgba(233,238,251,.78)}
+.footer__links a:hover{color:#fff}
+
+/* Floating call */
+.callfloat{
+  position:fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index:50;
+  padding: .85rem 1rem;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--accent2), var(--accent));
+  color:#120b05;
+  font-weight:900;
+  box-shadow: 0 18px 40px rgba(255,106,0,.22);
+  display:flex;gap:.5rem;align-items:center;
+}
+.callfloat span{display:inline-block}
+.callfloat:hover{filter: brightness(1.02)}
+.callfloat:active{transform: translateY(1px)}
+
+/* Responsive */
+@media (max-width: 980px){
+  .nav{display:none}
+  .burger{display:block}
+  .hero__inner{grid-template-columns: 1fr; padding: 3.2rem 0 2.6rem}
+  .hero__right{justify-content:flex-start}
+  .grid--3{grid-template-columns: 1fr}
+  .pricing{grid-template-columns: 1fr}
+  .zone{grid-template-columns: 1fr}
+  .devis{grid-template-columns: 1fr}
+  .form__grid{grid-template-columns: 1fr}
+  .span-2{grid-column:auto}
+}
+</style>
+</head>
+
+<body>
+  <!-- Top bar -->
+  <div class="topbar">
+    <div class="container topbar__inner">
+      <div class="topbar__left">
+        <span class="pill">⚡ Dépannage 24/7</span>
+        <span class="muted">Paris & proche banlieue</span>
+      </div>
+      <div class="topbar__right">
+        <a class="toplink" href="tel:+33102030405">📞 01 02 03 04 05</a>
+        <a class="toplink" href="#devis">Devis gratuit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__inner">
+      <a class="brand" href="#">
+        <span class="brand__logo" aria-hidden="true">
+          <!-- Logo simple SVG -->
+          <svg width="42" height="42" viewBox="0 0 64 64" fill="none">
+            <path d="M10 28L32 10l22 18v24H10V28Z" stroke="currentColor" stroke-width="3" />
+            <path d="M24 52V36h16v16" stroke="currentColor" stroke-width="3" />
+            <path d="M8 28h48" stroke="currentColor" stroke-width="3" />
+          </svg>
+        </span>
+        <span class="brand__text">
+          <span class="brand__name">Voltéo BAT</span>
+          <span class="brand__tag">Électricité • Dépannage • Rénovation</span>
+        </span>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#services">Nos services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#zone">Zone</a>
+        <a href="#avis">Avis</a>
+        <a class="btn btn--small" href="#devis">Demander un devis</a>
+      </nav>
+
+      <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+
+    <!-- Mobile menu -->
+    <div class="mobile" id="mobile" hidden>
+      <a href="#services">Nos services</a>
+      <a href="#tarifs">Tarifs</a>
+      <a href="#zone">Zone</a>
+      <a href="#avis">Avis</a>
+      <a class="btn" href="#devis">Demander un devis</a>
+      <a class="mobile__tel" href="tel:+33102030405">📞 01 02 03 04 05</a>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" id="accueil" aria-label="Présentation">
+    <div class="hero__bg" aria-hidden="true"></div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <h1>
+          <span class="kicker">Électricien Paris</span>
+          Dépannage & Rénovation <span class="accent">rapides</span>
+        </h1>
+
+        <p class="lead">
+          Intervention 24/7 • Mise aux normes • Devis transparent.
+          Un travail propre, sécurisé, conforme aux dernières normes.
+        </p>
+
+        <div class="hero__cta">
+          <a class="btn" href="#devis">Demander un devis</a>
+          <a class="btn btn--ghost" href="tel:+33102030405">Appeler maintenant</a>
+        </div>
+
+        <div class="hero__trust">
+          <div class="trust">
+            <div class="trust__icon">⭐</div>
+            <div class="trust__text">
+              <strong>5/5</strong>
+              <span>Avis clients vérifiés</span>
+            </div>
+          </div>
+          <div class="trust">
+            <div class="trust__icon">⏱️</div>
+            <div class="trust__text">
+              <strong>30–60 min</strong>
+              <span>Selon secteur</span>
+            </div>
+          </div>
+          <div class="trust">
+            <div class="trust__icon">🛡️</div>
+            <div class="trust__text">
+              <strong>Assuré</strong>
+              <span>RC pro + décennale</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero__right">
+        <div class="hero__card">
+          <h3>Urgence électrique ?</h3>
+          <p class="muted">Coupe de courant, disjoncteur, court-circuit…</p>
+          <div class="hero__actions">
+            <a class="btn btn--small" href="tel:+33102030405">📞 Appel direct</a>
+            <a class="btn btn--small btn--ghost" href="#devis">Devis express</a>
+          </div>
+          <div class="divider"></div>
+          <ul class="bullets">
+            <li>Déplacement rapide</li>
+            <li>Tarifs annoncés avant intervention</li>
+            <li>Diagnostic + solution sur place</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Engagements -->
+  <section class="section section--soft" aria-label="Engagements">
+    <div class="container">
+      <div class="section__head">
+        <h2>Nos engagements pour votre sérénité</h2>
+        <p class="muted">3 promesses simples : vitesse, conformité, transparence.</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="card">
+          <div class="card__icon">✅</div>
+          <h3>Travail propre & sécurisé</h3>
+          <p>Protection des zones, finitions nettes, installations fiables et durables.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">📏</div>
+          <h3>Conforme aux normes</h3>
+          <p>Respect des règles en vigueur, mise à niveau de tableaux et circuits.</p>
+        </article>
+
+        <article class="card">
+          <div class="card__icon">💬</div>
+          <h3>Devis transparent</h3>
+          <p>Prix annoncés avant action, options claires, pas de surprise.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services" aria-label="Services">
+    <div class="container">
+      <div class="section__head">
+        <h2>Nos services</h2>
+        <p class="muted">Dépannage, rénovation, installation : on couvre l’essentiel (et plus).</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Urgence</span>
+            <h3>Dépannage 24/7</h3>
+          </div>
+          <p>Disjoncteur qui saute, panne, court-circuit, prise brûlée, odeur suspecte.</p>
+          <ul>
+            <li>Diagnostic rapide</li>
+            <li>Réparation immédiate</li>
+            <li>Sécurisation du réseau</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Sécurité</span>
+            <h3>Mise aux normes</h3>
+          </div>
+          <p>Mise en conformité des tableaux, terre, protection différentielle, circuits.</p>
+          <ul>
+            <li>Tableau électrique</li>
+            <li>Différentiels 30mA</li>
+            <li>Diagnostic & recommandations</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Rénovation</span>
+            <h3>Rénovation complète</h3>
+          </div>
+          <p>Rénovation d’appartement/maison : schéma, tirage, appareillage, finitions.</p>
+          <ul>
+            <li>Création de circuits</li>
+            <li>Interrupteurs & prises</li>
+            <li>Éclairage intérieur/extérieur</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Confort</span>
+            <h3>Éclairage & LED</h3>
+          </div>
+          <p>Spots, rubans LED, luminaires, détecteurs, optimisation conso.</p>
+          <ul>
+            <li>Conseil implantation</li>
+            <li>Pose & raccordement</li>
+            <li>Gestion/variations</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Habitat</span>
+            <h3>Domotique</h3>
+          </div>
+          <p>Commande à distance, scénarios, thermostats, volets, sécurité.</p>
+          <ul>
+            <li>Étude simple</li>
+            <li>Matériel fiable</li>
+            <li>Prise en main</li>
+          </ul>
+        </article>
+
+        <article class="service">
+          <div class="service__top">
+            <span class="service__badge">Pro</span>
+            <h3>Commerce & bureaux</h3>
+          </div>
+          <p>Maintenance, conformité, éclairage pro, baie, réseaux simples.</p>
+          <ul>
+            <li>Interventions planifiées</li>
+            <li>Contrats possibles</li>
+            <li>Rapport d’intervention</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tarifs -->
+  <section class="section section--soft" id="tarifs" aria-label="Tarifs">
+    <div class="container">
+      <div class="section__head">
+        <h2>Tarifs indicatifs</h2>
+        <p class="muted">Tu peux ajuster ces prix. Le but : “premium + clair”.</p>
+      </div>
+
+      <div class="pricing">
+        <article class="price">
+          <h3>Dépannage</h3>
+          <p class="price__value"><span>À partir de</span> 89€</p>
+          <ul>
+            <li>Déplacement</li>
+            <li>Diagnostic</li>
+            <li>1re intervention (selon cas)</li>
+          </ul>
+          <a class="btn btn--ghost" href="#devis">Demander un devis</a>
+        </article>
+
+        <article class="price price--featured">
+          <div class="price__tag">Le plus demandé</div>
+          <h3>Mise aux normes</h3>
+          <p class="price__value"><span>À partir de</span> 290€</p>
+          <ul>
+            <li>Contrôle protections</li>
+            <li>Optimisation tableau</li>
+            <li>Recommandations écrites</li>
+          </ul>
+          <a class="btn" href="#devis">Devis express</a>
+        </article>
+
+        <article class="price">
+          <h3>Rénovation</h3>
+          <p class="price__value"><span>Sur</span> devis</p>
+          <ul>
+            <li>Plan + circuits</li>
+            <li>Fournitures adaptées</li>
+            <li>Finitions & tests</li>
+          </ul>
+          <a class="btn btn--ghost" href="#devis">Être rappelé</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Zone -->
+  <section class="section" id="zone" aria-label="Zone d’intervention">
+    <div class="container">
+      <div class="section__head">
+        <h2>Zone d’intervention</h2>
+        <p class="muted">Paris + proche banlieue. Déplacement rapide selon secteur.</p>
+      </div>
+
+      <div class="zone">
+        <div class="zone__text card">
+          <h3>On se déplace où ?</h3>
+          <p>
+            Paris (tous arrondissements) + communes proches.
+            Pour les urgences, indique ton code postal : on te dit le délai estimé.
+          </p>
+          <ul class="bullets">
+            <li>Intervention rapide</li>
+            <li>Rendez-vous planifiés</li>
+            <li>Pro & particuliers</li>
+          </ul>
+          <a class="btn btn--small" href="#devis">Vérifier la dispo</a>
+        </div>
+
+        <div class="zone__map card">
+          <!-- Remplace l'iframe par ta carte Google Maps (lien "Partager > Intégrer") -->
+          <iframe
+            title="Carte zone d'intervention"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            src="https://www.google.com/maps?q=Paris&output=embed">
+          </iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Avis -->
+  <section class="section section--soft" id="avis" aria-label="Avis">
+    <div class="container">
+      <div class="section__head">
+        <h2>Avis clients</h2>
+        <p class="muted">3 exemples (à remplacer par tes vrais avis).</p>
+      </div>
+
+      <div class="grid grid--3">
+        <article class="review card">
+          <div class="review__stars">★★★★★</div>
+          <p>Intervention rapide, explications claires, travail nickel. Je recommande.</p>
+          <div class="review__who">
+            <strong>Camille</strong><span class="muted">Paris 15</span>
+          </div>
+        </article>
+        <article class="review card">
+          <div class="review__stars">★★★★★</div>
+          <p>Tableau électrique remis au propre, devis respecté, rien à dire.</p>
+          <div class="review__who">
+            <strong>Mehdi</strong><span class="muted">Paris 17</span>
+          </div>
+        </article>
+        <article class="review card">
+          <div class="review__stars">★★★★★</div>
+          <p>Très pro. A trouvé la panne vite et a sécurisé l’installation.</p>
+          <div class="review__who">
+            <strong>Sophie</strong><span class="muted">Levallois</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Devis -->
+  <section class="section" id="devis" aria-label="Demande de devis">
+    <div class="container">
+      <div class="section__head">
+        <h2>Demande de devis</h2>
+        <p class="muted">Réponse rapide. Tu peux brancher Formspree, EmailJS, ou ton backend plus tard.</p>
+      </div>
+
+      <div class="devis">
+        <form class="form card" id="quoteForm">
+          <div class="form__grid">
+            <label>
+              <span>Nom</span>
+              <input name="name" type="text" placeholder="Ton nom" required />
+            </label>
+
+            <label>
+              <span>Téléphone</span>
+              <input name="phone" type="tel" placeholder="06 …" required />
+            </label>
+
+            <label>
+              <span>Ville</span>
+              <input name="city" type="text" placeholder="Paris / banlieue" required />
+            </label>
+
+            <label>
+              <span>Type de travaux</span>
+              <select name="type" required>
+                <option value="" selected disabled>Choisir…</option>
+                <option>Dépannage urgent</option>
+                <option>Mise aux normes</option>
+                <option>Tableau électrique</option>
+                <option>Rénovation complète</option>
+                <option>Éclairage / LED</option>
+                <option>Commerce / bureaux</option>
+              </select>
+            </label>
+
+            <label class="span-2">
+              <span>Description</span>
+              <textarea name="message" rows="5" placeholder="Explique en 2–3 lignes (symptômes, adresse approximative, urgence…)" required></textarea>
+            </label>
+          </div>
+
+          <div class="form__actions">
+            <button class="btn" type="submit">Envoyer ma demande</button>
+            <p class="fine muted">En envoyant, tu acceptes d’être recontacté par téléphone.</p>
+          </div>
+
+          <!-- message succès -->
+          <div class="toast" id="toast" role="status" aria-live="polite" hidden>
+            <div class="toast__dot" aria-hidden="true"></div>
+            <div class="toast__text">
+              <strong>Demande envoyée ✅</strong>
+              <span>On te recontacte rapidement.</span>
+            </div>
+            <button class="toast__close" type="button" id="toastClose" aria-label="Fermer">✕</button>
+          </div>
+        </form>
+
+        <aside class="side card">
+          <h3>Infos utiles</h3>
+          <ul class="bullets">
+            <li><strong>Horaires :</strong> 24/7 pour urgences</li>
+            <li><strong>Devis :</strong> gratuit & clair</li>
+            <li><strong>Paiement :</strong> CB / virement / espèces</li>
+          </ul>
+
+          <div class="divider"></div>
+
+          <div class="callout">
+            <p class="muted">Besoin d’une réponse immédiate ?</p>
+            <a class="btn btn--small" href="tel:+33102030405">📞 01 02 03 04 05</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" aria-label="Pied de page">
+    <div class="container footer__inner">
+      <div>
+        <strong>Voltéo BAT</strong>
+        <p class="muted">Électricien • Paris & proche banlieue</p>
+      </div>
+      <div class="footer__links">
+        <a href="#services">Services</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#devis">Devis</a>
+        <a href="#">Mentions légales</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Call floating -->
+  <a class="callfloat" href="tel:+33102030405" aria-label="Appeler">
+    📞 <span>01 02 03 04 05</span>
+  </a>
+
+  <script>// Menu mobile
+const burger = document.getElementById("burger");
+const mobile = document.getElementById("mobile");
+
+if (burger && mobile) {
+  burger.addEventListener("click", () => {
+    const isOpen = burger.getAttribute("aria-expanded") === "true";
+    burger.setAttribute("aria-expanded", String(!isOpen));
+    mobile.hidden = isOpen;
+  });
+
+  // Ferme le menu au clic sur un lien
+  mobile.querySelectorAll("a").forEach(a => {
+    a.addEventListener("click", () => {
+      burger.setAttribute("aria-expanded", "false");
+      mobile.hidden = true;
+    });
+  });
+}
+
+// Form: simulation envoi + toast succès (sans rechargement)
+const form = document.getElementById("quoteForm");
+const toast = document.getElementById("toast");
+const toastClose = document.getElementById("toastClose");
+
+function showToast() {
+  if (!toast) return;
+  toast.hidden = false;
+  requestAnimationFrame(() => toast.classList.add("is-show"));
+}
+
+function hideToast() {
+  if (!toast) return;
+  toast.classList.remove("is-show");
+  setTimeout(() => (toast.hidden = true), 220);
+}
+
+toastClose?.addEventListener("click", hideToast);
+
+form?.addEventListener("submit", async (e) => {
+  e.preventDefault();
+
+  // Ici tu brancheras Formspree/EmailJS/Backend.
+  // Pour l’instant : on simule une requête réseau.
+  const btn = form.querySelector('button[type="submit"]');
+  const original = btn.textContent;
+  btn.disabled = true;
+  btn.textContent = "Envoi…";
+
+  try {
+    await new Promise(r => setTimeout(r, 650));
+    form.reset();
+    showToast();
+    setTimeout(hideToast, 4200);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = original;
+  }
+});
+</script>
+</body>
+</html>
