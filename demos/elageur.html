@@ -1,0 +1,1454 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Élagage Haut de Gamme — Béthune & alentours | Devis rapide</title>
+  <meta name="description" content="Entreprise d’élagage premium : taille douce, abattage délicat, démontage avec rétention, haubanage, dessouchage. Devis en 2 minutes, intervention rapide." />
+  <meta name="theme-color" content="#0b0f14" />
+
+  <style>
+    /* ===========================
+       ULTRA PREMIUM ONE-PAGE CSS
+       =========================== */
+    :root{
+      --bg:#070a0f;
+      --panel:#0b0f14;
+      --card:#0e141c;
+      --muted:#9aa7b6;
+      --text:#e9f0f7;
+      --brand:#63e6a6;      /* accent luxe vert */
+      --brand2:#7aa7ff;     /* accent froid (premium tech) */
+      --gold:#d7c08a;       /* touche "luxe" */
+      --danger:#ff5c7a;
+      --shadow: 0 22px 70px rgba(0,0,0,.55);
+      --shadow2: 0 14px 40px rgba(0,0,0,.45);
+      --r: 22px;
+      --r2: 16px;
+      --border: 1px solid rgba(255,255,255,.08);
+      --border2: 1px solid rgba(255,255,255,.12);
+      --max: 1180px;
+      --ease: cubic-bezier(.2,.8,.2,1);
+      --font: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family:var(--font);
+      color:var(--text);
+      background:
+        radial-gradient(1200px 500px at 20% -10%, rgba(99,230,166,.22), transparent 60%),
+        radial-gradient(900px 500px at 90% 0%, rgba(122,167,255,.18), transparent 60%),
+        radial-gradient(700px 500px at 50% 110%, rgba(215,192,138,.10), transparent 60%),
+        linear-gradient(180deg, #05070b, #070a0f 40%, #05070b);
+      overflow-x:hidden;
+    }
+
+    a{color:inherit; text-decoration:none}
+    img{max-width:100%; display:block}
+    button, input, select, textarea{font-family:inherit}
+
+    /* Smooth anchor offset for sticky header */
+    section{scroll-margin-top:90px}
+
+    .wrap{max-width:var(--max); margin:0 auto; padding:0 20px}
+    .grid{display:grid; gap:18px}
+    .row{display:flex; gap:14px; align-items:center}
+
+    .badge{
+      display:inline-flex; gap:10px; align-items:center;
+      padding:10px 12px;
+      border:var(--border);
+      border-radius:999px;
+      background:rgba(255,255,255,.04);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 12px 30px rgba(0,0,0,.25);
+      font-size:13px;
+      color:rgba(233,240,247,.92);
+      letter-spacing:.2px;
+      white-space:nowrap;
+    }
+    .dot{width:9px; height:9px; border-radius:50%;
+      background: radial-gradient(circle at 30% 30%, #fff, var(--brand));
+      box-shadow: 0 0 0 4px rgba(99,230,166,.15);
+    }
+
+    /* ===========================
+       HEADER
+       =========================== */
+    header{
+      position:sticky; top:0; z-index:50;
+      background:rgba(7,10,15,.55);
+      backdrop-filter: blur(14px);
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .nav{
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0;
+    }
+    .logo{
+      display:flex; gap:12px; align-items:center;
+    }
+    .mark{
+      width:38px; height:38px; border-radius:14px;
+      background:
+        radial-gradient(12px 12px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,.0)),
+        linear-gradient(135deg, rgba(99,230,166,.95), rgba(122,167,255,.85));
+      box-shadow: 0 18px 40px rgba(99,230,166,.14), 0 18px 40px rgba(122,167,255,.10);
+      position:relative;
+      overflow:hidden;
+    }
+    .mark:after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: conic-gradient(from 120deg, transparent 0 50%, rgba(255,255,255,.25), transparent 60% 100%);
+      animation: spin 6s linear infinite;
+    }
+    @keyframes spin{to{transform:rotate(360deg)}}
+    .brand{
+      display:flex; flex-direction:column; line-height:1.05;
+    }
+    .brand strong{font-size:14px; letter-spacing:.6px}
+    .brand span{font-size:12px; color:var(--muted)}
+
+    .links{display:none; gap:18px; align-items:center}
+    .links a{
+      font-size:13px; color:rgba(233,240,247,.9);
+      opacity:.9;
+      padding:10px 10px;
+      border-radius:12px;
+      transition: all .25s var(--ease);
+    }
+    .links a:hover{
+      background:rgba(255,255,255,.05);
+      opacity:1;
+      transform: translateY(-1px);
+    }
+
+    .cta{
+      display:flex; gap:10px; align-items:center;
+    }
+    .btn{
+      border:var(--border);
+      background:rgba(255,255,255,.04);
+      color:var(--text);
+      padding:11px 14px;
+      border-radius:14px;
+      font-size:13px;
+      letter-spacing:.2px;
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      transition: all .28s var(--ease);
+      cursor:pointer;
+      user-select:none;
+    }
+    .btn:hover{transform:translateY(-1px); background:rgba(255,255,255,.06)}
+    .btn:active{transform:translateY(0px) scale(.99)}
+    .btn.primary{
+      border:1px solid rgba(99,230,166,.35);
+      background: linear-gradient(135deg, rgba(99,230,166,.95), rgba(122,167,255,.75));
+      color:#081017;
+      font-weight:650;
+      box-shadow: 0 18px 45px rgba(99,230,166,.18), 0 18px 45px rgba(122,167,255,.12);
+    }
+    .btn.primary:hover{filter:saturate(1.1) brightness(1.05)}
+    .btn.ghost{
+      background:transparent;
+    }
+    .hamb{
+      width:44px; height:44px;
+      border-radius:14px;
+      border:var(--border);
+      background:rgba(255,255,255,.03);
+      display:inline-flex; align-items:center; justify-content:center;
+    }
+    .hamb svg{opacity:.9}
+
+    @media(min-width: 940px){
+      .links{display:flex}
+      .hamb{display:none}
+    }
+
+    /* ===========================
+       HERO
+       =========================== */
+    .hero{
+      padding:56px 0 20px;
+      position:relative;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(700px 300px at 25% 0%, rgba(99,230,166,.16), transparent 60%),
+        radial-gradient(680px 320px at 80% 5%, rgba(122,167,255,.13), transparent 60%);
+      pointer-events:none;
+    }
+    .hero-grid{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:22px;
+      align-items:stretch;
+    }
+    @media(min-width: 940px){
+      .hero-grid{grid-template-columns: 1.1fr .9fr}
+    }
+
+    .headline{
+      padding:22px 0;
+    }
+    h1{
+      margin:14px 0 12px;
+      font-size: clamp(30px, 4.2vw, 54px);
+      line-height:1.03;
+      letter-spacing:-.8px;
+    }
+    .sub{
+      color:rgba(233,240,247,.85);
+      font-size:16px;
+      line-height:1.6;
+      max-width:60ch;
+    }
+    .hl{
+      background: linear-gradient(135deg, rgba(255,255,255,.98), rgba(255,255,255,.78));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+    }
+    .shine{
+      background: linear-gradient(135deg, rgba(99,230,166,.95), rgba(122,167,255,.85));
+      -webkit-background-clip:text;
+      background-clip:text;
+      color:transparent;
+      text-shadow: 0 24px 60px rgba(99,230,166,.12);
+    }
+
+    .hero-actions{
+      display:flex; flex-wrap:wrap;
+      gap:10px; margin-top:18px;
+    }
+
+    .kpis{
+      display:grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap:12px;
+      margin-top:18px;
+      max-width:520px;
+    }
+    .kpi{
+      border:var(--border);
+      border-radius:18px;
+      padding:12px 12px;
+      background:rgba(255,255,255,.03);
+      backdrop-filter: blur(10px);
+    }
+    .kpi strong{display:block; font-size:18px}
+    .kpi span{display:block; color:var(--muted); font-size:12px; margin-top:2px}
+
+    /* Right card (premium quote box) */
+    .hero-card{
+      border:var(--border);
+      border-radius: calc(var(--r) + 6px);
+      background:
+        radial-gradient(900px 450px at 20% 0%, rgba(99,230,166,.08), transparent 65%),
+        radial-gradient(700px 420px at 100% 10%, rgba(122,167,255,.07), transparent 60%),
+        rgba(255,255,255,.03);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+      position:relative;
+    }
+    .hero-card::after{
+      content:"";
+      position:absolute; inset:0;
+      background: linear-gradient(180deg, rgba(255,255,255,.06), transparent 28%, rgba(0,0,0,.32));
+      pointer-events:none;
+    }
+    .hero-card-inner{
+      position:relative;
+      padding:18px;
+      z-index:1;
+    }
+    .mini-title{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .mini-title strong{font-size:14px; letter-spacing:.3px}
+    .pill{
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(215,192,138,.25);
+      background: rgba(215,192,138,.08);
+      color:rgba(215,192,138,.92);
+      font-size:12px;
+      white-space:nowrap;
+    }
+    .hero-photo{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      position:relative;
+      min-height: 210px;
+      background:
+        radial-gradient(400px 220px at 30% 20%, rgba(99,230,166,.18), transparent 65%),
+        radial-gradient(420px 260px at 80% 30%, rgba(122,167,255,.14), transparent 65%),
+        linear-gradient(135deg, rgba(255,255,255,.04), rgba(255,255,255,.015));
+    }
+    .hero-photo .glass{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(360px 220px at 30% 30%, rgba(255,255,255,.12), transparent 70%),
+        linear-gradient(180deg, rgba(0,0,0,.1), rgba(0,0,0,.35));
+      pointer-events:none;
+    }
+    .hero-photo .caption{
+      position:absolute; left:14px; right:14px; bottom:12px;
+      display:flex; justify-content:space-between; align-items:flex-end;
+      gap:12px;
+    }
+    .hero-photo .caption .txt{
+      max-width:70%;
+    }
+    .hero-photo .caption .txt strong{
+      display:block; font-size:14px; letter-spacing:.2px;
+    }
+    .hero-photo .caption .txt span{
+      display:block; font-size:12px; color:rgba(233,240,247,.8); margin-top:3px;
+    }
+
+    /* ===========================
+       SECTION LAYOUT
+       =========================== */
+    .section{
+      padding:56px 0;
+    }
+    .section h2{
+      margin:0 0 10px;
+      font-size: clamp(22px, 2.3vw, 32px);
+      letter-spacing:-.3px;
+    }
+    .section p.lead{
+      margin:0 0 18px;
+      color:rgba(233,240,247,.82);
+      line-height:1.7;
+      max-width:80ch;
+    }
+    .split{
+      display:grid;
+      grid-template-columns: 1fr;
+      gap:18px;
+      align-items:start;
+    }
+    @media(min-width: 940px){
+      .split{grid-template-columns: 1fr 1fr}
+    }
+
+    .card{
+      border:var(--border);
+      border-radius: var(--r);
+      background: rgba(255,255,255,.03);
+      box-shadow: var(--shadow2);
+      overflow:hidden;
+    }
+    .card.pad{padding:18px}
+    .card .topline{
+      display:flex; justify-content:space-between; align-items:center;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .tag{
+      font-size:12px;
+      color:rgba(233,240,247,.85);
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.10);
+      background:rgba(255,255,255,.03);
+    }
+
+    /* Services */
+    .services{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media(min-width: 740px){
+      .services{grid-template-columns: repeat(2, minmax(0, 1fr))}
+    }
+    .svc{
+      padding:16px;
+      border-radius: var(--r2);
+      border:1px solid rgba(255,255,255,.08);
+      background:
+        radial-gradient(350px 180px at 20% 0%, rgba(99,230,166,.10), transparent 65%),
+        rgba(255,255,255,.02);
+      transition: transform .28s var(--ease), border-color .28s var(--ease), background .28s var(--ease);
+      min-height: 110px;
+    }
+    .svc:hover{
+      transform: translateY(-3px);
+      border-color: rgba(99,230,166,.25);
+      background:
+        radial-gradient(350px 180px at 20% 0%, rgba(99,230,166,.14), transparent 65%),
+        rgba(255,255,255,.03);
+    }
+    .svc .icon{
+      width:40px; height:40px; border-radius: 14px;
+      display:inline-flex; align-items:center; justify-content:center;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      margin-bottom:10px;
+    }
+    .svc strong{display:block; font-size:14px}
+    .svc span{display:block; color:var(--muted); font-size:12px; margin-top:4px; line-height:1.5}
+
+    /* Gallery */
+    .gallery{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media(min-width: 740px){
+      .gallery{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    }
+    .shot{
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      overflow:hidden;
+      background:
+        radial-gradient(260px 160px at 20% 20%, rgba(99,230,166,.18), transparent 70%),
+        radial-gradient(260px 160px at 80% 30%, rgba(122,167,255,.16), transparent 70%),
+        linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.015));
+      min-height: 180px;
+      position:relative;
+      transition: transform .28s var(--ease), border-color .28s var(--ease);
+    }
+    .shot:hover{transform: translateY(-3px); border-color: rgba(215,192,138,.22)}
+    .shot .cap{
+      position:absolute; left:12px; right:12px; bottom:12px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(0,0,0,.28);
+      backdrop-filter: blur(12px);
+      border-radius: 14px;
+      padding:10px;
+      display:flex; justify-content:space-between; align-items:flex-start; gap:10px;
+    }
+    .shot .cap strong{font-size:13px}
+    .shot .cap span{font-size:12px; color:rgba(233,240,247,.78)}
+    .shot .cap em{
+      font-style:normal;
+      color:rgba(215,192,138,.95);
+      font-size:12px;
+      white-space:nowrap;
+    }
+
+    /* Pricing */
+    .pricing{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media(min-width: 940px){
+      .pricing{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    }
+    .price{
+      padding:18px;
+      border-radius: var(--r);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      position:relative;
+      overflow:hidden;
+    }
+    .price::before{
+      content:"";
+      position:absolute; inset:-60%;
+      background: radial-gradient(circle at 30% 30%, rgba(99,230,166,.12), transparent 60%);
+      transform: rotate(12deg);
+      pointer-events:none;
+    }
+    .price h3{margin:0 0 6px; font-size:16px}
+    .price .from{
+      color:rgba(233,240,247,.85);
+      font-size:13px;
+      margin-bottom:10px;
+    }
+    .price .val{
+      display:flex; align-items:baseline; gap:8px;
+      margin:10px 0 12px;
+    }
+    .price .val strong{font-size:34px; letter-spacing:-.6px}
+    .price .val span{color:var(--muted); font-size:12px}
+    .list{margin:0; padding:0 0 0 18px; color:rgba(233,240,247,.82); line-height:1.65; font-size:13px}
+    .price .mini{
+      margin-top:14px;
+      display:flex; gap:10px; flex-wrap:wrap;
+    }
+    .chip{
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color:rgba(233,240,247,.88);
+    }
+    .price.featured{
+      border-color: rgba(99,230,166,.28);
+      box-shadow: 0 28px 70px rgba(99,230,166,.12), var(--shadow2);
+      background:
+        radial-gradient(500px 220px at 20% 0%, rgba(99,230,166,.14), transparent 60%),
+        rgba(255,255,255,.03);
+    }
+    .ribbon{
+      position:absolute; top:14px; right:14px;
+      font-size:12px;
+      padding:8px 10px;
+      border-radius:999px;
+      border:1px solid rgba(215,192,138,.25);
+      background: rgba(215,192,138,.09);
+      color:rgba(215,192,138,.95);
+      z-index:2;
+    }
+
+    /* Reviews */
+    .reviews{
+      display:grid;
+      grid-template-columns: repeat(1, minmax(0, 1fr));
+      gap:14px;
+    }
+    @media(min-width: 940px){
+      .reviews{grid-template-columns: repeat(3, minmax(0, 1fr))}
+    }
+    .review{
+      padding:16px;
+      border-radius: var(--r);
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+    }
+    .review .stars{letter-spacing:2px; color:rgba(215,192,138,.92)}
+    .review p{margin:10px 0 12px; color:rgba(233,240,247,.82); line-height:1.7; font-size:13px}
+    .review .who{display:flex; justify-content:space-between; gap:10px; align-items:center}
+    .review .who strong{font-size:13px}
+    .review .who span{font-size:12px; color:var(--muted)}
+
+    /* FAQ */
+    details{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding:14px 14px;
+    }
+    details summary{
+      cursor:pointer;
+      list-style:none;
+      display:flex; justify-content:space-between; gap:12px;
+      font-weight:600;
+      font-size:14px;
+    }
+    details summary::-webkit-details-marker{display:none}
+    details p{margin:10px 0 0; color:rgba(233,240,247,.82); line-height:1.7; font-size:13px}
+    .chev{
+      width:22px; height:22px; border-radius:8px;
+      border:1px solid rgba(255,255,255,.12);
+      display:inline-flex; align-items:center; justify-content:center;
+      opacity:.85;
+      transition: transform .25s var(--ease);
+      flex:0 0 auto;
+    }
+    details[open] .chev{transform: rotate(180deg)}
+
+    /* ===========================
+       MAP + FORM
+       =========================== */
+    .map{
+      border-radius: var(--r);
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.02);
+      min-height: 360px;
+    }
+    .map iframe{
+      width:100%; height:380px;
+      border:0;
+      filter: saturate(.9) contrast(1.05) brightness(.92);
+    }
+    .form{
+      display:grid; gap:12px;
+    }
+    .field{
+      display:grid; gap:8px;
+    }
+    label{font-size:12px; color:rgba(233,240,247,.82)}
+    input, select, textarea{
+      width:100%;
+      border-radius: 14px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.18);
+      color:var(--text);
+      padding:12px 12px;
+      outline:none;
+      transition: border-color .25s var(--ease), transform .25s var(--ease);
+    }
+    textarea{min-height:120px; resize:vertical}
+    input:focus, select:focus, textarea:focus{
+      border-color: rgba(99,230,166,.35);
+      transform: translateY(-1px);
+    }
+    .help{
+      font-size:12px; color:var(--muted); line-height:1.5;
+    }
+    .success{
+      display:none;
+      border:1px solid rgba(99,230,166,.28);
+      background: rgba(99,230,166,.10);
+      padding:12px 12px;
+      border-radius: 16px;
+      color:rgba(233,240,247,.92);
+    }
+    .error{
+      display:none;
+      border:1px solid rgba(255,92,122,.28);
+      background: rgba(255,92,122,.10);
+      padding:12px 12px;
+      border-radius: 16px;
+      color:rgba(233,240,247,.92);
+    }
+
+    /* ===========================
+       FOOTER + STICKY CONTACT BAR
+       =========================== */
+    footer{
+      padding:26px 0 88px;
+      color:rgba(233,240,247,.68);
+      border-top:1px solid rgba(255,255,255,.06);
+      background: rgba(0,0,0,.12);
+    }
+    .foot{
+      display:flex; flex-direction:column; gap:10px;
+    }
+    @media(min-width:740px){
+      .foot{flex-direction:row; justify-content:space-between; align-items:center}
+    }
+
+    .sticky{
+      position:fixed;
+      left:14px; right:14px; bottom:14px;
+      z-index:60;
+      border-radius: 18px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(10,14,20,.62);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 70px rgba(0,0,0,.55);
+      padding:10px;
+      display:flex;
+      gap:10px;
+      align-items:center;
+      justify-content:space-between;
+      transform: translateY(0);
+      transition: transform .35s var(--ease), opacity .35s var(--ease);
+    }
+    .sticky.hide{transform: translateY(110%); opacity:.0}
+    .sticky .left{
+      display:flex; flex-direction:column; gap:2px;
+      min-width: 0;
+    }
+    .sticky .left strong{font-size:13px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .sticky .left span{font-size:12px; color:rgba(233,240,247,.78); white-space:nowrap; overflow:hidden; text-overflow:ellipsis}
+    .sticky .right{display:flex; gap:10px}
+
+    /* ===========================
+       MOBILE DRAWER MENU
+       =========================== */
+    .drawer{
+      position:fixed; inset:0; z-index:80;
+      background: rgba(0,0,0,.55);
+      backdrop-filter: blur(4px);
+      display:none;
+      padding:16px;
+    }
+    .drawer.open{display:block}
+    .drawer .panel{
+      max-width:520px;
+      margin:60px auto 0;
+      border-radius: 24px;
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(11,15,20,.92);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .drawer .panel .head{
+      display:flex; justify-content:space-between; align-items:center;
+      padding:14px 14px;
+      border-bottom:1px solid rgba(255,255,255,.06);
+    }
+    .drawer .panel .body{
+      padding:10px;
+      display:grid;
+      gap:8px;
+    }
+    .drawer a{
+      padding:12px 12px;
+      border-radius: 16px;
+      border:1px solid rgba(255,255,255,.08);
+      background: rgba(255,255,255,.03);
+      font-size:14px;
+    }
+
+    /* ===========================
+       REVEAL ANIMATIONS
+       =========================== */
+    .reveal{
+      opacity:0;
+      transform: translateY(12px);
+      transition: opacity .7s var(--ease), transform .7s var(--ease);
+    }
+    .reveal.on{
+      opacity:1;
+      transform: translateY(0);
+    }
+    /* ===== Header mobile premium ===== */
+.nav{
+  display:grid;
+  grid-template-columns: 1fr auto;
+  align-items:center;
+  gap:12px;
+}
+
+/* Mobile CTA bar sous le header */
+.mobile-cta-bar{ display:none; padding: 0 20px 12px; }
+.w100{ width:100%; justify-content:center; }
+
+/* CTA blocks */
+.cta-desktop{ display:flex; gap:10px; align-items:center; }
+.cta-mobile{ display:none; gap:10px; align-items:center; }
+
+/* Bouton icône (premium) */
+.btn.icon{
+  width:44px; height:44px;
+  padding:0;
+  border-radius:14px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,.03);
+}
+
+/* Brand tightening */
+.brand .brand-sub{ opacity:.85; }
+
+/* <= 940px : on passe en mode mobile propre */
+@media (max-width: 940px){
+  .links{ display:none; }
+  .cta-desktop{ display:none; }
+  .cta-mobile{ display:flex; }
+  .mobile-cta-bar{ display:block; }
+
+  /* Logo compact */
+  .brand strong{ font-size:13px; letter-spacing:.4px; }
+  .brand .brand-sub{ font-size:11px; max-width: 180px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .mark{ width:34px; height:34px; border-radius:13px; }
+
+  header .wrap{ padding-left: 20px; padding-right: 20px; }
+}
+
+/* Très petit écran : on cache la ligne ville pour respirer */
+@media (max-width: 380px){
+  .brand .brand-sub{ display:none; }
+}
+
+
+    /* Reduce motion */
+    @media(prefers-reduced-motion: reduce){
+      *{animation:none !important; transition:none !important}
+      .reveal{opacity:1; transform:none}
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ===========================
+       HEADER
+       =========================== -->
+  <header>
+   <div class="wrap nav">
+  <a class="logo" href="#top" aria-label="Accueil">
+    <div class="mark" aria-hidden="true"></div>
+    <div class="brand">
+      <strong>ÉLAGAGE • PRESTIGE</strong>
+      <span class="brand-sub">Béthune • Lens • Arras • Lille</span>
+    </div>
+  </a>
+
+  <nav class="links" aria-label="Navigation">
+    <a href="#services">Services</a>
+    <a href="#realisations">Réalisations</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#avis">Avis</a>
+    <a href="#zone">Zone & Carte</a>
+    <a href="#devis">Devis</a>
+  </nav>
+
+  <!-- Actions desktop -->
+  <div class="cta cta-desktop">
+    <a class="btn ghost" href="tel:+33600000000" title="Appeler">
+      <span aria-hidden="true">📞</span> 06 00 00 00 00
+    </a>
+    <a class="btn primary" href="#devis">
+      <span aria-hidden="true">⚡</span> Devis express
+    </a>
+    <button class="hamb" id="openDrawer" aria-label="Ouvrir le menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Actions mobile -->
+  <div class="cta cta-mobile">
+    <a class="btn icon" href="tel:+33600000000" aria-label="Appeler">
+      <span aria-hidden="true">📞</span>
+    </a>
+
+    <button class="btn icon" id="openDrawerMobile" aria-label="Ouvrir le menu">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+        <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Bande CTA mobile (juste sous le header) -->
+<div class="wrap mobile-cta-bar">
+  <a class="btn primary w100" href="#devis">
+    <span aria-hidden="true">⚡</span> Devis express (2 min)
+  </a>
+</div>
+
+  </header>
+
+  <!-- ===========================
+       HERO
+       =========================== -->
+  <main id="top" class="hero">
+    <div class="wrap hero-grid">
+      <div class="headline reveal">
+        <div class="row" style="flex-wrap:wrap">
+          <span class="badge"><span class="dot" aria-hidden="true"></span> Intervention rapide • Sécurité maîtrisée • Travail soigné</span>
+          <span class="badge" style="border-color: rgba(215,192,138,.18)"><span class="dot" style="background:radial-gradient(circle at 30% 30%, #fff, var(--gold))" aria-hidden="true"></span> Devis clair + photos • Sans surprise</span>
+        </div>
+
+        <h1>
+          Élagage <span class="shine">haut de gamme pour jardins exigeants</span><br />
+          <span class="hl"></span>
+        </h1>
+
+        <p class="sub">
+          Taille douce, abattage délicat, démontage avec rétention, haubanage, dessouchage.
+          Un rendu propre, une sécurité impeccable, et un suivi premium.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn primary" href="#devis">Obtenir un devis (2 min)</a>
+          <a class="btn" href="#realisations">Voir les réalisations</a>
+          <a class="btn" href="#tarifs">Consulter les tarifs</a>
+        </div>
+
+        <div class="kpis">
+          <div class="kpi">
+            <strong>+10 ans</strong>
+            <span>Expérience terrain</span>
+          </div>
+          <div class="kpi">
+            <strong>Assuré</strong>
+            <span>RC Pro + décennale*</span>
+          </div>
+          <div class="kpi">
+            <strong>Équipe discrète</strong>
+            <span>Chantier propre</span>
+          </div>
+          <div class="kpi">
+            <strong>Devis précis</strong>
+            <span>Photos + explications</span>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-card reveal">
+        <div class="hero-card-inner">
+          <div class="mini-title">
+            <strong>Un rendu “wow”, sans prise de tête</strong>
+            <span class="pill">Créneaux sous 7 jours*</span>
+          </div>
+
+          <div class="hero-photo" aria-label="Visuel premium">
+            <div class="glass" aria-hidden="true"></div>
+            <div class="caption">
+              <div class="txt">
+                <strong>Avant / Après — Taille de restructuration</strong>
+                <span>Respect de l’arbre • Esthétique • Luminosité</span>
+              </div>
+              <div class="badge" style="padding:8px 10px; font-size:12px">
+                <span class="dot" style="background:radial-gradient(circle at 30% 30%, #fff, var(--brand2))" aria-hidden="true"></span>
+                Photos envoyées
+              </div>
+            </div>
+          </div>
+
+          <div style="height:12px"></div>
+
+          <div class="card pad" style="background: rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.08)">
+            <div class="topline">
+              <strong style="font-size:14px">Ce qui fait la différence</strong>
+              <span class="tag">Qualité premium</span>
+            </div>
+            <ul class="list">
+              <li>Protection des zones sensibles (terrasse, vitres, massifs)</li>
+              <li>Techniques de démontage sécurisées (rétention / cordage)</li>
+              <li>Finitions nettes + évacuation possible</li>
+              <li>Conseils d’entretien & saisonnalité</li>
+            </ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===========================
+       SERVICES
+       =========================== -->
+  <section id="services" class="section">
+    <div class="wrap">
+      <h2 class="reveal">Services premium</h2>
+      <p class="lead reveal">
+        Une approche “propre et maîtrisée” : on optimise la sécurité, la santé de l’arbre et l’esthétique du jardin.
+      </p>
+
+      <div class="services">
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🌿</div>
+          <strong>Taille douce & d’entretien</strong>
+          <span>Respect des flux de sève, coupe propre, silhouette harmonieuse.</span>
+        </div>
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🪓</div>
+          <strong>Abattage délicat</strong>
+          <span>Gestion des contraintes : accès étroit, zones fragiles, voisinage.</span>
+        </div>
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🧗</div>
+          <strong>Démontage avec rétention</strong>
+          <span>Technique corde + rétention pour descendre les sections en sécurité.</span>
+        </div>
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🪢</div>
+          <strong>Haubanage</strong>
+          <span>Stabilisation de branches fragiles pour préserver l’arbre.</span>
+        </div>
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🧱</div>
+          <strong>Dessouchage</strong>
+          <span>Rognage / extraction selon configuration et accès.</span>
+        </div>
+        <div class="svc reveal">
+          <div class="icon" aria-hidden="true">🚚</div>
+          <strong>Évacuation & broyage</strong>
+          <span>Option évacuation complète, ou valorisation en broyat.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       REALISATIONS (GALLERY)
+       =========================== -->
+  <section id="realisations" class="section">
+    <div class="wrap">
+      <div class="row" style="justify-content:space-between; flex-wrap:wrap">
+        <div>
+          <h2 class="reveal">Réalisations</h2>
+          <p class="lead reveal">Quelques exemples de chantiers (remplace par tes photos plus tard).</p>
+        </div>
+        <a class="btn reveal" href="#devis">Demander un devis</a>
+      </div>
+
+      <div class="gallery">
+        <div class="shot reveal">
+          <div class="cap">
+            <div>
+              <strong>Taille de réduction</strong>
+              <span>Haie + arbre isolé</span>
+            </div>
+            <em>★★★★★</em>
+          </div>
+        </div>
+        <div class="shot reveal">
+          <div class="cap">
+            <div>
+              <strong>Démontage rétention</strong>
+              <span>Accès difficile</span>
+            </div>
+            <em>★★★★★</em>
+          </div>
+        </div>
+        <div class="shot reveal">
+          <div class="cap">
+            <div>
+              <strong>Abattage sécurisé</strong>
+              <span>Proche habitation</span>
+            </div>
+            <em>★★★★★</em>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       TARIFS (PRICING)
+       =========================== -->
+  <section id="tarifs" class="section">
+    <div class="wrap">
+      <h2 class="reveal">Tarifs transparents</h2>
+      <p class="lead reveal">
+        Les prix dépendent de la hauteur, du volume, de l’accès, des risques et de l’évacuation.
+        Ici, des repères clairs. Devis final après photos / visite.
+      </p>
+
+      <div class="pricing">
+        <div class="price reveal">
+          <h3>Entretien jardin</h3>
+          <div class="from">Taille douce / haies / arbustes</div>
+          <div class="val"><strong>à partir de 120€</strong><span>/ intervention</span></div>
+          <ul class="list">
+            <li>Taille d’entretien (haies/arbustes)</li>
+            <li>Petite taille de formation</li>
+            <li>Nettoyage + finition propre</li>
+          </ul>
+          <div class="mini">
+            <span class="chip">Rapide</span>
+            <span class="chip">Propre</span>
+            <span class="chip">Idéal entretien</span>
+          </div>
+        </div>
+
+        <div class="price featured reveal">
+          <span class="ribbon">Le plus demandé</span>
+          <h3>Élagage premium</h3>
+          <div class="from">Taille technique & esthétique</div>
+          <div class="val"><strong>à partir de 290€</strong><span>/ arbre</span></div>
+          <ul class="list">
+            <li>Taille de réduction / restructuration</li>
+            <li>Accès moyen, sécurisation incluse</li>
+            <li>Conseils saison + maintien forme</li>
+          </ul>
+          <div class="mini">
+            <span class="chip">Sécurité</span>
+            <span class="chip">Finition luxe</span>
+            <span class="chip">Conseil</span>
+          </div>
+        </div>
+
+        <div class="price reveal">
+          <h3>Abattage / démontage</h3>
+          <div class="from">Arbres dangereux / zones sensibles</div>
+          <div class="val"><strong>à partir de 490€</strong><span>/ chantier</span></div>
+          <ul class="list">
+            <li>Abattage délicat ou démontage rétention</li>
+            <li>Gestion des risques & protections</li>
+            <li>Évacuation en option</li>
+          </ul>
+          <div class="mini">
+            <span class="chip">Rétention</span>
+            <span class="chip">Accès difficile</span>
+            <span class="chip">Sécurisé</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="help reveal" style="margin-top:14px">
+        *Mention “décennale” seulement si tu l’as réellement. Sinon remplace par “RC Pro”.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===========================
+       AVIS
+       =========================== -->
+  <section id="avis" class="section">
+    <div class="wrap">
+      <h2 class="reveal">Avis clients</h2>
+      <p class="lead reveal">Du concret : ponctualité, sécurité, chantier propre, résultat net.</p>
+
+      <div class="reviews">
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Travail impeccable, jardin laissé nickel. On sent la maîtrise, et les explications étaient claires.”</p>
+          <div class="who">
+            <strong>Claire D.</strong>
+            <span>Béthune</span>
+          </div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Démontage avec rétention proche de la maison : zéro stress, zéro dégât. Très pro.”</p>
+          <div class="who">
+            <strong>Marc L.</strong>
+            <span>Lens</span>
+          </div>
+        </div>
+        <div class="review reveal">
+          <div class="stars">★★★★★</div>
+          <p>“Le rendu est hyper propre et esthétique. On voit que c’est du premium, pas du vite fait.”</p>
+          <div class="who">
+            <strong>Sonia P.</strong>
+            <span>Arras</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       ZONE + MAP
+       =========================== -->
+  <section id="zone" class="section">
+    <div class="wrap split">
+      <div class="card pad reveal">
+        <div class="topline">
+          <strong style="font-size:14px">Zone d’intervention</strong>
+          <span class="tag">Hauts-de-France</span>
+        </div>
+        <p class="lead" style="margin:0 0 12px">
+          Béthune, Lens, Arras, Lille et alentours.  
+          Déplacements possibles sur demande selon le chantier.
+        </p>
+        <ul class="list">
+          <li>Intervention rapide selon planning</li>
+          <li>Visite / devis sur photo possible</li>
+          <li>Chantiers complexes : on étudie tout</li>
+        </ul>
+
+        <div style="height:12px"></div>
+        <a class="btn primary" href="#devis">Devis express</a>
+        <a class="btn" href="tel:+33600000000" style="margin-left:8px">Appeler</a>
+      </div>
+
+      <div class="map reveal" aria-label="Carte Google Maps">
+        <!-- IMPORTANT :
+          1) Va sur Google Maps > partage > intégrer une carte
+          2) Copie l’iframe et remplace le src ci-dessous
+        -->
+        <iframe
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2526.935671235579!2d2.6401016!3d50.5308878!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47dd24e4b28c2a3d%3A0xb4b2c4b7d3b7a76c!2sB%C3%A9thune!5e0!3m2!1sfr!2sfr!4v0000000000000">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FAQ
+       =========================== -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="reveal">Questions fréquentes</h2>
+      <p class="lead reveal">On te répond clairement, sans bla-bla.</p>
+
+      <div class="grid" style="grid-template-columns: 1fr; gap:12px">
+        <details class="reveal">
+          <summary>Est-ce que vous évacuez les déchets verts ?
+            <span class="chev" aria-hidden="true">⌄</span>
+          </summary>
+          <p>Oui, en option. Selon le volume, on propose évacuation complète ou broyage/valorisation (broyat).</p>
+        </details>
+
+        <details class="reveal">
+          <summary>Vous intervenez sur des zones proches de maisons / câbles ?
+            <span class="chev" aria-hidden="true">⌄</span>
+          </summary>
+          <p>Oui. On privilégie les techniques de démontage sécurisé (cordage + rétention) et on protège les zones sensibles.</p>
+        </details>
+
+        <details class="reveal">
+          <summary>Comment obtenir un devis rapidement ?
+            <span class="chev" aria-hidden="true">⌄</span>
+          </summary>
+          <p>Remplis le formulaire (2 minutes) et joins une photo si possible : on répond vite avec un devis clair.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FORM (DEMANDE DE DEVIS)
+       =========================== -->
+  <section id="devis" class="section">
+    <div class="wrap split">
+      <div class="card pad reveal">
+        <div class="topline">
+          <strong style="font-size:14px">Demande de devis</strong>
+          <span class="tag">Réponse rapide</span>
+        </div>
+        <p class="lead" style="margin-top:0">
+          Donne un max d’infos : hauteur approximative, accès, contraintes (terrasse, clôture, câbles), et si tu veux l’évacuation.
+        </p>
+
+        <div class="success" id="successBox">
+          ✅ Merci ! Ta demande est envoyée. On te recontacte rapidement.
+        </div>
+        <div class="error" id="errorBox">
+          ❌ Oups, envoi impossible pour le moment. Réessaie ou appelle directement.
+        </div>
+
+        <!--
+          OPTION A (recommandée) : Formspree
+          - Remplace action="" par ton endpoint Formspree : https://formspree.io/f/XXXXXX
+          - L’envoi se fera sans reload, avec message de succès.
+        -->
+        <form class="form" id="quoteForm" action="" method="POST" novalidate>
+          <div class="field">
+            <label for="name">Nom</label>
+            <input id="name" name="name" placeholder="Ex : Martin" autocomplete="name" required />
+          </div>
+
+          <div class="field">
+            <label for="phone">Téléphone</label>
+            <input id="phone" name="phone" placeholder="Ex : 06 12 34 56 78" autocomplete="tel" required />
+          </div>
+
+          <div class="field">
+            <label for="city">Ville</label>
+            <input id="city" name="city" placeholder="Ex : Béthune" autocomplete="address-level2" required />
+          </div>
+
+          <div class="field">
+            <label for="type">Type d’intervention</label>
+            <select id="type" name="type" required>
+              <option value="">Choisir…</option>
+              <option>Élagage (taille douce / réduction)</option>
+              <option>Abattage</option>
+              <option>Démontage avec rétention</option>
+              <option>Haie / arbustes</option>
+              <option>Dessouchage</option>
+              <option>Autre</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="details">Description</label>
+            <textarea id="details" name="details" placeholder="Hauteur approx, accès, contraintes, évacuation…"></textarea>
+            <div class="help">Astuce : ajoute “accès par portail 90 cm”, “proche câble”, “terrasse fragile”, etc.</div>
+          </div>
+
+          <!--
+            Upload de fichier : possible si ton endpoint le supporte.
+            Si tu veux absolument upload via Formspree: il faut un plan compatible.
+            Sinon retire ce champ.
+          -->
+          <div class="field">
+            <label for="photo">Photo (optionnel)</label>
+            <input id="photo" name="photo" type="file" accept="image/*" />
+            <div class="help">Si l’upload ne passe pas, envoie la photo par SMS après.</div>
+          </div>
+
+          <button class="btn primary" type="submit">Envoyer ma demande</button>
+          <div class="help">En envoyant, tu acceptes d’être recontacté. Données utilisées uniquement pour traiter ta demande.</div>
+        </form>
+      </div>
+
+      <div class="card pad reveal">
+        <div class="topline">
+          <strong style="font-size:14px">Contact direct</strong>
+          <span class="tag">Ultra simple</span>
+        </div>
+
+        <div class="grid">
+          <div class="card pad" style="background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.08)">
+            <strong style="display:block; font-size:14px; margin-bottom:6px">Téléphone</strong>
+            <div class="row" style="justify-content:space-between">
+              <span style="color:rgba(233,240,247,.85)">06 00 00 00 00</span>
+              <a class="btn" href="tel:+33600000000">Appeler</a>
+            </div>
+          </div>
+
+          <div class="card pad" style="background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.08)">
+            <strong style="display:block; font-size:14px; margin-bottom:6px">Email</strong>
+            <div class="row" style="justify-content:space-between; flex-wrap:wrap">
+              <span style="color:rgba(233,240,247,.85)">contact@elagage-prestige.fr</span>
+              <a class="btn" href="mailto:contact@elagage-prestige.fr">Écrire</a>
+            </div>
+          </div>
+
+          <div class="card pad" style="background:rgba(0,0,0,.18); border:1px solid rgba(255,255,255,.08)">
+            <strong style="display:block; font-size:14px; margin-bottom:6px">Engagements</strong>
+            <ul class="list" style="margin:0">
+              <li>Chantier propre & respect voisinage</li>
+              <li>Sécurité : EPI + méthodes adaptées</li>
+              <li>Devis clair (photos + explications)</li>
+            </ul>
+          </div>
+
+          <p class="help">*Remplace ces infos par les vraies (SIRET, assurance, zone, etc.).</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===========================
+       FOOTER
+       =========================== -->
+  <footer>
+    <div class="wrap foot">
+      <div>
+        <strong style="color:rgba(233,240,247,.85)">ÉLAGAGE • PRESTIGE</strong>
+        <div style="font-size:12px; margin-top:6px">
+          SIRET : XXXXX • Assurance : RC Pro • © <span id="year"></span>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap">
+        <a class="btn" href="#services">Services</a>
+        <a class="btn" href="#tarifs">Tarifs</a>
+        <a class="btn primary" href="#devis">Devis</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===========================
+       STICKY CONTACT BAR
+       =========================== -->
+  <div class="sticky" id="stickyBar" role="region" aria-label="Barre de contact">
+    <div class="left">
+      <strong>Besoin d’un devis ?</strong>
+      <span>Réponse rapide • Béthune & alentours</span>
+    </div>
+    <div class="right">
+      <a class="btn" href="tel:+33600000000">📞 Appeler</a>
+      <a class="btn primary" href="#devis">⚡ Devis</a>
+    </div>
+  </div>
+
+  <!-- ===========================
+       MOBILE DRAWER
+       =========================== -->
+  <div class="drawer" id="drawer" aria-hidden="true">
+    <div class="panel">
+      <div class="head">
+        <strong>Menu</strong>
+        <button class="btn" id="closeDrawer">Fermer</button>
+      </div>
+      <div class="body">
+        <a href="#services">Services</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="#tarifs">Tarifs</a>
+        <a href="#avis">Avis</a>
+        <a href="#zone">Zone & Carte</a>
+        <a href="#devis">Demande de devis</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ===========================
+    // Ultra premium JS (light)
+    // ===========================
+
+    // Year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Mobile drawer
+    const drawer = document.getElementById("drawer");
+    const openDrawer = document.getElementById("openDrawer");
+    const closeDrawer = document.getElementById("closeDrawer");
+
+    const setDrawer = (open) => {
+      drawer.classList.toggle("open", open);
+      drawer.setAttribute("aria-hidden", open ? "false" : "true");
+      document.body.style.overflow = open ? "hidden" : "";
+    };
+
+    openDrawer?.addEventListener("click", () => setDrawer(true));
+    closeDrawer?.addEventListener("click", () => setDrawer(false));
+    drawer?.addEventListener("click", (e) => {
+      if (e.target === drawer) setDrawer(false);
+    });
+    drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", () => setDrawer(false)));
+
+    // Reveal on scroll (IntersectionObserver)
+    const els = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      for (const ent of entries) {
+        if (ent.isIntersecting) ent.target.classList.add("on");
+      }
+    }, { threshold: 0.12 });
+    els.forEach(el => io.observe(el));
+
+    // Sticky bar hide on top (nice UX)
+    const stickyBar = document.getElementById("stickyBar");
+    let lastY = window.scrollY;
+    window.addEventListener("scroll", () => {
+      const y = window.scrollY;
+      const goingDown = y > lastY;
+      lastY = y;
+
+      // hide when going down and past a bit, show when going up
+      if (y > 220 && goingDown) stickyBar.classList.add("hide");
+      else stickyBar.classList.remove("hide");
+    }, { passive: true });
+
+    // Form submit (AJAX) - works with Formspree endpoint
+    const form = document.getElementById("quoteForm");
+    const successBox = document.getElementById("successBox");
+    const errorBox = document.getElementById("errorBox");
+
+    const show = (el) => { el.style.display = "block"; };
+    const hide = (el) => { el.style.display = "none"; };
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      hide(successBox); hide(errorBox);
+
+      // Basic front validation
+      const name = form.querySelector("#name").value.trim();
+      const phone = form.querySelector("#phone").value.trim();
+      const city = form.querySelector("#city").value.trim();
+      const type = form.querySelector("#type").value.trim();
+
+      if (!name || !phone || !city || !type) {
+        errorBox.textContent = "❌ Merci de remplir Nom, Téléphone, Ville et Type d’intervention.";
+        show(errorBox);
+        return;
+      }
+
+      const action = form.getAttribute("action")?.trim();
+
+      // If no endpoint: fallback (demo mode)
+      if (!action) {
+        // Simule un envoi réussi (mode démo)
+        show(successBox);
+        form.reset();
+        return;
+      }
+
+      try {
+        const fd = new FormData(form);
+
+        const res = await fetch(action, {
+          method: "POST",
+          body: fd,
+          headers: { "Accept": "application/json" }
+        });
+
+        if (res.ok) {
+          show(successBox);
+          form.reset();
+        } else {
+          show(errorBox);
+        }
+      } catch (err) {
+        show(errorBox);
+      }
+    });
+  </script>
+</body>
+</html>
