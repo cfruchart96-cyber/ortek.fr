@@ -93,10 +93,12 @@
                 <input name="city" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Béthune…" />
               </div>
               <div>
-                <label class="block text-sm font-medium">Décrivez votre activité</label>
-                <input name="city" type="text" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500" placeholder="Entreprise de plomberie, taxi/vtc, profession libérale etc..." />
+                  <label class="block text-sm font-medium">Décrivez votre activité</label>
+                  <input name="activity" type="text"
+                    class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500"
+                    placeholder="Entreprise de plomberie, taxi/vtc, profession libérale etc..." />
               </div>
-            </div>
+
           </fieldset>
 
           <!-- 2. Périmètre du site vitrine -->
@@ -228,11 +230,11 @@
     </div>
   </footer>
 
- <script>
+<script>
   /* =========================
-     FORMULAIRE (briefForm)
+     FORMULAIRE (quoteForm)
   ========================== */
-  const form = document.getElementById('briefForm');
+  const form = document.getElementById('quoteForm');
   const statusEl = document.getElementById('status');
 
   if (form && statusEl) {
@@ -240,7 +242,6 @@
       e.preventDefault();
 
       const endpoint = form.dataset.endpoint;
-
       if (!endpoint) {
         statusEl.textContent = "❌ Erreur technique : endpoint manquant.";
         statusEl.className = "text-sm rounded-xl p-3 border bg-red-50 border-red-200 text-red-700";
@@ -250,7 +251,7 @@
 
       const formData = new FormData(form);
       formData.append("page", location.href);
-      formData.append("_subject", "Ortek — Nouveau brief e-commerce");
+      formData.append("_subject", "Ortek — Nouvelle demande de devis (site vitrine)");
 
       statusEl.textContent = "Envoi en cours…";
       statusEl.className = "text-sm rounded-xl p-3 border bg-gray-50 border-gray-200";
@@ -290,7 +291,6 @@
       mobileMenu.classList.toggle('hidden');
     });
 
-    // Fermer le menu quand on clique sur un lien
     mobileMenu.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', () => {
         mobileMenu.classList.add('hidden');
@@ -300,8 +300,10 @@
 </script>
 
 
+
 </body>
 </html>
+
 
 
 
