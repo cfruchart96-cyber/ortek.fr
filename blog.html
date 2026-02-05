@@ -1,673 +1,378 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog Ortek — Conseils web, SEO local, conversion & sites vitrines</title>
-  <meta name="description" content="Le blog Ortek : conseils concrets pour artisans, indépendants et TPE. SEO local, site vitrine, conversion, Google Business Profile, pages qui font appeler, formulaire efficace, performance, et bonnes pratiques 2026." />
-  <link rel="canonical" href="https://ortek.fr/blog.html" />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Blog Ortek — SEO local, conversion et sites vitrines" />
-  <meta property="og:description" content="Conseils pratiques pour gagner des clients localement : SEO, pages qui convertissent, Google Business Profile, performance, formulaires, confiance." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://ortek.fr/blog.html" />
-
-  <!-- Tailwind CDN -->
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ortek — Blog</title>
+  <meta name="description" content="Conseils concrets pour artisans: IA, SEO local, conversion, sites vitrines et automatisations.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
   <script src="https://cdn.tailwindcss.com"></script>
-
-  <!-- Petite typo -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root { color-scheme: light; }
-    html { font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
-
-    /* "prose" sans plugin typography : on sécurise le rendu */
-    .prose p { margin: 0.6rem 0; }
-    .prose li { margin: 0.4rem 0; }
-    .prose h4 { margin-top: 1rem; margin-bottom: 0.5rem; }
-    .prose ul { padding-left: 1.25rem; list-style: disc; }
-
-    .shadow-soft { box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08); }
-  </style>
-
-  <!-- JSON-LD: Blog + FAQ -->
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"Blog",
-    "name":"Blog Ortek",
-    "url":"https://ortek.fr/blog.html",
-    "description":"Conseils SEO local, sites vitrines, conversion et performance pour artisans, indépendants et TPE.",
-    "publisher":{
-      "@type":"Organization",
-      "name":"Ortek",
-      "url":"https://ortek.fr"
-    }
-  }
-  </script>
-
-  <script type="application/ld+json">
-  {
-    "@context":"https://schema.org",
-    "@type":"FAQPage",
-    "mainEntity":[
-      {
-        "@type":"Question",
-        "name":"Un site vitrine suffit-il pour trouver des clients ?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Oui, si le site est conçu pour la conversion (appel / formulaire), le SEO local (zones desservies), la confiance (preuves, avis, garanties) et la performance (rapide sur mobile). Sinon, il peut exister sans jamais générer d’appels."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Combien de temps faut-il pour voir des résultats SEO local ?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Souvent 2 à 8 semaines pour des premiers signaux (indexation, impressions, appels), et 2 à 4 mois pour stabiliser des positions locales si le contenu, la technique et Google Business Profile sont cohérents."
-        }
-      },
-      {
-        "@type":"Question",
-        "name":"Pourquoi mon site ne remonte pas sur Google malgré mon activité ?",
-        "acceptedAnswer":{
-          "@type":"Answer",
-          "text":"Ca vient généralement d’un manque de pages locales, d’un site lent, d’un contenu trop générique, d’un Google Business Profile incomplet, d’un manque de preuves (avis, réalisations), ou d’une structure SEO (titres H1/H2, balises, maillage interne) insuffisante."
-        }
-      }
-    ]
-  }
-  </script>
+  <meta name="color-scheme" content="light"><meta name="darkreader-lock">
+  <style>html{scroll-behavior:smooth}</style>
 </head>
 
-<body class="bg-slate-50 text-slate-900">
-  <!-- Top bar -->
-  <header class="sticky top-0 z-40 backdrop-blur bg-white/85 border-b border-slate-200">
+<body class="antialiased text-gray-800 bg-white">
+  <!-- ================= Header ================= -->
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="h-16 flex items-center justify-between">
+      <div class="flex h-16 items-center justify-between">
         <a href="index.html" class="flex items-center gap-3">
-          <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white grid place-items-center font-extrabold">O</div>
-          <div class="leading-tight">
-            <div class="font-extrabold tracking-tight">Ortek</div>
-            <div class="text-xs text-slate-500">Sites vitrines & conversion locale</div>
-          </div>
+          <img src="assets/images/logo.png" alt="Ortek" class="h-9 w-auto rounded-xl">
+          <span class="font-semibold tracking-tight">Ortek</span>
         </a>
 
-        <nav class="hidden md:flex items-center gap-2">
-          <a class="px-3 py-2 text-sm font-semibold rounded-xl hover:bg-slate-100" href="index.html">Accueil</a>
-          <a class="px-3 py-2 text-sm font-semibold rounded-xl hover:bg-slate-100" href="catalogue.html">Catalogue</a>
-          <a class="px-3 py-2 text-sm font-semibold rounded-xl bg-slate-900 text-white" href="blog.html">Blog</a>
-          <a class="px-3 py-2 text-sm font-semibold rounded-xl hover:bg-slate-100" href="demanderundevis.html">Devis</a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="offres.html" class="text-gray-600 hover:text-gray-900">Nos offres</a>
+          <a href="tarifs.html" class="text-gray-600 hover:text-gray-900">Tarifs</a>
+          <a href="realisations.html" class="text-gray-600 hover:text-gray-900">Réalisations</a>
+          <a href="quisommesnous.html" class="text-gray-600 hover:text-gray-900">Qui sommes-nous</a>
+          <a href="blog.html" class="text-gray-900 font-medium">Blog</a>
         </nav>
 
-        <a href="demanderundevis.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800 shadow-soft">
-          <span>Demander un devis</span>
-          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
-            <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+        <div class="hidden md:block">
+          <a href="demanderundevis.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700">
+            Demander un devis
+          </a>
+        </div>
+
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Ouvrir le menu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
           </svg>
-        </a>
+        </button>
       </div>
+
+      <nav id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm">
+          <a href="offres.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Nos offres</a>
+          <a href="tarifs.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Tarifs</a>
+          <a href="realisations.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Réalisations</a>
+          <a href="quisommesnous.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Qui sommes-nous</a>
+          <a href="blog.html" class="px-3 py-2 rounded-lg hover:bg-gray-50 font-medium text-gray-900">Blog</a>
+          <a href="demanderundevispro.html" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center">Demander un devis</a>
+        </div>
+      </nav>
     </div>
   </header>
 
-  <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <div class="absolute inset-0 bg-gradient-to-b from-white to-slate-50"></div>
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
-      <div class="py-12 sm:py-16 lg:py-20">
-        <div class="grid lg:grid-cols-12 gap-8 items-start">
-          <div class="lg:col-span-8">
-            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-slate-900 text-white text-xs font-semibold">
-              <span>Blog Ortek</span>
-              <span class="opacity-70">•</span>
-              <span class="opacity-90">SEO local, conversion & confiance</span>
-            </div>
-
-            <h1 class="mt-4 text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
-              Les articles qui font gagner des appels.
-              <span class="text-slate-500">Pas juste “un joli site”.</span>
+  <main>
+    <!-- ================= Hero ================= -->
+    <section class="relative overflow-hidden">
+      <div class="bg-gradient-to-br from-blue-700 via-blue-600 to-blue-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-12">
+          <div class="max-w-3xl">
+            <p class="text-xs uppercase tracking-widest opacity-90">Blog Ortek</p>
+            <h1 class="mt-2 text-2xl sm:text-4xl font-semibold tracking-tight">
+              L’IA sur un site web: pas un gadget, un salarié numérique 🧠
             </h1>
-
-            <p class="mt-4 text-base sm:text-lg text-slate-600 max-w-3xl">
-              Ici on parle concret : comment un artisan, une TPE ou un indépendant peut transformer son site en
-              <span class="font-semibold text-slate-800">machine à demandes de devis</span>.
-              SEO local, Google Business Profile, pages de services, preuves, formulaire, vitesse, messages…
-              Tout ce qui fait la différence dans la vraie vie.
+            <p class="mt-3 text-sm sm:text-base opacity-90">
+              Comment un agent IA intégré à votre site peut capter, filtrer et convertir des prospects 24h/24,
+              tout en renforçant votre référencement local.
             </p>
 
             <div class="mt-6 flex flex-wrap gap-3">
-              <a href="#guides" class="px-4 py-2 rounded-xl bg-white border border-slate-200 font-semibold hover:bg-slate-50">Guides rapides</a>
-              <a href="#articles" class="px-4 py-2 rounded-xl bg-white border border-slate-200 font-semibold hover:bg-slate-50">Articles piliers</a>
-              <a href="#faq" class="px-4 py-2 rounded-xl bg-white border border-slate-200 font-semibold hover:bg-slate-50">FAQ</a>
-              <a href="demanderundevis.html" class="px-4 py-2 rounded-xl bg-slate-900 text-white font-semibold hover:bg-slate-800">Je veux des clients</a>
+              <a href="#article-ia" class="rounded-xl border border-white/30 bg-white/10 px-4 py-2 text-white hover:bg-white/20 backdrop-blur">
+                Lire l’article
+              </a>
+              <a href="demanderundevispro.html" class="rounded-xl bg-white text-blue-700 px-4 py-2 font-medium hover:bg-blue-50">
+                Activer l’option IA
+              </a>
+            </div>
+
+            <div class="mt-6 flex flex-wrap gap-2 text-xs">
+              <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1">Artisans</span>
+              <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1">Professions libérales</span>
+              <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1">Taxi / VTC</span>
+              <span class="rounded-full bg-white/10 border border-white/20 px-3 py-1">Santé</span>
             </div>
           </div>
+        </div>
+      </div>
+    </section>
 
-          <aside class="lg:col-span-4">
-            <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-              <div class="flex items-start gap-3">
-                <div class="w-10 h-10 rounded-2xl bg-emerald-600/10 text-emerald-700 grid place-items-center font-extrabold">✓</div>
-                <div>
-                  <div class="font-extrabold">Checklist “Site qui convertit”</div>
-                  <p class="text-sm text-slate-600 mt-1">
-                    12 points que ton site doit cocher pour générer des appels / devis.
-                    C’est simple, mais c’est là que 90% des sites perdent des clients.
+    <!-- ================= Liste d'articles (mini index) ================= -->
+    <section class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="flex items-end justify-between gap-4">
+          <div>
+            <h2 class="text-xl sm:text-2xl font-semibold tracking-tight">À la une</h2>
+            <p class="mt-1 text-sm text-gray-600">Des sujets concrets, pensés terrain.</p>
+          </div>
+          <div class="hidden sm:flex gap-2">
+            <a href="#article-ia" class="rounded-xl border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50">Agents IA</a>
+            <a href="#seo-llm" class="rounded-xl border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50">SEO & LLM</a>
+            <a href="#faq" class="rounded-xl border border-gray-200 px-3 py-2 text-sm hover:bg-gray-50">FAQ</a>
+          </div>
+        </div>
+
+        <div class="mt-6 grid md:grid-cols-3 gap-4">
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Article</p>
+            <h3 class="text-base font-semibold">Agents IA sur site internet: le guide Ortek</h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Définition, fonctions, exemples métiers, et pourquoi ça convertit mieux qu’un site passif.
+            </p>
+            <a href="#article-ia" class="mt-4 inline-flex text-sm font-medium text-blue-600 hover:underline">Lire →</a>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Focus</p>
+            <h3 class="text-base font-semibold">SEO local + LLM: l’effet “site plus lisible”</h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Temps passé, rebond, structure d’info: comment l’IA peut aider le référencement (sans blabla).
+            </p>
+            <a href="#seo-llm" class="mt-4 inline-flex text-sm font-medium text-blue-600 hover:underline">Lire →</a>
+          </article>
+
+          <article class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">FAQ</p>
+            <h3 class="text-base font-semibold">Combien ça coûte? Est-ce fiable? Et la vie privée?</h3>
+            <p class="mt-2 text-sm text-gray-600">
+              Les questions qui reviennent tout le temps, avec des réponses simples.
+            </p>
+            <a href="#faq" class="mt-4 inline-flex text-sm font-medium text-blue-600 hover:underline">Voir →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= Article principal ================= -->
+    <section id="article-ia" class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <div class="grid lg:grid-cols-12 gap-6">
+          <!-- Article -->
+          <article class="lg:col-span-8 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 sm:p-8">
+            <header class="mb-6">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold">Agents IA sur site internet</p>
+              <h2 class="mt-2 text-xl sm:text-3xl font-semibold tracking-tight">
+                Un site sans IA informe. Un site avec IA travaille. 🛠️
+              </h2>
+              <p class="mt-3 text-sm text-gray-600">
+                Un agent IA est un assistant conversationnel connecté au contenu, aux règles métier et aux objectifs
+                d’une entreprise. Il comprend le contexte, guide l’utilisateur et peut déclencher des actions:
+                devis, rendez-vous, réservation, suivi.
+              </p>
+            </header>
+
+            <div class="prose max-w-none">
+              <h3 class="text-lg font-semibold tracking-tight">1) Pourquoi ça change tout (version terrain)</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Un site classique est passif: il affiche des infos et espère que le visiteur “se débrouille”.
+                L’agent IA rend le site actif: il accueille, répond instantanément, filtre les demandes,
+                et transforme les visites en demandes exploitables, même la nuit, même le dimanche.
+              </p>
+
+              <div class="mt-5 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-gray-200 bg-gray-50 p-4">
+                  <p class="text-xs uppercase tracking-widest text-gray-500">Avant</p>
+                  <p class="mt-1 text-sm text-gray-700">
+                    Formulaire vide, appels manqués, messages flous (“vous faites quoi comme tarifs?”).
+                  </p>
+                </div>
+                <div class="rounded-2xl border border-gray-200 bg-blue-50 p-4">
+                  <p class="text-xs uppercase tracking-widest text-blue-700">Avec agent IA</p>
+                  <p class="mt-1 text-sm text-gray-700">
+                    Questions ciblées, demande structurée, infos utiles dès le 1er message.
                   </p>
                 </div>
               </div>
 
-              <ul class="mt-4 space-y-3 text-sm text-slate-700">
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Une promesse claire au-dessus de la ligne de flottaison</li>
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Un bouton “Appeler” visible sur mobile</li>
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Formulaire court + réponse rapide</li>
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Preuves : réalisations, avis, assurances</li>
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Pages locales (villes / zones)</li>
-                <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-slate-900"></span>Vitesse : pas de site “lourd” qui rame</li>
+              <h3 class="mt-8 text-lg font-semibold tracking-tight">2) Fonctions principales d’un agent IA pro</h3>
+              <ul class="mt-3 space-y-2 text-sm text-gray-700 list-disc pl-5">
+                <li><span class="font-medium">Accueil intelligent</span> et réponse instantanée aux questions fréquentes.</li>
+                <li><span class="font-medium">Qualification des prospects</span>: urgence, lieu, type de prestation, contraintes, budget.</li>
+                <li><span class="font-medium">Prise de rendez-vous / réservations</span>: créneaux, confirmations, rappels.</li>
+                <li><span class="font-medium">Pré-devis encadré</span>: estimation basée sur des règles, sans improviser.</li>
+                <li><span class="font-medium">Support et suivi</span>: après intervention, consignes, questions, avis.</li>
               </ul>
 
-              <a href="demanderundevis.html" class="mt-5 inline-flex w-full justify-center items-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 text-white font-extrabold hover:bg-slate-800">
-                Audit rapide (gratuit)
-                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none">
-                  <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                  <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-              </a>
-
-              <p class="mt-3 text-xs text-slate-500">
-                Astuce “croustillante” : la plupart des demandes perdues viennent de <span class="font-semibold">3 secondes</span> de flottement.
-                Un site qui hésite (message flou, bouton caché, formulaire compliqué) = un client qui part.
-              </p>
-            </div>
-          </aside>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Quick guides -->
-  <section id="guides" class="py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-end justify-between gap-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Guides rapides </h2>
-          <p class="text-slate-600 mt-2 max-w-3xl">
-            Des mini-guides lisibles, très terrain, pour faire avancer ton site <span class="font-semibold">en 30 minutes</span>.
-          </p>
-        </div>
-      </div>
-
-      <div class="mt-6 grid md:grid-cols-2 lg:grid-cols-3 gap-5">
-        <!-- Card -->
-        <article class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Conversion</div>
-          <h3 class="mt-2 font-extrabold text-lg">La section héro qui fait appeler</h3>
-          <div class="mt-3 text-sm text-slate-700 prose">
-            <p><span class="font-semibold">Formule simple :</span> Métier + Zone + Bénéfice + preuve + CTA.</p>
-            <ul class="list-disc pl-5">
-              <li>“Électricien à Béthune — interventions rapides & devis clair”</li>
-              <li>Preuve : “Assuré RC Pro — +120 interventions / an”</li>
-              <li>CTA : “Appeler” + “Devis en 2 minutes”</li>
-            </ul>
-            <p>Si ton héro dit juste “Bienvenue” : tu perds du monde.</p>
-          </div>
-        </article>
-
-        <article class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500">SEO local</div>
-          <h3 class="mt-2 font-extrabold text-lg">Pages villes : le boost sous-estimé</h3>
-          <div class="mt-3 text-sm text-slate-700 prose">
-            <p>Google adore comprendre <span class="font-semibold">où</span> tu bosses.</p>
-            <ul class="list-disc pl-5">
-              <li>1 page “Zone d’intervention” + 6 à 12 pages villes prioritaires</li>
-              <li>Chaque page = services + délais + exemples + FAQ locale</li>
-              <li>Maillage interne : “Voir nos services à …”</li>
-            </ul>
-            <p>Tu peux être très bon… si Google ne te situe pas, tu n’existes pas.</p>
-          </div>
-        </article>
-
-        <article class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-          <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Confiance</div>
-          <h3 class="mt-2 font-extrabold text-lg">Les 7 preuves qui rassurent instantanément</h3>
-          <div class="mt-3 text-sm text-slate-700 prose">
-            <ul class="list-disc pl-5">
-              <li>Assurance RC Pro / décennale (si concerné)</li>
-              <li>Avis clients (même 5–10 bien choisis)</li>
-              <li>Photos avant/après (réel & propre)</li>
-              <li>Process (“appel → devis → intervention”)</li>
-              <li>Délais & créneaux (même approximatifs)</li>
-              <li>Garantie / SAV (simple)</li>
-              <li>Contact humain + téléphone cliquable</li>
-            </ul>
-            <p>Un site sans preuve = “risque” dans la tête du client.</p>
-          </div>
-        </article>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pillar Articles -->
-  <section id="articles" class="py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6">
-        <div>
-          <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Articles piliers (SEO + réponses clients)</h2>
-          <p class="text-slate-600 mt-2 max-w-3xl">
-            Les articles “piliers” sont écrits pour répondre aux vraies questions des clients.
-            Plus tu réponds clairement, plus tu récupères des demandes… et moins tu perds du temps au téléphone.
-          </p>
-        </div>
-
-        <div class="bg-white border border-slate-200 rounded-2xl p-3 flex flex-col sm:flex-row sm:items-center gap-3 shadow-soft">
-          <input
-            id="searchInput"
-            type="text"
-            placeholder="Rechercher dans le blog (SEO, devis, Google, site…)"
-            class="w-full sm:w-72 bg-transparent outline-none text-sm px-2"
-          />
-          <button id="clearBtn" class="text-sm font-semibold px-3 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 w-full sm:w-auto">
-            Effacer
-          </button>
-        </div>
-      </div>
-
-      <div id="postGrid" class="mt-6 grid lg:grid-cols-12 gap-6">
-        <!-- Main content -->
-        <div class="lg:col-span-8 space-y-6">
-
-          <!-- Post 1 -->
-          <article class="post bg-white border border-slate-200 rounded-3xl p-7 shadow-soft" data-tags="seo local google artisan tpe">
-            <div class="flex items-center justify-between gap-4 flex-wrap">
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-500">SEO Local • Google</div>
-              <div class="text-xs text-slate-500">Mise à jour : 2026</div>
-            </div>
-
-            <h3 class="mt-2 text-xl sm:text-2xl font-extrabold tracking-tight">
-              SEO local : comment Google décide qui afficher (et pourquoi ton site “joli” ne suffit pas)
-            </h3>
-
-            <div class="mt-4 text-sm text-slate-700 prose">
-              <p>
-                La plupart des entreprises locales perdent des clients sans le savoir : elles sont “invisibles” au moment exact où
-                quelqu’un tape <span class="font-semibold">“plombier + ville”</span> ou <span class="font-semibold">“électricien urgence”</span>.
+              <h3 class="mt-8 text-lg font-semibold tracking-tight">3) Qualification intelligente: le super-pouvoir</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Le vrai gain n’est pas “répondre comme un humain”. Le vrai gain, c’est de
+                transformer une demande floue en demande exploitable.
+                L’agent pose des questions adaptées au métier et renvoie au pro un résumé clair.
               </p>
 
-              <h4 class="mt-4 font-extrabold">1) Les 3 piliers du local (simple, mais implacable)</h4>
-              <ul class="list-disc pl-5">
-                <li><span class="font-semibold">Pertinence</span> : ton site parle-t-il exactement du service recherché + de la zone ?</li>
-                <li><span class="font-semibold">Distance</span> : Google comprend-il où tu interviens ? (adresse / zones / pages villes)</li>
-                <li><span class="font-semibold">Notoriété</span> : avis, mentions, cohérence des infos, contenu, liens, ancienneté</li>
-              </ul>
+              <div class="mt-4 rounded-2xl border border-gray-200 bg-white p-4">
+                <p class="text-xs uppercase tracking-widest text-gray-500">Exemple (artisan)</p>
+                <p class="mt-2 text-sm text-gray-700">
+                  “Bonjour, c’est pour quel type de prestation? Quelle ville? C’est urgent?
+                  Vous avez une contrainte d’accès (étage, portail, stationnement)?
+                  Vous souhaitez une estimation ou un rendez-vous?”
+                </p>
+              </div>
 
-              <h4 class="mt-4 font-extrabold">2) L’erreur “croustillante” la plus fréquente</h4>
-              <p>
-                Les sites “vitrines” qui disent tout et rien : “artisan sérieux, travail de qualité”.
-                Ça ne répond pas à la question du client.
-                Le client veut : <span class="font-semibold">quoi / où / quand / combien / comment tu prouves</span>.
+              <h3 class="mt-8 text-lg font-semibold tracking-tight">4) Prise de rendez-vous: moins d’appels, plus d’actions</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                L’agent peut proposer des créneaux, confirmer par SMS ou email et envoyer des rappels.
+                Résultat: moins d’appels entrants, moins d’oubli, plus de rendez-vous tenus.
               </p>
 
-              <h4 class="mt-4 font-extrabold">3) Checklist SEO local (très rentable)</h4>
-              <ul class="list-disc pl-5">
-                <li>Une page par service important (pas une page “fourre-tout”).</li>
-                <li>Une page “Zones d’intervention” + pages villes prioritaires.</li>
-                <li>Google Business Profile complet (services, zones, photos, posts, FAQ).</li>
-                <li>Téléphone cliquable + CTA visibles.</li>
-                <li>Photos réelles + avis clients (même peu, mais authentiques).</li>
-                <li>Vitesse correcte sur mobile (site léger, images optimisées).</li>
-              </ul>
-
-              <p class="mt-4">
-                Si tu veux, Ortek peut  rapide : on te dit ce qui bloque, et ce qui va rapporter des appels en premier.
+              <h3 class="mt-8 text-lg font-semibold tracking-tight">5) Pré-devis: encadré, clair, rassurant</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Avec des règles simples (prix mini, critères, variables), l’agent peut donner
+                une estimation encadrée: il explique le pourquoi, pose les questions clés,
+                et prépare une base de devis. Le pro garde la main, mais gagne un temps fou.
               </p>
-              <div class="mt-4">
-                <a href="demanderundevis.html" class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 text-white font-extrabold hover:bg-slate-800">
-                  Je veux mon site Pro
-                  <span aria-hidden="true">→</span>
+
+              <h3 class="mt-8 text-lg font-semibold tracking-tight">6) Cas d’usage par secteur</h3>
+              <div class="mt-4 grid sm:grid-cols-2 gap-4">
+                <div class="rounded-2xl border border-gray-200 bg-white p-4">
+                  <p class="text-sm font-semibold">Artisans</p>
+                  <p class="mt-1 text-sm text-gray-700">Tri des urgences, demandes structurées, devis plus rapides.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-200 bg-white p-4">
+                  <p class="text-sm font-semibold">Taxi / VTC</p>
+                  <p class="mt-1 text-sm text-gray-700">Estimations immédiates, réservations 24/7, confirmations.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-200 bg-white p-4">
+                  <p class="text-sm font-semibold">Professions libérales</p>
+                  <p class="mt-1 text-sm text-gray-700">Pré-qualification, prise de rendez-vous, réponses rapides.</p>
+                </div>
+                <div class="rounded-2xl border border-gray-200 bg-white p-4">
+                  <p class="text-sm font-semibold">Santé & services</p>
+                  <p class="mt-1 text-sm text-gray-700">Orientation, réduction de la pression téléphonique.</p>
+                </div>
+              </div>
+
+              <div class="mt-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
+                <p class="text-sm font-semibold text-blue-900">Vision Ortek</p>
+                <p class="mt-1 text-sm text-gray-700">
+                  Chez Ortek, l’agent IA est conçu comme un assistant métier autonome:
+                  il capte, filtre et convertit les prospects tout en renforçant l’image du site.
+                </p>
+                <a href="demanderundevispro.html"
+                   class="mt-4 inline-flex items-center rounded-xl bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700">
+                  Demander un devis IA
                 </a>
               </div>
             </div>
           </article>
 
-          <!-- Post 2 -->
-          <article class="post bg-white border border-slate-200 rounded-3xl p-7 shadow-soft" data-tags="conversion formulaire devis artisan">
-            <div class="flex items-center justify-between gap-4 flex-wrap">
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Conversion • Devis</div>
-              <div class="text-xs text-slate-500">Mise à jour : 2026</div>
-            </div>
-
-            <h3 class="mt-2 text-xl sm:text-2xl font-extrabold tracking-tight">
-              Formulaire de devis : le modèle qui augmente les demandes (sans te faire perdre du temps)
-            </h3>
-
-            <div class="mt-4 text-sm text-slate-700 prose">
-              <p>
-                Un formulaire trop long tue la demande. Un formulaire trop court te fait perdre du temps.
-                La bonne stratégie : <span class="font-semibold">minimum utile + filtre intelligent</span>.
-              </p>
-
-              <h4 class="mt-4 font-extrabold">Le combo gagnant (5 champs + 1 menu)</h4>
-              <ul class="list-disc pl-5">
-                <li>Nom</li>
-                <li>Téléphone</li>
-                <li>Ville</li>
-                <li>Type de prestation (menu)</li>
-                <li>Description (texte libre)</li>
-                <li>Optionnel : photos / pièces jointes (si pertinent)</li>
+          <!-- Sidebar -->
+          <aside class="lg:col-span-4 space-y-4">
+            <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Checklist</p>
+              <h3 class="text-base font-semibold">Ce qu’un agent IA doit savoir</h3>
+              <ul class="mt-3 space-y-2 text-sm text-gray-700">
+                <li>• Vos services + zones d’intervention</li>
+                <li>• Vos règles de prix (minimum, variables)</li>
+                <li>• Vos horaires + délais d’intervention</li>
+                <li>• Vos questions de qualification (métier)</li>
+                <li>• Vos consignes (urgence, sécurité, limites)</li>
               </ul>
-
-              <h4 class="mt-4 font-extrabold">Message de confiance (oui, ça change tout)</h4>
-              <p>
-                Mets une phrase “anti-stress” sous le bouton :
-                <span class="font-semibold">“Réponse rapide — pas de spam — devis clair”</span>.
-                Le cerveau du client veut une sortie de secours.
-              </p>
-
-              <h4 class="mt-4 font-extrabold">Astuce croustillante : la vitesse de réponse</h4>
-              <p>
-                Beaucoup de marchés locaux se gagnent simplement sur la rapidité.
-                Si tu réponds vite avec un message propre, tu passes devant des concurrents meilleurs techniquement.
-                Ortek peut intégrer une confirmation + un message automatique clair, pour professionnaliser le contact.
-              </p>
-            </div>
-          </article>
-
-          <!-- Post 3 -->
-          <article class="post bg-white border border-slate-200 rounded-3xl p-7 shadow-soft" data-tags="site vitrine artisan prix confiance">
-            <div class="flex items-center justify-between gap-4 flex-wrap">
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Site vitrine</div>
-              <div class="text-xs text-slate-500">Mise à jour : 2026</div>
             </div>
 
-            <h3 class="mt-2 text-xl sm:text-2xl font-extrabold tracking-tight">
-              “Je n’ai pas de prix sur mon site” : bonne ou mauvaise idée ?
-            </h3>
-
-            <div class="mt-4 text-sm text-slate-700 prose">
-              <p>
-                En local, afficher des prix peut augmenter les demandes… si c’est bien fait.
-                Le piège, c’est de donner un prix “faux” qui crée une mauvaise surprise.
+            <div id="seo-llm" class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">SEO & LLM</p>
+              <h3 class="text-base font-semibold">Impact référencement</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                Un agent IA peut augmenter le temps passé, réduire le rebond et structurer l’info.
+                Un site plus clair et plus utile est plus “lisible” pour les moteurs et les IA génératives.
               </p>
-
-              <h4 class="mt-4 font-extrabold">La bonne approche : des repères, pas des promesses</h4>
-              <ul class="list-disc pl-5">
-                <li>“À partir de …” + ce que ça inclut clairement.</li>
-                <li>3 niveaux : simple / standard / premium.</li>
-                <li>Ce qui fait varier le prix (accès, urgence, surface, matériel).</li>
-              </ul>
-
-              <h4 class="mt-4 font-extrabold">Le vrai bénéfice</h4>
-              <p>
-                Tu filtres les demandes irréalistes, et tu rassures les gens sérieux.
-                Résultat : moins de blabla, plus de demandes qualifiées.
-              </p>
-            </div>
-          </article>
-
-          <!-- Post 4 -->
-          <article class="post bg-white border border-slate-200 rounded-3xl p-7 shadow-soft" data-tags="performance mobile vitesse site">
-            <div class="flex items-center justify-between gap-4 flex-wrap">
-              <div class="text-xs font-bold uppercase tracking-wider text-slate-500">Performance</div>
-              <div class="text-xs text-slate-500">Mise à jour : 2026</div>
+              <div class="mt-4 grid gap-2 text-sm text-gray-700">
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="font-medium">+ Temps sur site</p>
+                  <p class="text-gray-600 text-sm">Le visiteur échange au lieu de quitter.</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="font-medium">- Taux de rebond</p>
+                  <p class="text-gray-600 text-sm">Réponses immédiates aux questions.</p>
+                </div>
+                <div class="rounded-xl border border-gray-200 p-3">
+                  <p class="font-medium">Info structurée</p>
+                  <p class="text-gray-600 text-sm">Le métier est mieux “compréhensible”.</p>
+                </div>
+              </div>
             </div>
 
-            <h3 class="mt-2 text-xl sm:text-2xl font-extrabold tracking-tight">
-              Pourquoi un site lent te coûte de l’argent (même si tu ne fais pas de pub)
-            </h3>
-
-            <div class="mt-4 text-sm text-slate-700 prose">
-              <p>
-                En local, les gens sont sur mobile, souvent pressés.
-                Un site lent = ils reviennent à Google et cliquent sur le suivant.
+            <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+              <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold mb-1">Prochaine étape</p>
+              <h3 class="text-base font-semibold">Activer l’option IA</h3>
+              <p class="mt-2 text-sm text-gray-700">
+                On paramètre l’agent selon votre métier, vos services, votre zone, vos règles.
+                Résultat: des demandes propres, prêtes à traiter.
               </p>
-
-              <h4 class="mt-4 font-extrabold">Les 4 causes classiques</h4>
-              <ul class="list-disc pl-5">
-                <li>Images non optimisées (photos trop lourdes)</li>
-                <li>Scripts inutiles (widgets, plugins, thèmes lourds)</li>
-                <li>Hébergement bas de gamme saturé</li>
-                <li>Pas de cache / pas de compression</li>
-              </ul>
-
-              <h4 class="mt-4 font-extrabold">Le “truc croustillant”</h4>
-              <p>
-                Une page plus rapide “se sent” plus fiable.
-                Le cerveau associe inconsciemment vitesse = sérieux.
-                C’est injuste… mais c’est réel.
-              </p>
+              <a href="demanderundevispro.html" class="mt-4 inline-flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-white font-medium hover:bg-blue-700">
+                Remplir le brief IA
+              </a>
             </div>
-          </article>
-
+          </aside>
         </div>
-
-        <!-- Sidebar -->
-        <aside class="lg:col-span-4 space-y-6">
-          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-            <h3 class="font-extrabold text-lg">Ce que les clients veulent vraiment</h3>
-            <p class="text-sm text-slate-600 mt-2">
-              Quand quelqu’un arrive sur ton site, il scanne en 8 secondes.
-              Il cherche des réponses rapides :
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700">
-              <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-emerald-600"></span>Est-ce que tu fais exactement ce service ?</li>
-              <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-emerald-600"></span>Est-ce que tu interviens chez moi ?</li>
-              <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-emerald-600"></span>Est-ce que je peux te joindre facilement ?</li>
-              <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-emerald-600"></span>Est-ce que tu es fiable ? (preuves)</li>
-              <li class="flex gap-2"><span class="mt-1 w-2 h-2 rounded-full bg-emerald-600"></span>Est-ce que c’est clair niveau prix / process ?</li>
-            </ul>
-          </div>
-
-          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-            <h3 class="font-extrabold text-lg">Mini-audit en 60 secondes</h3>
-            <p class="text-sm text-slate-600 mt-2">Si tu réponds “non” à 2 questions : ton site perd des clients.</p>
-            <div class="mt-4 space-y-3 text-sm text-slate-700">
-              <label class="flex gap-3 items-start">
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-slate-900">
-                <span>Sur mobile, le bouton “Appeler” est visible sans scroller.</span>
-              </label>
-              <label class="flex gap-3 items-start">
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-slate-900">
-                <span>On comprend ton métier + ta zone + ton bénéfice en 5 secondes.</span>
-              </label>
-              <label class="flex gap-3 items-start">
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-slate-900">
-                <span>Il y a des preuves (avis, photos, garanties, assurances).</span>
-              </label>
-              <label class="flex gap-3 items-start">
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-slate-900">
-                <span>Le formulaire est simple et rassurant (pas intrusif).</span>
-              </label>
-              <label class="flex gap-3 items-start">
-                <input type="checkbox" class="mt-1 w-4 h-4 accent-slate-900">
-                <span>Tu as des pages services distinctes + une zone d’intervention.</span>
-              </label>
-            </div>
-
-            <a href="demanderundevis.html" class="mt-5 inline-flex w-full justify-center items-center gap-2 px-4 py-3 rounded-2xl bg-slate-900 text-white font-extrabold hover:bg-slate-800">
-              Je veux corriger ça
-              <span aria-hidden="true">→</span>
-            </a>
-          </div>
-
-          <div class="bg-white border border-slate-200 rounded-3xl p-6 shadow-soft">
-            <h3 class="font-extrabold text-lg">Idées d’articles (SEO long terme)</h3>
-            <p class="text-sm text-slate-600 mt-2">
-              Tu veux “charger” ton blog ? Voici des titres SEO qui attirent des clients prêts à appeler :
-            </p>
-            <ul class="mt-4 space-y-2 text-sm text-slate-700 list-disc pl-5">
-              <li>Quel prix pour un dépannage [métier] à [ville] ?</li>
-              <li>Urgence [métier] : que faire en attendant ? (checklist)</li>
-              <li>Comment choisir un [métier] sérieux ? 12 critères</li>
-              <li>Les erreurs qui coûtent cher en [service]</li>
-              <li>Avant / après : exemples réels + explications</li>
-              <li>Zone d’intervention : pourquoi ça change tout sur Google</li>
-              <li>Devis : ce que doit contenir un devis clair</li>
-            </ul>
-          </div>
-        </aside>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- FAQ -->
-  <section id="faq" class="py-10">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="bg-white border border-slate-200 rounded-3xl p-8 shadow-soft">
-        <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">FAQ (questions que les clients se posent)</h2>
+    <!-- ================= FAQ ================= -->
+    <section id="faq" class="py-10">
+      <div class="max-w-7xl mx-auto px-4">
+        <h2 class="text-xl sm:text-2xl font-semibold tracking-tight">FAQ</h2>
+        <p class="mt-1 text-sm text-gray-600">Les questions qu’on te posera au téléphone (autant les anticiper).</p>
 
-        <div class="mt-6 grid md:grid-cols-2 gap-6">
-          <details class="group rounded-2xl border border-slate-200 p-5">
-            <summary role="button" class="cursor-pointer font-extrabold flex items-center justify-between">
-              Un site vitrine suffit-il ?
-              <span class="ml-4 text-slate-500 transform transition group-open:rotate-180">▾</span>
-            </summary>
-            <div class="mt-3 text-sm text-slate-700 prose">
-              <p>
-                Oui, si c’est un site vitrine conçu pour convertir : pages services, zones, preuves, CTA visibles,
-                formulaire simple, et un minimum de contenu utile. Sinon, c’est juste une carte de visite.
-              </p>
-            </div>
+        <div class="mt-6 grid md:grid-cols-2 gap-4">
+          <details class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <summary class="cursor-pointer font-medium">L’agent IA peut-il prendre des rendez-vous?</summary>
+            <p class="mt-2 text-sm text-gray-700">
+              Oui: il peut proposer des créneaux, confirmer, et envoyer des rappels (selon la config).
+              L’objectif: réduire les appels entrants et augmenter le taux de prise de RDV.
+            </p>
           </details>
 
-          <details class="group rounded-2xl border border-slate-200 p-5">
-            <summary role="button" class="cursor-pointer font-extrabold flex items-center justify-between">
-              Pourquoi mon site ne rapporte rien ?
-              <span class="ml-4 text-slate-500 transform transition group-open:rotate-180">▾</span>
-            </summary>
-            <div class="mt-3 text-sm text-slate-700 prose">
-              <ul class="list-disc pl-5">
-                <li>Message flou (“artisan sérieux”) au lieu d’une promesse claire.</li>
-                <li>Pas de CTA visible sur mobile (appel / devis).</li>
-                <li>Pas de preuves (avis, photos, assurances).</li>
-                <li>Pas de pages locales → Google ne comprend pas ta zone.</li>
-                <li>Site trop lent / trop lourd.</li>
-              </ul>
-            </div>
+          <details class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <summary class="cursor-pointer font-medium">Est-ce que l’IA invente des infos?</summary>
+            <p class="mt-2 text-sm text-gray-700">
+              On la cadre avec tes règles: services, zone, prix, limites.
+              Quand c’est trop technique ou incertain, l’agent bascule vers “devis / appel”.
+            </p>
           </details>
 
-          <details class="group rounded-2xl border border-slate-200 p-5">
-            <summary role="button" class="cursor-pointer font-extrabold flex items-center justify-between">
-              Faut-il un blog pour un artisan ?
-              <span class="ml-4 text-slate-500 transform transition group-open:rotate-180">▾</span>
-            </summary>
-            <div class="mt-3 text-sm text-slate-700 prose">
-              <p>
-                Pas obligatoire. Mais un blog “intelligent” peut être une arme : il capte des recherches locales
-                et répond aux questions avant l’appel. L’objectif n’est pas d’écrire pour écrire : c’est d’écrire
-                des articles qui <span class="font-semibold">déclenchent</span> une prise de contact.
-              </p>
-            </div>
+          <details class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <summary class="cursor-pointer font-medium">Ça sert à quoi si j’ai déjà un formulaire?</summary>
+            <p class="mt-2 text-sm text-gray-700">
+              Le formulaire ne qualifie pas. L’agent transforme une phrase vague en demande structurée:
+              urgence, lieu, type de prestation, contraintes, budget estimatif.
+            </p>
           </details>
 
-          <details class="group rounded-2xl border border-slate-200 p-5">
-            <summary role="button" class="cursor-pointer font-extrabold flex items-center justify-between">
-              “Je n’aime pas le téléphone” : je fais comment ?
-              <span class="ml-4 text-slate-500 transform transition group-open:rotate-180">▾</span>
-            </summary>
-            <div class="mt-3 text-sm text-slate-700 prose">
-              <p>
-                Tu peux orienter la conversion vers le formulaire : bouton “Devis en 2 minutes”, questions filtrantes,
-                message rassurant, et réponse structurée. Un site bien conçu peut réduire les appels “inutiles”
-                et t’amener des demandes qualifiées.
-              </p>
-            </div>
+          <details class="rounded-2xl border border-gray-200 bg-white shadow-sm p-5">
+            <summary class="cursor-pointer font-medium">Et niveau référencement?</summary>
+            <p class="mt-2 text-sm text-gray-700">
+              L’agent peut améliorer l’engagement (temps sur site, rebond) et rendre l’info plus structurée.
+              Ce n’est pas “magique”, mais c’est un vrai bonus quand c’est bien fait.
+            </p>
           </details>
         </div>
 
-        <div class="mt-8 flex flex-col sm:flex-row gap-3">
-          <a href="demanderundevis.html" class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-2xl bg-slate-900 text-white font-extrabold hover:bg-slate-800">
-            Je veux un site qui convertit
-            <span aria-hidden="true">→</span>
-          </a>
-          <a href="catalogue2.html" class="inline-flex justify-center items-center gap-2 px-5 py-3 rounded-2xl bg-white border border-slate-200 font-extrabold hover:bg-slate-50">
-            Voir le catalogue métiers
+        <div class="mt-8 rounded-2xl border border-gray-200 bg-white shadow-sm p-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+          <div>
+            <p class="text-sm font-semibold">Tu veux que ton site travaille pendant que tu bosses?</p>
+            <p class="text-sm text-gray-600">On met l’agent IA en place, et tu reçois des demandes propres.</p>
+          </div>
+          <a href="demanderundevispro.html" class="inline-flex items-center rounded-xl bg-blue-600 px-4 py-2.5 text-white font-medium hover:bg-blue-700">
+            Demander un devis
           </a>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- Footer -->
-  <footer class="py-10 border-t border-slate-200 bg-white">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid md:grid-cols-3 gap-8">
-        <div>
-          <div class="flex items-center gap-3">
-            <div class="w-10 h-10 rounded-2xl bg-slate-900 text-white grid place-items-center font-extrabold">O</div>
-            <div>
-              <div class="font-extrabold">Ortek</div>
-              <div class="text-xs text-slate-500">Sites vitrines & conversion locale</div>
-            </div>
-          </div>
-          <p class="mt-3 text-sm text-slate-600 max-w-sm">
-            Ortek conçoit des sites clairs, rapides, rassurants, avec une obsession :
-            <span class="font-semibold text-slate-800">faire rentrer des demandes</span>.
-          </p>
-        </div>
-
-        <div>
-          <div class="font-extrabold">Ressources</div>
-          <ul class="mt-3 space-y-2 text-sm">
-            <li><a class="text-slate-700 hover:text-slate-900" href="catalogue2.html">Catalogue</a></li>
-            <li><a class="text-slate-700 hover:text-slate-900" href="blog.html">Blog</a></li>
-            <li><a class="text-slate-700 hover:text-slate-900" href="demanderundevis.html">Demande de devis</a></li>
-        </div>
-
-        <div>
-          <div class="font-extrabold">SEO local</div>
-          <p class="mt-3 text-sm text-slate-600">
-            Une présence web locale efficace = pages services + zones + preuves + vitesse.
-          </p>
-          
-        </div>
-      </div>
-
-      <div class="mt-10 pt-6 border-t border-slate-200 flex flex-col sm:flex-row gap-3 justify-between text-xs text-slate-500">
-        <div>© <span id="year"></span> Ortek. Tous droits réservés.</div>
-        <div>Astuce : un site “simple” mais net convertit souvent mieux qu’un site “complexe”.</div>
+  <!-- ================= Footer ================= -->
+  <footer class="border-t border-gray-200 py-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
+      <div class="flex items-center gap-6 text-gray-600">
+        <a href="/offres.html" class="hover:text-gray-800">Nos offres</a>
+        <a href="/tarifs.html" class="hover:text-gray-800">Tarifs</a>
+        <a href="/demanderundevis.html" class="hover:text-gray-800">Demander un devis</a>
       </div>
     </div>
   </footer>
 
   <script>
-    // année
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // recherche simple dans les posts (client-side)
-    const input = document.getElementById("searchInput");
-    const clearBtn = document.getElementById("clearBtn");
-    const posts = Array.from(document.querySelectorAll(".post"));
-
-    function normalize(s) {
-      return (s || "")
-        .toLowerCase()
-        .normalize("NFD")
-        .replace(/[\u0300-\u036f]/g, "");
-    }
-
-    function filterPosts(q) {
-      const query = normalize(q);
-      posts.forEach(p => {
-        const text = normalize(p.innerText);
-        const tags = normalize(p.getAttribute("data-tags") || "");
-        const match = !query || text.includes(query) || tags.includes(query);
-        p.style.display = match ? "" : "none";
-      });
-    }
-
-    input?.addEventListener("input", (e) => filterPosts(e.target.value));
-    clearBtn?.addEventListener("click", () => {
-      input.value = "";
-      filterPosts("");
-      input.focus();
+    // Year + mobile menu
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.getElementById('menuBtn')?.addEventListener('click', () => {
+      document.getElementById('mobileMenu')?.classList.toggle('hidden');
     });
   </script>
 </body>
 </html>
-
-
-
