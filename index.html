@@ -284,6 +284,130 @@
       .pillars{ grid-template-columns:1fr }
       .vision-grid{ grid-template-columns:1fr; }
     }
+  
+    /* ---------- ORTEK CHAT WIDGET ---------- */
+    #ortek-chat-bubble{
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    width: 64px;
+    height: 64px;
+    border-radius: 999px;
+    border: none;
+    cursor: pointer;
+    font-size: 26px;
+    z-index: 9999;
+
+    background: linear-gradient(135deg, #2563EB, #1D4ED8);
+    color: white;
+
+    box-shadow:
+      0 12px 30px rgba(37,99,235,.45),
+      0 0 0 0 rgba(37,99,235,.45);
+
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+/* effet hover */
+#ortek-chat-bubble:hover{
+    transform: scale(1.08);
+    box-shadow:
+      0 16px 40px rgba(37,99,235,.55),
+      0 0 0 8px rgba(37,99,235,.15);
+}
+
+/* halo pulsant (attire l'œil) */
+#ortek-chat-bubble::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:999px;
+    box-shadow: 0 0 0 0 rgba(37,99,235,.5);
+    animation: chatPulse 2.5s infinite;
+}
+
+@keyframes chatPulse{
+  0%   { box-shadow: 0 0 0 0 rgba(37,99,235,.5); }
+  70%  { box-shadow: 0 0 0 18px rgba(37,99,235,0); }
+  100% { box-shadow: 0 0 0 0 rgba(37,99,235,0); }
+}
+    #ortek-chat{
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      width: 340px;
+      max-width: calc(100vw - 36px);
+      height: 460px;
+      max-height: calc(100vh - 120px);
+      background: #0b1220;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 16px;
+      box-shadow: 0 18px 60px rgba(0,0,0,.35);
+      overflow: hidden;
+      display: none;
+      z-index: 9999;
+    }
+    #ortek-chat header{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding: 12px 14px;
+      background: rgba(255,255,255,.06);
+      color: #fff;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    #ortek-chat header .title{ font-weight: 700; font-size: 14px; }
+    #ortek-chat header .sub{ font-size: 12px; opacity: .8; }
+    #ortek-chat header button{
+      background: transparent;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      cursor: pointer;
+      opacity: .85;
+    }
+    #ortek-msgs{
+      height: calc(100% - 98px);
+      padding: 14px;
+      overflow: auto;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    .ortek-m{ display:flex; margin: 10px 0; }
+    .ortek-m.user{ justify-content:flex-end; }
+    .ortek-bubble{
+      max-width: 85%;
+      padding: 10px 12px;
+      border-radius: 14px;
+      line-height: 1.25;
+      font-size: 14px;
+      color: #fff;
+      white-space: pre-wrap;
+    }
+    .ortek-m.user .ortek-bubble{ background: rgba(59,130,246,.85); }
+    .ortek-m.bot  .ortek-bubble{ background: rgba(255,255,255,.10); }
+    #ortek-form{
+      display:flex;
+      gap: 8px;
+      padding: 10px;
+      border-top: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.04);
+    }
+    #ortek-input{
+      flex:1;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(0,0,0,.25);
+      color: #fff;
+      outline: none;
+    }
+    #ortek-form button{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+    }
+
   </style>
 </head>
 
@@ -432,61 +556,20 @@
 
           <!-- Shopify -->
           <article class="card" role="listitem" aria-labelledby="pack-shopify">
-            <div class="eyebrow-muted">E-commerce</div>
-            <h4 id="pack-shopify">Boutique Shopify</h4>
+            <div class="eyebrow-muted">Vitrine IA intégrée</div>
+            <h4 id="pack-shopify">Site Pro IA & SEO avancé</h4>
             <ul>
-              <li>Parcours d’achat rapide, thème optimisé</li>
-              <li>Stripe/Shopify Payments, PayPal, 3x/4x</li>
-              <li>Taxes, livraisons & notifications paramétrées</li>
-              <li>Pixels (GA4, Meta, TikTok) + retargeting paniers</li>
-              <li>SEO e-commerce & schémas produits</li>
+              <li>Jusqu’à 5 pages (Accueil, Services, À propos, Réalisations, Contact)</li>
+              <li>Référencement local SEO Google et pour les LLM (Chat GPT, gemini, claude...)</li>
+              <li>IA intégrée (assistant conversationnel)</li>
+              <li>500 messages inclus,par mois et par agent ia</li>
+              <li>Mise à jour annuelle incluse</li>
             </ul>
-            <div class="pill">Cadrage produit & logistique</div>
-            <div class="pill">Accompagnement lancement</div>
-            <a class="btn btn-green btn-block" href="devisprojetshopify.html">Remplir le brief e-commerce</a>
+            <div class="pill">Support clients 24/7 automatique</div>
+            <div class="pill">Moins d'appel inutile</div>
+            <a class="btn btn-green btn-block" href="site-ia.html">Demander un devis IA</a>
           </article>
         </div>
-
-        <!-- Accordéon comparatif -->
-        <details>
-          <summary>
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            Voir le comparatif détaillé <span class="badge">(pages, SEO, paiement…)</span>
-          </summary>
-          <div class="compare">
-            <div class="container" style="padding:0">
-              <div style="overflow-x:auto">
-                <table class="table" aria-label="Tableau comparatif des offres">
-                  <thead>
-                    <tr>
-                      <th>Fonctionnalité</th>
-                      <th>Essentiel</th>
-                      <th>Pro</th>
-                      <th>Shopify</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr><td>Pages incluses</td><td>1 à 3</td><td>Jusqu’à 5</td><td>Illimité</td></tr>
-                    <tr><td>SEO local avancé</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Paiement en ligne</td><td><span class="cross">✕</span></td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Google Business</td><td><span class="cross">✕</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                    <tr><td>Maintenance incluse</td><td><span class="check">✓</span></td><td><span class="check">✓</span></td><td><span class="check">✓</span></td></tr>
-                  </tbody>
-                </table>
-              </div>
-              <p class="mini" style="margin:.6rem 0 1rem">
-                💡 Quel que soit votre besoin, chaque site est livré clé en main, prêt à convertir et à performer localement.
-              </p>
-              <div class="feat" style="margin-bottom:14px">
-                <i>🛡️</i>
-                <div>
-                  <strong>Abonnement Sérénité</strong><br>
-                  Hébergement géré, SSL, sauvegardes, mises à jour et support prioritaire. <strong>Engagement minimal 24 mois</strong>, contrat clair et sans coûts cachés. Résiliation simple au terme.
-                </div>
-              </div>
-            </div>
-          </div>
-        </details>
       </div>
     </section>
 
@@ -632,9 +715,110 @@
   })();
   </script>
 
+
+  <!-- ===== ORTEK CHAT (Agent IA) ===== -->
+  <button id="ortek-chat-bubble" aria-label="Ouvrir le chat">💬</button>
+
+  <div id="ortek-chat" role="dialog" aria-label="Chat Ortek">
+    <header>
+      <div>
+        <div class="title">Assistant IA Ortek</div>
+        <div class="sub">Devis, infos, rappel</div>
+      </div>
+      <button id="ortek-chat-close" aria-label="Fermer">✕</button>
+    </header>
+
+    <div id="ortek-msgs"></div>
+
+    <form id="ortek-form">
+      <input id="ortek-input" type="text" placeholder="Écris ton message…" autocomplete="off" />
+      <button type="submit">Envoyer</button>
+    </form>
+  </div>
+
+
+  <!-- ===== ORTEK CHAT SCRIPT ===== -->
+  <script>
+    // 1) Mets ici l'URL "Production" de ton Webhook n8n
+    const ORTEK_WEBHOOK_URL = "https://n8n.srv1330819.hstgr.cloud/webhook/0d42f996-731d-4345-935d-1298ddb1c54fhttps://TON-PRODUCTION-WEBHOOK-URL"; // <- remplace
+
+    const bubbleBtn = document.getElementById("ortek-chat-bubble");
+    const chatBox   = document.getElementById("ortek-chat");
+    const closeBtn  = document.getElementById("ortek-chat-close");
+    const form      = document.getElementById("ortek-form");
+    const input     = document.getElementById("ortek-input");
+    const msgsEl    = document.getElementById("ortek-msgs");
+
+    // Session stable par navigateur (pour garder le contexte côté n8n si tu veux)
+    const sessionId = localStorage.getItem("ortek_session_id") || (crypto.randomUUID ? crypto.randomUUID() : String(Date.now()) + Math.random());
+    localStorage.setItem("ortek_session_id", sessionId);
+
+    function addMsg(role, text){
+      const row = document.createElement("div");
+      row.className = "ortek-m " + (role === "user" ? "user" : "bot");
+
+      const b = document.createElement("div");
+      b.className = "ortek-bubble";
+      b.textContent = text;
+
+      row.appendChild(b);
+      msgsEl.appendChild(row);
+      msgsEl.scrollTop = msgsEl.scrollHeight;
+      return b; // pour remplacer un placeholder
+    }
+
+    function setOpen(open){
+      chatBox.style.display = open ? "block" : "none";
+      if(open && msgsEl.childElementCount === 0){
+        addMsg("bot", "Bonjour 👋 Dites-moi votre activité + la ville + ce que vous voulez (site vitrine, RDV, informations…).");
+      }
+      if(open) input.focus();
+    }
+
+    bubbleBtn.addEventListener("click", () => setOpen(true));
+    closeBtn.addEventListener("click", () => setOpen(false)); 
+
+  // ouverture automatique après 6 secondes
+setTimeout(() => {
+  setOpen(true);
+}, 6000);
+
+
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const text = input.value.trim();
+      if(!text) return;
+
+      addMsg("user", text);
+      input.value = "";
+
+      const placeholder = addMsg("bot", "…");
+
+      try{
+        const res = await fetch(ORTEK_WEBHOOK_URL, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            message: text,
+            sessionId,
+            pageUrl: location.href,
+            userAgent: navigator.userAgent
+          })
+        });
+
+        if(!res.ok) throw new Error("HTTP " + res.status);
+        const data = await res.json();
+
+        placeholder.textContent = (data && data.reply) ? data.reply : "Je n'ai pas compris. Tu peux reformuler ?";
+      }catch(err){
+        placeholder.textContent = "Oups, le chat est indisponible pour le moment. Réessaie dans un instant.";
+        console.error(err);
+      }
+    });
+  </script>
+
 </body>
 </html>
-
 
 
 
