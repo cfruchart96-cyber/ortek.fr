@@ -1,363 +1,427 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Béthune Garage – Entretien, révision & pneus – Béthune et alentours</title>
-  <meta name="description" content="Béthune Garage à Béthune : entretien constructeur sans perte de garantie, révision, pneus, climatisation, freinage, diagnostic électronique, carrosserie et dépannage." />
-
-  <!-- Open Graph -->
-  <meta property="og:title" content="Béthune Garage – Entretien, révision & pneus – Béthune et alentours" />
-  <meta property="og:description" content="Garage auto à Béthune. Devis rapide, RDV facile, accueil pros & particuliers." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://mon-garage.fr" />
-  <meta property="og:image" content="/og-image.jpg" />
-
-  <!-- Schema.org LocalBusiness (AutoRepair) -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "AutoRepair",
-    "name": "Béthune Garage",
-    "image": "https://mon-garage.fr/og-image.jpg",
-    "telephone": "+33600000000",
-    "email": "maildedemo@garage.fr",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Rue du Pot Bertin",
-      "addressLocality": "Béthune",
-      "postalCode": "62400",
-      "addressCountry": "FR"
-    },
-    "openingHours": ["Mo-Sa 09:00-19:00"],
-    "areaServed": ["Béthune", "Bruay-la-Buissière", "Lens"]
-  }
-  </script>
-
-  <!-- Tailwind Play CDN (no build) -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Garage Dupont — Réparation & Entretien</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    // Personnalisez rapidement vos couleurs de marque ici
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brand: {
-              DEFAULT: '#0ea5e9', // Primaire HEX
-              50: '#f0f9ff',
-              100: '#e0f2fe'
-            },
-            accent: '#0f172a' // Secondaire HEX
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    /* Petits raffinements pour un rendu premium */
-    .glass { backdrop-filter: blur(6px); background: rgba(255,255,255,0.08); }
-    .container { max-width: 1120px; }
-  </style>
+  <meta name="description" content="Garage auto : entretien, freins, pneus, vidange, diagnostic. Intervention rapide et transparente. Devis clair." />
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased">
-  <!-- Topbar -->
-  <header class="sticky top-0 z-40 bg-slate-950/90 backdrop-blur border-b border-white/5">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#" class="flex items-center gap-3">
-        <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-brand text-slate-900 font-bold">BG</span>
-        <div>
-          <div class="font-semibold">Béthune Garage</div>
-          <div class="text-xs text-slate-400">Entretien, révision & pneus – Béthune et alentours</div>
+
+<body class="bg-zinc-950 text-zinc-100 selection:bg-amber-300/30 selection:text-amber-100">
+  <!-- Top strip -->
+  <div class="bg-zinc-900/70 border-b border-zinc-800">
+    <div class="mx-auto max-w-6xl px-4 py-2 flex flex-wrap gap-x-6 gap-y-2 items-center justify-between text-sm">
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-zinc-300">
+        <span class="inline-flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-emerald-400"></span>
+          Ouvert aujourd’hui : 8h30 – 18h30
+        </span>
+        <span class="text-zinc-500">•</span>
+        <span>📍 Béthune & alentours</span>
+      </div>
+      <div class="flex items-center gap-3 text-zinc-300">
+        <a class="hover:text-white underline underline-offset-4 decoration-zinc-600" href="#zone">Voir la zone</a>
+        <span class="text-zinc-500">•</span>
+        <a class="hover:text-white underline underline-offset-4 decoration-zinc-600" href="#contact">Devis rapide</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 bg-zinc-950/80 backdrop-blur border-b border-zinc-800">
+    <div class="mx-auto max-w-6xl px-4 py-4 flex items-center justify-between gap-4">
+      <!-- Brand -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="h-10 w-10 rounded-xl bg-gradient-to-br from-amber-400/20 to-amber-400/0 border border-amber-400/30 grid place-items-center">
+          <span class="text-amber-200 font-semibold">GD</span>
+        </div>
+        <div class="leading-tight">
+          <div class="font-semibold tracking-wide group-hover:text-white">Garage Dupont</div>
+          <div class="text-xs text-zinc-400">Réparation & entretien standard</div>
         </div>
       </a>
-      <nav class="hidden md:flex items-center gap-6 text-sm">
-        <a href="#services" class="hover:text-brand">Services</a>
-        <a href="#tarifs" class="hover:text-brand">Tarifs</a>
-        <a href="#zone" class="hover:text-brand">Zone</a>
-        <a href="#avis" class="hover:text-brand">Avis</a>
-        <a href="#contact" class="hover:text-brand">Contact</a>
-        <a href="tel:+33600000000" class="ml-2 inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="call">Appeler</a>
+
+      <!-- Nav -->
+      <nav class="hidden md:flex items-center gap-1 text-sm">
+        <a href="#services" class="px-3 py-2 rounded-lg hover:bg-zinc-900 text-zinc-300 hover:text-white">Services</a>
+        <a href="#tarifs" class="px-3 py-2 rounded-lg hover:bg-zinc-900 text-zinc-300 hover:text-white">Tarifs</a>
+        <a href="#zone" class="px-3 py-2 rounded-lg hover:bg-zinc-900 text-zinc-300 hover:text-white">Zone</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg hover:bg-zinc-900 text-zinc-300 hover:text-white">Contact</a>
       </nav>
-      <button class="md:hidden inline-flex items-center rounded-xl border border-white/10 px-3 py-2" id="menuBtn" aria-label="Ouvrir le menu">☰</button>
+
+      <!-- Call CTA -->
+      <div class="flex items-center gap-2">
+        <a href="tel:+33600000000"
+           class="inline-flex items-center gap-2 rounded-xl bg-amber-400 px-4 py-2 font-semibold text-zinc-950 hover:bg-amber-300 transition">
+          📞 Appeler
+          <span class="hidden sm:inline text-zinc-900/70 font-medium">06 00 00 00 00</span>
+        </a>
+
+        <!-- Mobile menu button (simple anchor jump list) -->
+        <a href="#menu"
+           class="md:hidden inline-flex items-center justify-center h-10 w-10 rounded-xl border border-zinc-800 hover:bg-zinc-900"
+           aria-label="Ouvrir le menu">
+          ☰
+        </a>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="menu" class="md:hidden border-t border-zinc-800 bg-zinc-950">
+      <div class="mx-auto max-w-6xl px-4 py-3 flex flex-wrap gap-2">
+        <a href="#services" class="px-3 py-2 rounded-lg bg-zinc-900 text-zinc-200">Services</a>
+        <a href="#tarifs" class="px-3 py-2 rounded-lg bg-zinc-900 text-zinc-200">Tarifs</a>
+        <a href="#zone" class="px-3 py-2 rounded-lg bg-zinc-900 text-zinc-200">Zone</a>
+        <a href="#contact" class="px-3 py-2 rounded-lg bg-zinc-900 text-zinc-200">Contact</a>
+      </div>
     </div>
   </header>
 
-  <!-- Mobile menu -->
-  <div id="mobileMenu" class="hidden md:hidden border-b border-white/5 bg-slate-950/95">
-    <nav class="container mx-auto px-4 py-3 grid gap-3 text-sm">
-      <a href="#services" class="hover:text-brand">Services</a>
-      <a href="#tarifs" class="hover:text-brand">Tarifs</a>
-      <a href="#zone" class="hover:text-brand">Zone</a>
-      <a href="#avis" class="hover:text-brand">Avis</a>
-      <a href="#contact" class="hover:text-brand">Contact</a>
-      <a href="tel:+33600000000" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="call-mobile">Appeler</a>
-    </nav>
-  </div>
-
   <!-- Hero -->
-  <section class="relative overflow-hidden">
-    <img src="images/hero.jpg.jpg" alt="Garage automobile premium à Béthune" class="absolute inset-0 h-full w-full object-cover opacity-20" loading="lazy" />
-    <div class="relative container mx-auto px-4 py-20 md:py-28">
-      <div class="max-w-2xl">
-        <h1 class="text-3xl md:text-5xl font-extrabold leading-tight">Votre garage auto premium à <span class="text-brand">Béthune</span></h1>
-        <p class="mt-4 text-slate-300">Entretien constructeur sans perte de garantie, révision, pneus, freinage, climatisation, diagnostic électronique, carrosserie et plus.</p>
-        <div class="mt-6 flex flex-wrap gap-3">
-          <a href="#devis" class="rounded-2xl bg-brand px-5 py-3 font-semibold text-slate-900" data-cta="devis">Demander un devis</a>
-          <a href="#contact" class="rounded-2xl border border-white/10 px-5 py-3" data-cta="rdv">Prendre RDV</a>
-          <a href="tel:+33600000000" class="rounded-2xl border border-brand/40 px-5 py-3 text-brand" data-cta="call-hero">Appeler</a>
+  <section class="relative">
+    <!-- Decorative "workshop grid" -->
+    <div class="absolute inset-0 opacity-[0.18] pointer-events-none"
+         style="background-image:
+           radial-gradient(circle at 1px 1px, rgba(245,158,11,0.35) 1px, transparent 0);
+           background-size: 28px 28px;">
+    </div>
+
+    <div class="mx-auto max-w-6xl px-4 py-14 relative">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div>
+          <div class="inline-flex items-center gap-2 rounded-full border border-amber-400/30 bg-amber-400/10 px-3 py-1 text-sm text-amber-200">
+            <span class="h-2 w-2 rounded-full bg-amber-300"></span>
+            Diagnostic clair, réparation propre.
+          </div>
+
+          <h1 class="mt-4 text-4xl sm:text-5xl font-semibold tracking-tight">
+            Votre garage local pour
+            <span class="text-amber-200">l’entretien & la réparation</span>
+            du quotidien.
+          </h1>
+
+          <p class="mt-4 text-zinc-300 leading-relaxed">
+            Vidange, freins, pneus, batterie, courroie, révision… On va droit au but :
+            <span class="text-zinc-100 font-medium">on explique, on chiffre, on répare</span>.
+          </p>
+
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#contact"
+               class="rounded-xl bg-white text-zinc-950 px-5 py-3 font-semibold hover:bg-zinc-100 transition">
+              Demander un devis
+            </a>
+            <a href="#tarifs"
+               class="rounded-xl border border-zinc-700 px-5 py-3 font-semibold text-zinc-200 hover:bg-zinc-900 transition">
+              Voir les tarifs
+            </a>
+          </div>
+
+          <div class="mt-8 grid sm:grid-cols-3 gap-3 text-sm">
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+              <div class="font-semibold text-zinc-100">⏱️ Rapide</div>
+              <div class="text-zinc-400 mt-1">RDV courts, créneaux utiles.</div>
+            </div>
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+              <div class="font-semibold text-zinc-100">🧾 Transparent</div>
+              <div class="text-zinc-400 mt-1">Devis clair avant intervention.</div>
+            </div>
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-900/40 p-4">
+              <div class="font-semibold text-zinc-100">🔧 Standard</div>
+              <div class="text-zinc-400 mt-1">Entretien & pannes courantes.</div>
+            </div>
+          </div>
         </div>
-        <div class="mt-6 flex items-center gap-3 text-sm text-slate-300">
-          <span class="inline-flex items-center gap-2 rounded-full bg-white/5 px-3 py-1">★ 4,7/5 — Google</span>
-          <span class="hidden md:inline">•</span>
-          <span>Particuliers • Pros • Flottes</span>
+
+        <!-- Right panel -->
+        <div class="rounded-3xl border border-zinc-800 bg-gradient-to-b from-zinc-900/60 to-zinc-950 p-6 shadow-xl">
+          <div class="flex items-start justify-between gap-4">
+            <div>
+              <h2 class="text-xl font-semibold">Diagnostic express</h2>
+              <p class="text-zinc-400 mt-1 text-sm">3 infos et on vous rappelle avec un prix.</p>
+            </div>
+            <div class="rounded-2xl border border-amber-400/30 bg-amber-400/10 px-3 py-2 text-amber-200 text-sm font-semibold">
+              Réponse rapide
+            </div>
+          </div>
+
+          <form class="mt-6 grid gap-3" action="#" method="POST">
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                     placeholder="Nom" name="nom" />
+              <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                     placeholder="Téléphone" name="tel" />
+            </div>
+
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                     placeholder="Véhicule (ex: Clio 4)" name="vehicule" />
+              <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                     placeholder="Ville" name="ville" />
+            </div>
+
+            <textarea class="w-full min-h-[110px] rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                      placeholder="Décrivez le souci (symptômes, bruit, voyant, etc.)" name="message"></textarea>
+
+            <button type="submit"
+                    class="rounded-xl bg-amber-400 px-5 py-3 font-semibold text-zinc-950 hover:bg-amber-300 transition">
+              Envoyer la demande
+            </button>
+
+            <p class="text-xs text-zinc-500">
+              En envoyant, vous acceptez d’être recontacté pour établir un devis. (RGPD: pas de spam)
+            </p>
+          </form>
+
+          <div class="mt-6 grid sm:grid-cols-2 gap-3 text-sm">
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4">
+              <div class="font-semibold text-zinc-200">Ce qu’on fait</div>
+              <ul class="mt-2 space-y-1 text-zinc-400">
+                <li>• Freins / disques / plaquettes</li>
+                <li>• Vidange / filtres</li>
+                <li>• Pneus / équilibrage</li>
+                <li>• Batterie / alternateur</li>
+              </ul>
+            </div>
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-950/50 p-4">
+              <div class="font-semibold text-zinc-200">Ce qu’on évite</div>
+              <ul class="mt-2 space-y-1 text-zinc-400">
+                <li>• Promesses floues</li>
+                <li>• Factures surprises</li>
+                <li>• Jargon inutile</li>
+                <li>• Délais non tenus</li>
+              </ul>
+            </div>
+          </div>
+
         </div>
       </div>
-    </div>
-  </section>
-
-  <!-- Preuves rapides -->
-  <section class="container mx-auto px-4 py-10 grid grid-cols-2 md:grid-cols-4 gap-4">
-    <div class="glass rounded-2xl p-4 text-center">
-      <div class="text-3xl">⏱️</div>
-      <div class="mt-2 text-sm">Devis en 2h ouvrées</div>
-    </div>
-    <div class="glass rounded-2xl p-4 text-center">
-      <div class="text-3xl">🛠️</div>
-      <div class="mt-2 text-sm">Entretien constructeur</div>
-    </div>
-    <div class="glass rounded-2xl p-4 text-center">
-      <div class="text-3xl">🧰</div>
-      <div class="mt-2 text-sm">Diag. multimarques</div>
-    </div>
-    <div class="glass rounded-2xl p-4 text-center">
-      <div class="text-3xl">🛡️</div>
-      <div class="mt-2 text-sm">RC Pro & partenaires</div>
     </div>
   </section>
 
   <!-- Services -->
-  <section id="services" class="container mx-auto px-4 py-16">
-    <h2 class="text-2xl md:text-3xl font-bold">Services</h2>
-    <p class="mt-2 text-slate-300">Tout pour votre véhicule, sans perte de garantie.</p>
-    <div class="mt-8 grid gap-6 md:grid-cols-2">
-      <ul class="space-y-3 text-slate-200">
-        <li>• Entretien constructeur (avec/sans perte de garantie)</li>
-        <li>• Révision, vidange, filtres</li>
-        <li>• Pneus (montage/équilibrage), géométrie/parallélisme</li>
-        <li>• Freinage (plaquettes, disques, liquide)</li>
-        <li>• Climatisation (recharge, traceur, désinfection)</li>
-        <li>• Diagnostic électronique</li>
-      </ul>
-      <ul class="space-y-3 text-slate-200">
-        <li>• Distribution / Embrayage</li>
-        <li>• CT – Pré-contrôle</li>
-        <li>• Carrosserie / Peinture</li>
-        <li>• Dépannage / Remorquage</li>
-        <li>• Cartes grises / Préparation vente</li>
-      </ul>
+  <section id="services" class="mx-auto max-w-6xl px-4 py-14">
+    <div class="flex items-end justify-between gap-6 flex-wrap">
+      <div>
+        <h2 class="text-3xl font-semibold">Services</h2>
+        <p class="text-zinc-400 mt-2">Le cœur du garage : l’entretien et les réparations courantes.</p>
+      </div>
+      <a href="tel:+33600000000" class="text-amber-200 hover:text-amber-100 font-semibold">
+        📞 Appeler maintenant
+      </a>
+    </div>
+
+    <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <!-- Card -->
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🛢️</div>
+        <h3 class="mt-3 font-semibold text-lg">Vidange & révision</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Huile + filtres, contrôle visuel, remise à niveau.</p>
+      </article>
+
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🛞</div>
+        <h3 class="mt-3 font-semibold text-lg">Pneus</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Montage, équilibrage, réparation crevaison.</p>
+      </article>
+
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🧱</div>
+        <h3 class="mt-3 font-semibold text-lg">Freinage</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Plaquettes, disques, liquide, contrôle sécurité.</p>
+      </article>
+
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🔋</div>
+        <h3 class="mt-3 font-semibold text-lg">Batterie & charge</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Test batterie, alternateur, démarrage.</p>
+      </article>
+
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🧠</div>
+        <h3 class="mt-3 font-semibold text-lg">Diagnostic</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Lecture défauts, symptômes, recherche de panne.</p>
+      </article>
+
+      <article class="rounded-3xl border border-zinc-800 bg-zinc-900/30 p-6 hover:bg-zinc-900/50 transition">
+        <div class="text-2xl">🧰</div>
+        <h3 class="mt-3 font-semibold text-lg">Petites réparations</h3>
+        <p class="mt-2 text-zinc-400 text-sm">Courroies, capteurs, ampoules, essuie-glaces.</p>
+      </article>
     </div>
   </section>
 
-  <!-- Offres phares / Tarifs -->
-  <section id="tarifs" class="bg-slate-900/40 border-t border-white/5">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Offres phares</h2>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <div class="rounded-2xl border border-white/10 p-6">
-          <h3 class="font-semibold">Révision standard</h3>
-          <p class="mt-2 text-sm text-slate-300">Huile + filtre + contrôles 30 pts</p>
-          <div class="mt-4 text-3xl font-extrabold">dès 149€</div>
-          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-revision">Demander un devis</a>
-        </div>
-        <div class="rounded-2xl border border-white/10 p-6">
-          <h3 class="font-semibold">Pack pneus + géométrie</h3>
-          <p class="mt-2 text-sm text-slate-300">Montage/équilibrage + parallélisme</p>
-          <div class="mt-4 text-3xl font-extrabold">sur devis</div>
-          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-pneus">Demander un devis</a>
-        </div>
-        <div class="rounded-2xl border border-white/10 p-6">
-          <h3 class="font-semibold">Recharge climatisation</h3>
-          <p class="mt-2 text-sm text-slate-300">Traceur + désinfection en option</p>
-          <div class="mt-4 text-3xl font-extrabold">à partir de 69€</div>
-          <a href="#devis" class="mt-6 inline-flex rounded-xl bg-brand px-4 py-2 font-semibold text-slate-900" data-cta="offre-clim">Demander un devis</a>
-        </div>
-      </div>
-    </div>
-  </section>
+  <!-- Tarifs -->
+  <section id="tarifs" class="bg-zinc-900/20 border-y border-zinc-800">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="grid lg:grid-cols-2 gap-10 items-start">
+        <div>
+          <h2 class="text-3xl font-semibold">Tarifs</h2>
+          <p class="mt-2 text-zinc-400">
+            Exemples indicatifs. Le devis final dépend du modèle et des pièces.
+          </p>
 
-  <!-- Zone d'intervention -->
-  <section id="zone" class="container mx-auto px-4 py-16">
-    <h2 class="text-2xl md:text-3xl font-bold">Zone de service</h2>
-    <p class="mt-2 text-slate-300">Béthune et alentours : Bruay-la-Buissière, Lens, Noeux-les-Mines…</p>
-    <div class="mt-6 grid md:grid-cols-2 gap-6 items-stretch">
-      <div class="rounded-2xl overflow-hidden border border-white/10">
-        <iframe title="Carte Google" loading="lazy" class="w-full h-72 md:h-full"
-          src="https://www.google.com/maps?q=Rue%20du%20Pot%20Bertin%2C%20B%C3%A9thune&output=embed"></iframe>
-      </div>
-      <ul class="space-y-3 text-slate-200 self-center">
-        <li>• Ville principale : Béthune</li>
-        <li>• Cibles : particuliers / pros / flottes</li>
-        <li>• Devis réponse sous 2h ouvrées</li>
-      </ul>
-    </div>
-  </section>
+          <div class="mt-6 rounded-3xl border border-zinc-800 bg-zinc-950 p-6">
+            <div class="flex items-center justify-between">
+              <div class="font-semibold text-zinc-100">Main d’œuvre</div>
+              <div class="text-amber-200 font-semibold">à partir de 59€ / h</div>
+            </div>
+            <p class="mt-2 text-zinc-400 text-sm">
+              On valide toujours avec vous avant d’engager des frais supplémentaires.
+            </p>
+          </div>
+        </div>
 
-  <!-- Avis & preuves -->
-  <section id="avis" class="bg-slate-900/40 border-t border-white/5">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Ils nous font confiance</h2>
-      <div class="mt-2 text-slate-300">Note Google : <strong>4,7/5</strong> (128 avis)</div>
-      <div class="mt-8 grid gap-6 md:grid-cols-3">
-        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
-          « Accueil top, révision rapide et prix nickel. »<br/><span class="text-slate-400">— Matthieu D.</span>
-        </blockquote>
-        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
-          « Géométrie impeccable, plus de tirage à droite. »<br/><span class="text-slate-400">— Sofia L.</span>
-        </blockquote>
-        <blockquote class="rounded-2xl border border-white/10 p-6 text-sm">
-          « Intervention pro sur flotte utilitaire, RAS. »<br/><span class="text-slate-400">— TransNord</span>
-        </blockquote>
-      </div>
-      <div class="mt-10 flex flex-wrap items-center gap-4 opacity-80">
-        <img src="images/axa.png" alt="AXA" class="h-8" loading="lazy"/>
-        <img src="images/maaf.png" alt="MAAF" class="h-8" loading="lazy"/>
-        <img src="images/allianz.png" alt="Allianz" class="h-8" loading="lazy"/>
-        <img src="images/" alt="Partenaire" class="h-8" loading="lazy"/>
-      </div>
-    </div>
-  </section>
+        <div class="rounded-3xl border border-zinc-800 bg-zinc-950 overflow-hidden">
+          <div class="p-5 border-b border-zinc-800 flex items-center justify-between">
+            <div class="font-semibold">Exemples</div>
+            <div class="text-xs text-zinc-500">Prix indicatifs</div>
+          </div>
 
-  <!-- Contact / Formulaire -->
-  <section id="contact" class="container mx-auto px-4 py-16">
-    <h2 class="text-2xl md:text-3xl font-bold">Contact & Devis</h2>
-    <div class="mt-8 grid gap-8 md:grid-cols-2">
-      <div class="rounded-2xl border border-white/10 p-6">
-        <div class="space-y-2 text-slate-300">
-          <div>📍 Rue du Pot Bertin, 62400 Béthune</div>
-          <div>📞 <a class="text-brand" href="tel:+33600000000">06 00 00 00 00</a></div>
-          <div>✉️ <a class="text-brand" href="mailto:maildedemo@garage.fr">maildedemo@garage.fr</a></div>
-          <div>🕘 9h – 19h du lundi au samedi</div>
-        </div>
-      </div>
+          <div class="divide-y divide-zinc-800">
+            <div class="p-5 flex items-center justify-between">
+              <div>
+                <div class="font-semibold text-zinc-100">Vidange + filtre</div>
+                <div class="text-sm text-zinc-400">huile standard</div>
+              </div>
+              <div class="font-semibold text-amber-200">à partir de 89€</div>
+            </div>
 
-      <form id="devis" action="https://formspree.io/f/XXXXdemo" method="POST" class="rounded-2xl border border-white/10 p-6 space-y-4" data-form="devis">
-        <div>
-          <label class="block text-sm mb-1">Nom</label>
-          <input type="text" name="name" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">Téléphone</label>
-          <input type="tel" name="phone" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">Immatriculation (option)</label>
-          <input type="text" name="immatriculation" class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand" />
-        </div>
-        <div>
-          <label class="block text-sm mb-1">Message</label>
-          <textarea name="message" rows="4" required class="w-full rounded-xl bg-white/5 px-4 py-3 outline-none focus:ring-2 focus:ring-brand"></textarea>
-        </div>
-        <button type="submit" class="w-full rounded-2xl bg-brand px-5 py-3 font-semibold text-slate-900" data-cta="send-form">Envoyer</button>
-        <p class="text-xs text-slate-400">En envoyant ce formulaire, vous acceptez notre <a href="#legal" class="underline">politique de confidentialité</a>.</p>
-      </form>
-    </div>
-  </section>
+            <div class="p-5 flex items-center justify-between">
+              <div>
+                <div class="font-semibold text-zinc-100">Plaquettes avant</div>
+                <div class="text-sm text-zinc-400">selon véhicule</div>
+              </div>
+              <div class="font-semibold text-amber-200">à partir de 129€</div>
+            </div>
 
-  <!-- Mentions légales & RGPD -->
-  <section id="legal" class="bg-slate-900/40 border-t border-white/5">
-    <div class="container mx-auto px-4 py-16">
-      <h2 class="text-2xl md:text-3xl font-bold">Mentions légales</h2>
-      <div class="mt-4 grid gap-6 md:grid-cols-2 text-sm text-slate-300">
-        <div>
-          <p><strong>Raison sociale :</strong> Béthune Garage</p>
-          <p><strong>SIREN :</strong> 01212121212121</p>
-          <p><strong>RC Pro :</strong> 21 254 258 245</p>
-          <p><strong>Hébergement :</strong> OVH / o2switch / Netlify (démo)</p>
-        </div>
-        <div>
-          <p>Politique de confidentialité : vos données sont utilisées pour vous recontacter, conformément au RGPD. Aucune revente. Droit d'accès et de suppression sur demande : <a href="mailto:maildedemo@garage.fr" class="underline">maildedemo@garage.fr</a>.</p>
-          <p class="mt-2">Cookies : uniquement pour la mesure d'audience (GA4) si vous l'acceptez.</p>
+            <div class="p-5 flex items-center justify-between">
+              <div>
+                <div class="font-semibold text-zinc-100">Permutation pneus</div>
+                <div class="text-sm text-zinc-400">équilibrage possible</div>
+              </div>
+              <div class="font-semibold text-amber-200">à partir de 29€</div>
+            </div>
+
+            <div class="p-5 flex items-center justify-between">
+              <div>
+                <div class="font-semibold text-zinc-100">Diagnostic valise</div>
+                <div class="text-sm text-zinc-400">lecture + première analyse</div>
+              </div>
+              <div class="font-semibold text-amber-200">à partir de 39€</div>
+            </div>
+          </div>
+
+          <div class="p-5 bg-zinc-900/30">
+            <p class="text-sm text-zinc-400">
+              Astuce: si la réparation est confirmée chez nous, le diagnostic peut être déduit (selon cas).
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="border-t border-white/5">
-    <div class="container mx-auto px-4 py-8 text-sm text-slate-400 flex flex-wrap items-center justify-between gap-4">
-      <div>© <span id="year"></span> Béthune Garage — Tous droits réservés.</div>
-      <div class="flex items-center gap-4">
-        <a href="#legal" class="hover:text-brand">Mentions légales</a>
-        <a href="#" class="hover:text-brand">Politique de confidentialité</a>
+  <!-- Zone -->
+  <section id="zone" class="mx-auto max-w-6xl px-4 py-14">
+    <h2 class="text-3xl font-semibold">Zone d’intervention</h2>
+    <p class="mt-2 text-zinc-400">Garage sur Béthune, interventions et clientèle locale aux alentours.</p>
+
+    <div class="mt-8 grid lg:grid-cols-2 gap-4">
+      <div class="rounded-3xl border border-zinc-800 bg-zinc-950 p-6">
+        <h3 class="font-semibold text-zinc-100">Villes fréquentes</h3>
+        <div class="mt-3 flex flex-wrap gap-2">
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Béthune</span>
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Bruay-la-Buissière</span>
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Annezin</span>
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Noeux-les-Mines</span>
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Lens</span>
+          <span class="px-3 py-1 rounded-full border border-zinc-800 text-zinc-300 text-sm">Arras</span>
+        </div>
+
+        <div class="mt-5 rounded-2xl bg-zinc-900/40 border border-zinc-800 p-4 text-sm text-zinc-400">
+          <div class="font-semibold text-zinc-200">Accès</div>
+          <p class="mt-1">Parking devant le garage, dépôt véhicule simple, explications claires à l’arrivée.</p>
+        </div>
+      </div>
+
+      <div class="rounded-3xl border border-zinc-800 bg-zinc-950 p-2 overflow-hidden">
+        <!-- Google Maps embed placeholder -->
+        <iframe
+          title="Carte"
+          class="w-full h-[340px] rounded-2xl"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=B%C3%A9thune&output=embed">
+        </iframe>
       </div>
     </div>
-  </footer>
+  </section>
 
-  <!-- Cookie banner (simple) -->
-  <div id="cookieBanner" class="fixed bottom-4 inset-x-4 md:inset-x-auto md:right-4 md:max-w-xl z-50 hidden">
-    <div class="rounded-2xl border border-white/10 bg-slate-900/95 p-4 text-sm">
-      <p>Nous utilisons des cookies pour mesurer l'audience (GA4). <a href="#legal" class="underline">En savoir plus</a>.</p>
-      <div class="mt-3 flex gap-2 justify-end">
-        <button id="cookieDecline" class="rounded-xl border border-white/10 px-3 py-1">Refuser</button>
-        <button id="cookieAccept" class="rounded-xl bg-brand text-slate-900 px-3 py-1 font-semibold">Accepter</button>
+  <!-- Contact -->
+  <section id="contact" class="bg-zinc-900/20 border-t border-zinc-800">
+    <div class="mx-auto max-w-6xl px-4 py-14">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="rounded-3xl border border-zinc-800 bg-zinc-950 p-6">
+          <h2 class="text-3xl font-semibold">Contact</h2>
+          <p class="mt-2 text-zinc-400">Un appel, un message, et on cale le bon créneau.</p>
+
+          <div class="mt-6 grid gap-3">
+            <a href="tel:+33600000000"
+               class="rounded-2xl bg-amber-400 px-5 py-4 font-semibold text-zinc-950 hover:bg-amber-300 transition inline-flex items-center justify-between">
+              <span>📞 Appeler le garage</span>
+              <span class="text-zinc-900/70">06 00 00 00 00</span>
+            </a>
+
+            <a href="mailto:contact@garage-dupont.fr"
+               class="rounded-2xl border border-zinc-800 bg-zinc-900/30 px-5 py-4 font-semibold text-zinc-200 hover:bg-zinc-900/60 transition inline-flex items-center justify-between">
+              <span>✉️ Envoyer un email</span>
+              <span class="text-zinc-400 font-medium">contact@garage-dupont.fr</span>
+            </a>
+
+            <div class="rounded-2xl border border-zinc-800 bg-zinc-900/30 px-5 py-4">
+              <div class="font-semibold text-zinc-200">Horaires</div>
+              <div class="mt-1 text-sm text-zinc-400">Lun–Ven: 8h30–18h30 • Sam: 9h–12h</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="rounded-3xl border border-zinc-800 bg-zinc-950 p-6">
+          <h3 class="text-xl font-semibold">Formulaire (option)</h3>
+          <p class="mt-2 text-zinc-400 text-sm">
+            À brancher sur Formspree plus tard (ou autre). Pour l’instant, c’est une maquette.
+          </p>
+
+          <form class="mt-6 grid gap-3" action="#" method="POST">
+            <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                   placeholder="Nom" name="nom" />
+            <input class="w-full rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                   placeholder="Téléphone" name="tel" />
+            <textarea class="w-full min-h-[120px] rounded-xl bg-zinc-950 border border-zinc-800 px-4 py-3 text-zinc-100 placeholder:text-zinc-600 focus:outline-none focus:ring-2 focus:ring-amber-300/40"
+                      placeholder="Message" name="message"></textarea>
+            <button type="submit"
+                    class="rounded-xl bg-white text-zinc-950 px-5 py-3 font-semibold hover:bg-zinc-100 transition">
+              Envoyer
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
-  </div>
 
-  <!-- Scripts: menus, année, cookies & GA4 events -->
+      <footer class="mt-12 flex flex-wrap items-center justify-between gap-4 text-sm text-zinc-500">
+        <div>© <span id="year"></span> Garage Dupont. Tous droits réservés.</div>
+        <div class="flex items-center gap-3">
+          <a class="hover:text-zinc-300 underline underline-offset-4 decoration-zinc-700" href="#">Mentions légales</a>
+          <span class="text-zinc-700">•</span>
+          <a class="hover:text-zinc-300 underline underline-offset-4 decoration-zinc-700" href="#">Politique de confidentialité</a>
+          <span class="text-zinc-700">•</span>
+          <span>Créé par <span class="text-zinc-300 font-medium">ortek.fr</span></span>
+        </div>
+      </footer>
+    </div>
+  </section>
+
   <script>
-    // Année
-    document.getElementById('year').textContent = new Date().getFullYear();
-
-    // Menu mobile
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
-    if (menuBtn) menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-
-    // Cookie banner (consent minimaliste)
-    const cookieKey = 'ga4_consent';
-    const cookieBanner = document.getElementById('cookieBanner');
-    const acceptBtn = document.getElementById('cookieAccept');
-    const declineBtn = document.getElementById('cookieDecline');
-
-    const consent = localStorage.getItem(cookieKey);
-    if (!consent) cookieBanner.classList.remove('hidden');
-
-    function setConsent(value) {
-      localStorage.setItem(cookieKey, value);
-      cookieBanner.classList.add('hidden');
-      if (value === 'granted') initGA4();
-    }
-
-    if (acceptBtn) acceptBtn.addEventListener('click', () => setConsent('granted'));
-    if (declineBtn) declineBtn.addEventListener('click', () => setConsent('denied'));
-
-    // GA4 (chargé uniquement si consentement) + events CTA/Form
-    function initGA4() {
-      if (window.gtagInitialized) return;
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      window.gtag = gtag;
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX'); // <-- Remplacer par votre ID GA4
-
-      // Track clics CTA
-      document.querySelectorAll('[data-cta]').forEach(el => {
-        el.addEventListener('click', () => {
-          gtag('event', 'cta_click', { label: el.getAttribute('data-cta') });
-        });
-      });
-
-      // Track envoi formulaire
-      const form = document.querySelector('[data-form="devis"]');
-      if (form) form.addEventListener('submit', () => {
-        gtag('event', 'form_submit', { label: 'devis' });
-      });
-
-      window.gtagInitialized = true;
-    }
-
-    if (consent === 'granted') initGA4();
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
