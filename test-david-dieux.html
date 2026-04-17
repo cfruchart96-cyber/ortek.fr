@@ -1,0 +1,532 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Dieux Espace Vert - Élagage Bruay-la-Buissière</title>
+
+<meta name="description" content="Élagage, abattage et entretien d'espaces verts à Bruay-la-Buissière. Intervention rapide et devis gratuit.">
+
+
+<style>
+ *{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+body{
+color:white;
+}
+
+/* BACKGROUND */
+.bg{
+position:fixed;
+width:100%;
+height:100%;
+background:url('image/foret.png') center/cover no-repeat;
+z-index:-2;
+}
+
+.overlay{
+background:rgba(0,0,0,0.6);
+min-height:100vh;
+}
+
+/* CONTAINER */
+.container{
+max-width:1100px;
+margin:auto;
+padding:40px 20px;
+}
+
+/* NAV */
+.nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.logo{
+font-size:20px;
+font-weight:bold;
+}
+
+/* HERO */
+.hero{
+display:flex;
+justify-content:space-between;
+align-items:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero-box{
+background:rgba(255,255,255,0.1);
+padding:20px;
+border-radius:10px;
+}
+
+/* BUTTONS */
+.btn{
+padding:12px 20px;
+border-radius:8px;
+text-decoration:none;
+display:inline-block;
+margin-top:10px;
+}
+
+.primary{
+background:#2ecc71;
+color:white;
+}
+
+.secondary{
+border:1px solid white;
+color:white;
+}
+
+/* PROOF */
+.proof{
+display:flex;
+justify-content:space-around;
+text-align:center;
+}
+
+/* SERVICES */
+.services h2{
+text-align:center;
+margin-bottom:40px;
+}
+
+.service{
+display:flex;
+align-items:center;
+margin-bottom:40px;
+gap:20px;
+}
+
+.service.reverse{
+flex-direction:row-reverse;
+}
+
+.img{
+width:50%;
+height:200px;
+background:#333;
+border-radius:10px;
+}
+
+.text{
+width:50%;
+}
+
+/* GALLERY */
+.grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:20px;
+}
+
+.g{
+height:150px;
+background:#444;
+border-radius:10px;
+}
+
+/* PROCESS */
+.steps{
+display:flex;
+justify-content:space-between;
+text-align:center;
+}
+
+/* FORM */
+.form form{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+.form input, .form textarea, .form select{
+padding:10px;
+border:none;
+border-radius:5px;
+}
+
+/* MAP */
+.map iframe{
+width:100%;
+height:300px;
+border:none;
+}
+
+/* FOOTER */
+.footer{
+text-align:center;
+padding:20px;
+background:black;
+}
+.img1{
+    background:url('image/elagage.png') center/cover no-repeat;
+}
+
+.img2{
+    background:url('image/haie.png') center/cover no-repeat;
+}
+
+.img3{
+    background:url('image/abattage.png') center/cover no-repeat;
+}
+
+.step-card{
+    padding:20px;
+    border-radius:15px;
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.2);
+    text-align:center;
+    font-weight:bold;
+}
+.zone-card{
+    max-width:600px;
+    padding:25px;
+
+    background:rgba(255,255,255,0.1);
+    backdrop-filter:blur(10px);
+
+    border-radius:15px;
+    border:1px solid rgba(255,255,255,0.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,0.5);
+}
+.zone-card:hover{
+    transform:translateY(-5px);
+    transition:0.3s;
+}
+section:nth-child(even){
+    background:rgba(0,0,0,0.3);
+}
+/* MENU PC */
+.menu{
+    display:flex;
+    gap:20px;
+}
+
+.menu a{
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+/* BURGER */
+.burger{
+    display:none;
+    cursor:pointer;
+}
+
+.burger span{
+    display:block;
+    width:25px;
+    height:3px;
+    background:white;
+    margin:5px 0;
+}
+
+/* MENU MOBILE */
+.mobile-menu{
+    position:fixed;
+    top:0;
+    right:-100%;
+    width:75%;
+    height:100%;
+
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(12px);
+
+    display:flex;
+    flex-direction:column;
+    padding:80px 30px;
+    gap:25px;
+
+    transition:0.4s ease;
+    z-index:1000;
+}
+
+.mobile-menu a{
+    color:white;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:600;
+}
+/* ACTIF */
+.mobile-menu.active{
+    right:0;
+}
+.menu-overlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.5);
+
+    opacity:0;
+    visibility:hidden;
+    transition:0.3s;
+    z-index:999;
+}
+
+.menu-overlay.active{
+    opacity:1;
+    visibility:visible;
+}
+.burger{
+    position:fixed;
+    top:20px;
+    right:20px;
+    z-index:2000;
+    display:none; /* caché par défaut (PC) */
+}
+/* RESPONSIVE */
+@media(max-width:768px){
+
+.hero{
+flex-direction:column;
+}
+
+.service{
+flex-direction:column;
+}
+
+.text, .img{
+width:100%;
+}
+
+.steps{
+flex-direction:column;
+gap:10px;
+}
+.menu{
+    display:none;
+}
+
+.burger{
+    display:block;
+}
+
+.burger span{
+    display:block;
+    width:25px;
+    height:3px;
+    background:white;
+    margin:5px 0;
+    transition:0.3s;
+}
+
+/* ANIMATION ACTIVE */
+.burger.active span:nth-child(1){
+    transform:rotate(45deg) translate(5px,5px);
+}
+
+.burger.active span:nth-child(2){
+    opacity:0;
+}
+
+.burger.active span:nth-child(3){
+    transform:rotate(-45deg) translate(6px,-6px);
+}
+.menu{
+        display:none;
+    }
+
+    .burger{
+        display:block;
+    }
+}
+ 
+</style>
+
+</head>
+
+<body>
+<div class="menu-overlay" id="menuOverlay" onclick="toggleMenu()"></div>
+<!-- BACKGROUND -->
+<div class="bg"></div>
+
+<div class="overlay">
+
+<!-- NAV -->
+<header class="nav container">
+
+    <div class="logo">Dieux Espace Vert</div>
+
+    <!-- MENU PC -->
+    <nav class="menu">
+        <a href="#">Accueil</a>
+        <a href="#services">Services</a>
+        <a href="#zone">Zone</a>
+        <a href="#devis">Devis</a>
+        <a href="tel:0611070387">Appeler</a>
+    </nav>
+
+    <!-- BURGER MOBILE -->
+    <div class="burger" onclick="toggleMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+</header>
+
+<!-- MENU MOBILE -->
+<nav class="mobile-menu" id="mobileMenu">
+    <a href="#">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#zone">Zone</a>
+    <a href="#devis">Devis</a>
+    <a href="tel:0611070387">Appeler</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero container">
+    <div class="hero-text">
+        <h1>Élagage & entretien<br>espaces verts</h1>
+        <p>Intervention rapide à Bruay-la-Buissière et alentours</p>
+
+        <div class="cta">
+            <a href="#devis" class="btn primary">📩 Devis gratuit</a>
+            <a href="tel:0611070387" class="btn secondary">Appeler</a>
+        </div>
+    </div>
+
+    <div class="hero-box">
+        ✔ Intervention rapide<br>
+        ✔ Travail soigné<br>
+        ✔ Devis sous 24h
+    </div>
+</section>
+
+<!-- PREUVE -->
+<section class="proof container">
+    <div>+100 chantiers réalisés</div>
+    <div>Réponse rapide</div>
+    <div>Matériel pro</div>
+</section>
+
+<!-- SERVICES -->
+<section class="services container">
+
+    <h2>Nos services</h2>
+
+    <div class="service">
+        <div class="text">
+            <h3>Élagage</h3>
+            <p>Suppression des branches dangereuses et entretien des arbres.</p>
+        </div>
+        <div class="img img1"></div>
+    </div>
+
+    <div class="service reverse">
+        <div class="text">
+            <h3>Taille de haies</h3>
+            <p>Entretien propre pour un extérieur net toute l'année.</p>
+        </div>
+        <div class="img img2"></div>
+    </div>
+
+    <div class="service">
+        <div class="text">
+            <h3>Abattage</h3>
+            <p>Intervention sécurisée avec nettoyage du chantier.</p>
+        </div>
+        <div class="img img3"></div>
+    </div>
+
+</section>
+
+<!-- GALERIE -->
+<section class="gallery container">
+    <h2>Avant / Après</h2>
+
+    <div class="grid">
+        <div class="g"></div>
+        <div class="g"></div>
+        <div class="g"></div>
+        <div class="g"></div>
+    </div>
+</section>
+
+<!-- ZONE -->
+<section class="zone container" id="zone">
+    <div class="zone-card">
+        <h2>Zone d’intervention</h2>
+        <p>Bruay-la-Buissière, Béthune, Noeux-les-Mines et alentours</p>
+    </div>
+</section>
+<!-- MAP -->
+<section class="map">
+    <iframe 
+        src="https://www.google.com/maps/d/u/0/embed?mid=1irBoP64Ga87Vseg1DSYpteNU27Kfwcg&ehbc=2E312F&noprof=1">
+    </iframe>
+</section>
+
+<!-- PROCESS -->
+<section class="process container">
+    <h2>Comment ça se passe ?</h2>
+
+    <div class="steps">
+        <div class="step-card">1. Contact</div>
+        <div class="step-card">2. Devis rapide</div>
+        <div class="step-card">3. Intervention</div>
+        <div class="step-card">4. Chantier propre</div>
+    </div>
+</section>
+
+<!-- FORM -->
+<section id="devis" class="form container">
+    <h2>Demande de devis</h2>
+
+    <form action="https://formspree.io/f/TON_ID" method="POST">
+        <input type="text" name="nom" placeholder="Nom" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="tel" name="telephone" placeholder="Téléphone" required>
+        <input type="text" name="ville" placeholder="Ville">
+
+        <select name="service">
+            <option>Type de travaux</option>
+            <option>Élagage</option>
+            <option>Taille de haies</option>
+            <option>Abattage</option>
+        </select>
+
+        <textarea name="message" placeholder="Décrivez votre besoin"></textarea>
+
+        <button type="submit" class="btn primary">Recevoir mon devis</button>
+    </form>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+    <p>© Dieux Espace Vert - Bruay-la-Buissière</p>
+</footer>
+
+</div>
+
+<script>
+function toggleMenu(){
+    document.getElementById("mobileMenu").classList.toggle("active");
+    document.getElementById("menuOverlay").classList.toggle("active");
+
+    document.querySelector(".burger").classList.toggle("active");
+}
+</script></body>
+</html>
