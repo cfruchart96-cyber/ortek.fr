@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Site internet avec réservation pour coiffeur — Ortek</title>
+  <meta name="description" content="Un site professionnel clé en main pour salon de coiffure, avec réservation en ligne Easy!Appointments, agenda salon séparé, sans commission ni abonnement au logiciel de réservation." />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <meta name="color-scheme" content="light"><meta name="darkreader-lock">
+  <style>html{scroll-behavior:smooth}</style>
+</head>
+<body class="antialiased text-gray-800 bg-white">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-gray-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex h-16 items-center justify-between">
+        <a href="index.html" class="flex items-center gap-3">
+          <img src="assets/images/logo.png" alt="Ortek" class="h-9 w-auto rounded-xl">
+          <span class="font-semibold tracking-tight">Ortek</span>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm">
+          <a href="offres.html" class="text-gray-600 hover:text-gray-900">Notre offre</a>
+          <a href="offre-coiffeurs.html" class="text-gray-900 font-medium">Offre coiffeurs</a>
+          <a href="tarifs.html" class="text-gray-600 hover:text-gray-900">Tarifs</a>
+          <a href="realisations.html" class="text-gray-600 hover:text-gray-900">Réalisations</a>
+        </nav>
+        <div class="hidden md:block">
+          <a href="demanderundevispro.html" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-4 py-2 text-white font-medium hover:bg-blue-700 shadow-sm">
+            Demander un devis
+          </a>
+        </div>
+        <button id="menuBtn" class="md:hidden p-2 rounded-md hover:bg-gray-100" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobileMenu">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+          </svg>
+        </button>
+      </div>
+      <nav id="mobileMenu" class="md:hidden hidden pb-4">
+        <div class="grid gap-2 text-sm">
+          <a href="offres.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Notre offre</a>
+          <a href="offre-coiffeurs.html" class="px-3 py-2 rounded-lg bg-gray-50 font-medium">Offre coiffeurs</a>
+          <a href="tarifs.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Tarifs</a>
+          <a href="realisations.html" class="px-3 py-2 rounded-lg hover:bg-gray-50">Réalisations</a>
+          <a href="demanderundevispro.html" class="px-3 py-2 rounded-lg bg-blue-600 text-white text-center">Demander un devis</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="bg-gradient-to-b from-blue-50 to-white border-b border-blue-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+        <div class="max-w-4xl">
+          <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold">Site clé en main pour salon de coiffure</p>
+          <h1 class="mt-3 text-4xl sm:text-5xl font-semibold tracking-tight text-gray-900">
+            Votre salon visible en ligne. Vos rendez-vous organisés sans commission.
+          </h1>
+          <p class="mt-6 text-lg text-gray-600 leading-relaxed max-w-3xl">
+            Ortek conçoit votre site professionnel et y intègre Easy!Appointments pour permettre à vos clients de réserver en ligne. Vous disposez d’un accès séparé à l’agenda du salon pour gérer vos prestations, horaires et rendez-vous.
+          </p>
+          <div class="mt-8 flex flex-col sm:flex-row gap-3">
+            <a href="demanderundevispro.html" class="inline-flex items-center justify-center rounded-xl bg-blue-600 px-5 py-3 text-white font-medium hover:bg-blue-700 shadow-sm">
+              Demander mon devis
+            </a>
+            <a href="#inclus" class="inline-flex items-center justify-center rounded-xl border border-gray-200 bg-white px-5 py-3 text-gray-700 font-medium hover:bg-gray-50">
+              Voir ce qui est inclus
+            </a>
+          </div>
+          <ul class="mt-8 flex flex-wrap gap-3 text-sm text-gray-700">
+            <li class="rounded-lg border border-blue-100 bg-white px-3 py-2">Aucune commission sur les réservations</li>
+            <li class="rounded-lg border border-blue-100 bg-white px-3 py-2">Aucun abonnement au logiciel de réservation</li>
+            <li class="rounded-lg border border-blue-100 bg-white px-3 py-2">Agenda salon accessible séparément</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="inclus" class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="max-w-3xl">
+          <p class="text-xs uppercase tracking-wide text-gray-500">Une solution complète</p>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight">Tout le nécessaire pour présenter le salon et recevoir des rendez-vous</h2>
+        </div>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <div class="text-2xl" aria-hidden="true">✦</div>
+            <h3 class="mt-3 text-lg font-semibold">Site professionnel</h3>
+            <p class="mt-2 text-sm text-gray-600">Design adapté à votre image, présentation du salon, prestations, tarifs, galerie, coordonnées et appels à l’action clairs.</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <div class="text-2xl" aria-hidden="true">◷</div>
+            <h3 class="mt-3 text-lg font-semibold">Réservation en ligne</h3>
+            <p class="mt-2 text-sm text-gray-600">Easy!Appointments est intégré au site pour que vos clients choisissent une prestation et un créneau disponible, depuis leur mobile ou leur ordinateur.</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6 shadow-sm">
+            <div class="text-2xl" aria-hidden="true">✓</div>
+            <h3 class="mt-3 text-lg font-semibold">Agenda côté salon</h3>
+            <p class="mt-2 text-sm text-gray-600">Un accès distinct vous permet de consulter et gérer les rendez-vous, les horaires, les indisponibilités et les prestations proposées.</p>
+          </article>
+        </div>
+
+        <div class="mt-6 rounded-2xl border border-gray-200 bg-gray-50 p-6 sm:p-8">
+          <div class="grid md:grid-cols-2 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold">Inclus dans la mise en place</h3>
+              <ul class="mt-4 space-y-3 text-sm text-gray-700">
+                <li>• Structure et design responsive du site</li>
+                <li>• Pages et contenus définis lors du cadrage</li>
+                <li>• Intégration et configuration d’Easy!Appointments</li>
+                <li>• Paramétrage initial des prestations, durées et horaires</li>
+                <li>• Formulaire de contact et accès rapide par téléphone</li>
+                <li>• Référencement local de base et optimisation mobile</li>
+              </ul>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold">Vous gardez la maîtrise</h3>
+              <ul class="mt-4 space-y-3 text-sm text-gray-700">
+                <li>• Pas de pourcentage prélevé sur vos rendez-vous</li>
+                <li>• Pas d’abonnement à un logiciel de réservation tiers</li>
+                <li>• Vos clients réservent directement auprès du salon</li>
+                <li>• Les règles de disponibilité sont adaptées à votre organisation</li>
+                <li>• Un devis précise le périmètre avant toute réalisation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white border-y border-gray-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <h2 class="text-2xl sm:text-3xl font-semibold tracking-tight">Une mise en place simple</h2>
+        <div class="mt-8 grid md:grid-cols-3 gap-6">
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <p class="text-sm text-blue-600 font-medium">1. Cadrage</p>
+            <h3 class="mt-1 font-semibold">Votre salon et vos règles</h3>
+            <p class="mt-2 text-sm text-gray-600">Nous définissons les pages, les prestations, les durées, les horaires et les informations nécessaires à la réservation.</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <p class="text-sm text-blue-600 font-medium">2. Conception</p>
+            <h3 class="mt-1 font-semibold">Site et agenda configurés</h3>
+            <p class="mt-2 text-sm text-gray-600">Ortek crée le site, installe Easy!Appointments et prépare l’espace de gestion du salon.</p>
+          </article>
+          <article class="rounded-2xl border border-gray-200 p-6">
+            <p class="text-sm text-blue-600 font-medium">3. Validation</p>
+            <h3 class="mt-1 font-semibold">Vérification avant mise en ligne</h3>
+            <p class="mt-2 text-sm text-gray-600">Vous vérifiez le contenu et le parcours de réservation. La mise en ligne intervient après votre validation.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+        <div class="grid lg:grid-cols-[1.25fr_.75fr] gap-8 items-start">
+          <div>
+            <p class="text-xs uppercase tracking-widest text-blue-600 font-semibold">Tarif de lancement</p>
+            <h2 class="mt-2 text-2xl sm:text-3xl font-semibold tracking-tight">Une offre chiffrée selon votre salon</h2>
+            <p class="mt-4 text-gray-600 max-w-2xl">Le prix dépend du nombre de pages, des contenus à préparer, des prestations à paramétrer et des besoins de personnalisation. Vous recevez un devis clair avant le démarrage.</p>
+          </div>
+          <aside class="rounded-2xl border border-blue-200 bg-blue-50 p-6 shadow-sm">
+            <p class="text-sm text-blue-900 font-medium">À prévoir par le client</p>
+            <p class="mt-2 text-sm text-gray-700">Le nom de domaine et l’hébergement restent à votre charge. Leur coût dépend du fournisseur et de la formule choisis. Ortek peut vous guider pour sélectionner une solution compatible.</p>
+            <p class="mt-4 text-xs text-gray-600">Easy!Appointments ne facture ni commission par réservation ni abonnement logiciel. L’hébergement nécessaire à son fonctionnement reste un coût distinct.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-blue-600">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 text-center">
+        <h2 class="text-2xl sm:text-3xl font-semibold text-white">Prêt à simplifier les rendez-vous de votre salon ?</h2>
+        <p class="mt-3 text-blue-100">Expliquez-nous votre fonctionnement. Nous vous proposerons un périmètre et un devis adaptés.</p>
+        <a href="demanderundevispro.html" class="mt-6 inline-flex items-center justify-center rounded-xl bg-white px-5 py-3 text-blue-700 font-medium hover:bg-blue-50 shadow-sm">Demander mon devis</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="border-t border-gray-200 py-8 text-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-gray-600">© <span id="year"></span> Ortek.</p>
+      <div class="flex flex-wrap items-center justify-center gap-6 text-gray-600">
+        <a href="offres.html" class="hover:text-gray-800">Notre offre</a>
+        <a href="tarifs.html" class="hover:text-gray-800">Tarifs</a>
+        <a href="demanderundevispro.html" class="hover:text-gray-800">Demander un devis</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn?.addEventListener('click', () => {
+      const isHidden = mobileMenu.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!isHidden));
+    });
+  </script>
+</body>
+</html>
+
