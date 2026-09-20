@@ -55,6 +55,8 @@
               >
 
           <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
+          <label class="block text-sm font-medium" for="pack-choice">Formule souhaitée</label>
+          <select id="pack-choice" name="pack" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500"><option value="Présence">Présence — 19,90 € TTC / mois</option><option value="Vitrine">Vitrine — 29,90 € TTC / mois</option><option value="Vitrine + Réservation">Vitrine + Réservation — 39,90 € TTC / mois</option></select>
 
           <!-- 1. Coordonnées -->
           <fieldset>
@@ -83,12 +85,13 @@
                     placeholder="Entreprise de plomberie, taxi/vtc, profession libérale etc..." />
               </div>
                <div>
-                  <label class="block text-sm font-medium">Choix de votre noms de domaine (si disponible)</label>
-                  <input name="activity" type="text"
+                  <label class="block text-sm font-medium">Nom de domaine souhaité (si disponible)</label>
+                  <input name="desired_domain" type="text"
                     class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500"
                     placeholder="Par exemple : www.mon-entreprise.fr" />
               </div>
 
+                      </div>
           </fieldset>
 
           <!-- 2. Périmètre du site vitrine -->
@@ -163,7 +166,7 @@
 
           <!-- Note tarifs -->
           <div class="rounded-xl bg-blue-50 border border-blue-100 p-4 text-sm text-gray-700">
-            <p><strong>34.90€</strong> Inclus la construction - nom de domaine & gestion annuelle </p>
+            <p><strong>Présence :</strong> 99 € TTC de création + 19,90 € TTC / mois. <strong>Vitrine :</strong> 149 € TTC de création + 29,90 € TTC / mois. Le nom de domaine est réglé séparément. TVA non applicable (franchise en base).</p>
           </div>
         </form>
       </div>
