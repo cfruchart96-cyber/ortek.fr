@@ -19,14 +19,14 @@
       --bg:#F6F8FC;
 
       /* Brand Ortek-like */
-      --brand:#0B1E3B;          /* bleu nuit */
-      --brand-2:#132B5E;        /* variante */
-      --accent:#1E40AF;         /* bleu moyen */
-      --cta:#2563EB;            /* bleu action */
-      --cta-dark:#1D4ED8;
+       --brand:#071327;          /* bleu nuit */
+       --brand-2:#0D2040;        /* variante */
+       --accent:#9ED8FF;         /* bleu lumière */
+       --cta:#4B8DFF;            /* bleu action */
+       --cta-dark:#77B2FF;
       --success:#16A34A;
 
-      --radius:18px;
+       --radius:14px;
       --shadow-sm:0 6px 20px rgba(10,25,50,.06);
       --shadow-md:0 14px 40px rgba(10,25,50,.12);
     }
@@ -56,25 +56,24 @@
       overflow:hidden;
       color:#fff;
       isolation:isolate;
-      background:
-        radial-gradient(1200px 600px at 70% 10%, rgba(37,99,235,.10), transparent 60%),
-        radial-gradient(1200px 600px at 20% 90%, rgba(22,163,74,.06), transparent 60%),
-        linear-gradient(180deg,#0a1630 0%, #0B1E3B 60%, #0a1630 100%);
+       background:
+         radial-gradient(900px 520px at 78% 22%, rgba(75,141,255,.16), transparent 68%),
+         linear-gradient(180deg,#050D1D 0%, #071327 58%, #081A34 100%);
     }
     /* option image stylisée : remplacer url('hero.jpg') par ton visuel */
     .hero::before{
       content:"";
       position:absolute; inset:0;
-      background-image:url('hero.jpg'); /* facultatif ; enlève cette ligne si pas d'image */
-      background-size:cover; background-position:center;
-      opacity:.15; filter:blur(2px) saturate(1.1);
+       background-image:url('assets/images/ortek-hero-visual.png');
+       background-size:cover; background-position:center right;
+       opacity:.22; filter:saturate(.92) contrast(1.05);
       z-index:-2;
     }
     .hero::after{
       /* léger mouvement de lumière */
       content:"";
       position:absolute; inset:-20%;
-      background:radial-gradient(40% 30% at 60% 30%, rgba(255,255,255,.16), transparent 60%);
+       background:radial-gradient(36% 26% at 70% 26%, rgba(151,210,255,.13), transparent 64%);
       animation:floatLight 12s ease-in-out infinite alternate;
       z-index:-1;
     }
@@ -104,14 +103,14 @@
     .cta-row{display:flex; gap:14px; justify-content:center; flex-wrap:wrap}
     .btn{
       display:inline-flex; align-items:center; justify-content:center; gap:.6rem;
-      padding:14px 20px; border-radius:12px; font-weight:600;
+       padding:14px 20px; border-radius:10px; font-weight:600;
       border:1px solid transparent; transition:all .18s ease;
       box-shadow:var(--shadow-sm)
     }
-    .btn-primary{background:var(--cta); color:#fff}
-    .btn-primary:hover{background:var(--cta-dark); transform:translateY(-1px)}
-    .btn-ghost{background:rgba(255,255,255,.06); color:#fff; border-color:rgba(255,255,255,.18)}
-    .btn-ghost:hover{background:rgba(255,255,255,.12); transform:translateY(-1px)}
+     .btn-primary{background:var(--cta); color:#071327; box-shadow:0 10px 30px rgba(75,141,255,.24)}
+     .btn-primary:hover{background:var(--cta-dark); transform:translateY(-1px)}
+     .btn-ghost{background:rgba(255,255,255,.04); color:#fff; border-color:rgba(174,216,255,.28)}
+     .btn-ghost:hover{background:rgba(174,216,255,.10); transform:translateY(-1px)}
     .scroll-indicator{
       position:absolute; bottom:24px; left:50%; translate:-50% 0;
       font-size:.85rem; opacity:.7
