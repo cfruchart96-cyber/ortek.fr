@@ -407,6 +407,50 @@
       cursor: pointer;
     }
 
+    /* ---------- Sections flottantes / overglass ---------- */
+    body{
+      background:
+        radial-gradient(900px 680px at 88% 22%, rgba(73,137,255,.20), transparent 68%),
+        radial-gradient(780px 620px at 8% 76%, rgba(99,167,255,.12), transparent 70%),
+        #061326;
+      color:#eaf2ff;
+    }
+    main{
+      padding:26px 0 48px;
+      background:linear-gradient(180deg, rgba(6,19,38,.96), rgba(8,29,56,.92));
+    }
+    main > section{
+      width:min(1180px, calc(100% - 32px));
+      margin:22px auto;
+      padding:clamp(30px,5vw,58px) 0;
+      border:1px solid rgba(184,220,255,.18);
+      border-radius:28px;
+      background:linear-gradient(135deg, rgba(255,255,255,.10), rgba(255,255,255,.035));
+      box-shadow:0 24px 70px rgba(0,0,0,.25), inset 0 1px 0 rgba(255,255,255,.12);
+      backdrop-filter:blur(20px) saturate(125%);
+      -webkit-backdrop-filter:blur(20px) saturate(125%);
+    }
+    .vision{border-top:1px solid rgba(184,220,255,.18); border-bottom:1px solid rgba(184,220,255,.18)}
+    main h2, main h3, main h4{color:#f7fbff}
+    main p, main .mini, main .lead{color:rgba(226,239,255,.78)}
+    .pillar, .feat, .card, .kpi, .vision-quote{
+      background:rgba(9,27,53,.44);
+      border:1px solid rgba(190,224,255,.20);
+      box-shadow:inset 0 1px 0 rgba(255,255,255,.10), 0 16px 38px rgba(0,0,0,.18);
+      backdrop-filter:blur(16px);
+      -webkit-backdrop-filter:blur(16px);
+      color:#eaf2ff;
+    }
+    .pillar h3, .pillar p, .feat h3, .feat p, .card h4, .card li,
+    .vision-head h2, .vision .lead, .vision-quote, .kpi span, .kpi small{color:#eaf2ff}
+    .pill{background:rgba(165,211,255,.09); border-color:rgba(190,224,255,.18); color:#dceeff}
+    .feat i, .pillar .icon{background:rgba(123,187,255,.13); border-color:rgba(190,224,255,.24)}
+    .eyebrow-muted{color:#a9d5ff}
+    .card:hover, .pillar:hover, .feat:hover{border-color:rgba(159,211,255,.48); box-shadow:0 22px 48px rgba(0,0,0,.25)}
+    @media (max-width:680px){
+      main > section{width:calc(100% - 20px); margin:14px auto; border-radius:22px}
+    }
+
   </style>
 </head>
 
