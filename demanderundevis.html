@@ -41,7 +41,7 @@
     <section class="py-16 text-center bg-gradient-to-b from-blue-50 to-white">
       <div class="max-w-3xl mx-auto px-4">
         <h1 class="text-3xl sm:text-4xl font-semibold tracking-tight">Demander un devis</h1>
-        <p class="mt-3 text-gray-600">Formulaire détaillé pour <strong>site vitrine</strong>. Cochez ce dont vous avez besoin, on chiffre proprement.</p>
+        <p class="mt-3 text-gray-600">Présentez-nous votre activité, vos besoins et la formule souhaitée. Nous vous recontactons avec une proposition claire.</p>
       </div>
     </section>
 
@@ -56,7 +56,8 @@
 
           <p id="status" class="hidden text-sm rounded-xl p-3 border"></p>
           <label class="block text-sm font-medium" for="pack-choice">Formule souhaitée</label>
-          <select id="pack-choice" name="pack" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500"><option value="Présence">Présence — 19,90 € TTC / mois</option><option value="Vitrine">Vitrine — 29,90 € TTC / mois</option><option value="Vitrine + Réservation">Vitrine + Réservation — 39,90 € TTC / mois</option></select>
+          <select id="pack-choice" name="pack" class="mt-1 w-full rounded-xl border-gray-300 focus:border-blue-500 focus:ring-blue-500"><option value="Présence">Présence — 19,90 € TTC / mois</option><option value="Vitrine">Vitrine — 29,90 € TTC / mois</option><option value="Vitrine + Réservation">Vitrine + Réservation — 39,90 € TTC / mois</option><option value="Boutique e-commerce">Boutique e-commerce — 69 € TTC / mois</option></select>
+          <p id="ecommerce-note" class="hidden mt-2 rounded-xl bg-blue-50 border border-blue-100 p-3 text-sm text-gray-700">Cette formule comprend une boutique personnalisée et responsive, jusqu’à 20 produits intégrés au lancement, les paiements sécurisés, la gestion autonome des commandes, l’hébergement, le certificat SSL, la maintenance, les sauvegardes et l’accompagnement à la mise en ligne.</p>
 
           <!-- 1. Coordonnées -->
           <fieldset>
@@ -96,10 +97,10 @@
 
           <!-- 2. Périmètre du site vitrine -->
           <fieldset>
-            <legend class="text-lg font-semibold">2) Périmètre du site vitrine</legend>
+            <legend class="text-lg font-semibold">2) Périmètre de votre projet</legend>
             <div class="mt-4 grid md:grid-cols-2 gap-6">
               <div>
-                <label class="block text-sm font-medium">Elements souhaités</label>
+                <label class="block text-sm font-medium">Pages souhaitées</label>
                 <div class="mt-2 grid grid-cols-2 gap-2 text-sm text-gray-700">
                   <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Accueil" class="rounded"> Accueil</label>
                   <label class="flex items-center gap-2"><input type="checkbox" name="pages" value="Services" class="rounded"> Services</label>
@@ -166,7 +167,7 @@
 
           <!-- Note tarifs -->
           <div class="rounded-xl bg-blue-50 border border-blue-100 p-4 text-sm text-gray-700">
-            <p><strong>Présence :</strong> 99 € TTC de création + 19,90 € TTC / mois. <strong>Vitrine :</strong> 149 € TTC de création + 29,90 € TTC / mois. <strong>Vitrine + Réservation :</strong> 199 € TTC de création + 39,90 € TTC / mois. Le nom de domaine est réglé séparément. TVA non applicable (franchise en base).</p>
+            <p><strong>Présence :</strong> 99 € TTC de création + 19,90 € TTC / mois. <strong>Vitrine :</strong> 149 € TTC de création + 29,90 € TTC / mois. <strong>Vitrine + Réservation :</strong> 199 € TTC de création + 39,90 € TTC / mois. <strong>Boutique e-commerce :</strong> 69 € TTC / mois. Le nom de domaine est réglé séparément. TVA non applicable (franchise en base).</p>
           </div>
         </form>
       </div>
@@ -229,6 +230,15 @@
   ========================== */
   const form = document.getElementById('quoteForm');
   const statusEl = document.getElementById('status');
+  const packChoice = document.getElementById('pack-choice');
+  const ecommerceNote = document.getElementById('ecommerce-note');
+  const requestedPack = new URLSearchParams(window.location.search).get('pack');
+  if (packChoice && requestedPack && [...packChoice.options].some(option => option.value === requestedPack)) {
+    packChoice.value = requestedPack;
+  }
+  const syncEcommerceNote = () => ecommerceNote?.classList.toggle('hidden', packChoice?.value !== 'Boutique e-commerce');
+  packChoice?.addEventListener('change', syncEcommerceNote);
+  syncEcommerceNote();
 
   if (form && statusEl) {
     form.addEventListener('submit', async (e) => {
