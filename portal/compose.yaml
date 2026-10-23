@@ -1,0 +1,19 @@
+services:
+  ortek-portal:
+    build:
+      context: .
+      args:
+        NEXT_PUBLIC_SUPABASE_URL: ${NEXT_PUBLIC_SUPABASE_URL:?Projet Supabase requis}
+        NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY: ${NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY:?Cle publique Supabase requise}
+        NEXT_PUBLIC_PORTAL_URL: ${NEXT_PUBLIC_PORTAL_URL:?URL du portail requise}
+    env_file:
+      - .env.production
+    ports:
+      - "127.0.0.1:${PORTAL_BIND_PORT:-3100}:3000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "node", "-e", "fetch('http://127.0.0.1:3000/api/health').then(r=>process.exit(r.ok?0:1)).catch(()=>process.exit(1))"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 30s

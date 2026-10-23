@@ -42,6 +42,16 @@ Offres relevées dans `index.html` : Présence 590 € + 19,90 €/mois, Vitrine
 
 Après configuration de Supabase et du SMTP, l'administrateur ouvre `/admin`, saisit le nom et l'email du commercial dans « Inviter un commercial » et envoie l'invitation. L'email sert d'identifiant ; le commercial définit son mot de passe sur la page d'activation. L'administrateur lui autorise ensuite les offres et crée sa règle de commission. Le portefeuille CSV peut lui être attribué ou réattribué depuis `/admin`. Dans `/commercial`, le commercial voit ses devis, les statuts de factures Stripe et les commissions effectivement acquises. La validation d'un devis seule ne déclenche aucune commission ; une facture payée et vérifiée par webhook est nécessaire.
 
+## Hébergement sur un VPS existant (préparation)
+
+`Dockerfile` et `compose.yaml` isolent le serveur Next.js du site public GitHub Pages et des autres applications du VPS. Le conteneur n'écoute que sur `127.0.0.1` du VPS, port `3100` par défaut. Aucun secret n'est inclus dans l'image ou le dépôt ; les variables publiques Supabase et l'URL du portail sont intégrées au frontend pendant la construction.
+
+Avant de démarrer : vérifier Docker Compose, mémoire/disque et sauvegardes du VPS ; choisir un port local libre, une URL HTTPS dédiée et un projet Supabase **Ortek distinct** ; appliquer les migrations et configurer Auth/SMTP, Stripe **en mode test** et l'envoi d'emails. Créer sur le VPS `portal/.env.production` à partir de `.env.example` avec des secrets dans un fichier accessible uniquement au compte de déploiement (`chmod 600`) et ajouter `PORTAL_BIND_PORT` si `3100` est occupé. Ne jamais copier ce fichier dans Git ou dans un ticket.
+
+Depuis le répertoire `portal/` du VPS, une fois les prérequis validés : `docker compose --env-file .env.production up --build -d`. Vérifier `docker compose ps` et `curl -f http://127.0.0.1:3100/api/health` **sur le VPS**. Configurer ensuite le proxy HTTPS existant (Nginx ou Caddy) pour transmettre `portail.ortek.fr` vers `127.0.0.1:3100`, sans rendre le port du conteneur public. Activer le certificat TLS, la limitation des tentatives de connexion, des journaux sans secrets et une tâche planifiée qui appelle `/api/cron/notifications` avec `CRON_SECRET`. Reconfigurer l'URL de redirection Supabase et le webhook Stripe de test avec l'URL HTTPS effectivement choisie.
+
+Cette préparation n'installe rien sur le VPS. Garder le portail fermé aux commerciaux réels tant que les tests d'intégration, remboursements, sécurité et obligations juridiques de la section suivante ne sont pas validés. Le coût de l'hébergement VPS existant ne couvre pas nécessairement les éventuels dépassements ou options des services externes.
+
 ## À terminer avant un usage réel
 
 Cette branche est un socle fonctionnel, **pas un portail prêt à ouvrir aux commerciaux**. Il reste à :
