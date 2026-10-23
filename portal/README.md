@@ -26,7 +26,7 @@ Offres relevées dans `index.html` : Présence 590 € + 19,90 €/mois, Vitrine
 
 ## Mise en place **en test uniquement**
 
-1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001`, `002`, `003` et vérifier le bucket privé `quotes`.
+1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001`, `002`, `003`, `004` et vérifier le bucket privé `quotes`.
 2. Créer le compte administrateur dans Supabase Auth, puis ajouter **manuellement** sa ligne `profiles` avec son UUID, `role='admin'` et `status='active'`. Ne pas inclure d'email réel ou de secret dans Git.
 3. Configurer le SMTP Supabase pour l'envoi des invitations, les URL de redirection vers `/auth/callback?activate=1` et l'authentification MFA TOTP.
 4. Copier `.env.example` vers `.env.local` hors Git, renseigner les clés de **test** Supabase/Stripe, un domaine d'envoi vérifié, l'email administrateur et l'URL du portail. Ne pas utiliser de clés Stripe de production pour les essais.

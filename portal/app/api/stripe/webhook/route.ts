@@ -12,14 +12,17 @@ async function handleInvoice(invoice:Stripe.Invoice){
   if(!quoteId)throw new Error('Missing quote reference');
   const {data:q}=await db.from('quotes').select('id,number,status,snapshot,commercial_id').eq('id',quoteId).single();
   if(!q||q.status!=='accepted'||invoice.currency!=='eur'||invoice.status!=='paid')throw new Error('Invoice not eligible');
-  const {data:previous}=await db.from('payments').select('id').eq('quote_id',q.id).eq('type','setup').eq('status','paid').maybeSingle();
-  const setup=previous?0:q.snapshot.offer.setup_cents;
-  const monthly=q.snapshot.offer.monthly_cents;
-  // Discounts, taxes, partial payments and manual Stripe changes require a human review.
-  if(invoice.amount_paid!==setup+monthly||invoice.amount_remaining!==0)throw new Error('Invoice amount mismatch');
-  const result=await db.rpc('post_paid_invoice',{p_quote:q.id,p_invoice:invoice.id,p_customer:typeof invoice.customer==='string'?invoice.customer:invoice.customer?.id??'',p_subscription:subscriptionId,p_currency:invoice.currency,p_invoice_total:invoice.amount_paid,p_setup:setup,p_monthly:monthly});
-  if(result.error)throw result.error;
-  await audit(null,'invoice',invoice.id,'paid',{quote_id:q.id,amount:invoice.amount_paid});
+  const {data:alreadyPosted}=await db.from('payments').select('id').eq('stripe_invoice_id',invoice.id).eq('status','paid').limit(1).maybeSingle();
+  if(!alreadyPosted){
+    const {data:previous}=await db.from('payments').select('id').eq('quote_id',q.id).eq('type','setup').eq('status','paid').maybeSingle();
+    const setup=previous?0:q.snapshot.offer.setup_cents;
+    const monthly=q.snapshot.offer.monthly_cents;
+    // Discounts, taxes, partial payments and manual Stripe changes require a human review.
+    if(invoice.amount_paid!==setup+monthly||invoice.amount_remaining!==0)throw new Error('Invoice amount mismatch');
+    const result=await db.rpc('post_paid_invoice',{p_quote:q.id,p_invoice:invoice.id,p_customer:typeof invoice.customer==='string'?invoice.customer:invoice.customer?.id??'',p_subscription:subscriptionId,p_currency:invoice.currency,p_invoice_total:invoice.amount_paid,p_setup:setup,p_monthly:monthly});
+    if(result.error)throw result.error;
+    await audit(null,'invoice',invoice.id,'paid',{quote_id:q.id,amount:invoice.amount_paid}).catch(()=>{});
+  }
   await notify(`invoice:${invoice.id}:admin`,process.env.PORTAL_ADMIN_EMAIL!,`Paiement confirmé · devis ${q.number}`,`Un paiement de ${invoice.amount_paid/100} EUR est confirmé pour le devis ${q.number}. Consultez le portail pour commencer la production.`).catch(()=>{});
   const {data:seller}=await db.from('profiles').select('email').eq('id',q.commercial_id).single();
   if(seller)await notify(`invoice:${invoice.id}:seller`,seller.email,`Paiement Ortek confirmé · devis ${q.number}`,`Le paiement du devis ${q.number} est confirmé. Votre commission est visible dans le portail.`).catch(()=>{});
