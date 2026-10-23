@@ -1,5 +1,7 @@
 # Portail commercial Ortek — branche de développement
 
+`preview.html` est un aperçu statique de l'interface avec des données fictives. Ouvrir ce fichier dans un navigateur pour parcourir les vues commercial, prospects, administration et workflow ; ses boutons ne modifient aucune donnée.
+
 ## Audit de l'existant (23 octobre 2026)
 
 Le dépôt `cfruchart96-cyber/ortek.fr`, branche principale `main`, est un site statique HTML/CSS/JS avec `CNAME` pour `ortek.fr`. Aucun `package.json`, serveur, base de données, système d'identification, intégration Stripe ni workflow GitHub Actions n'est présent dans l'arbre audité. Les formulaires publics envoient les demandes à Formspree. Le `CNAME` est cohérent avec GitHub Pages, mais la configuration effective de Pages n'a pas été accessible par l'API liée : vérifier cette hypothèse dans les paramètres GitHub. Les fichiers publics n'ont pas été modifiés.
