@@ -53,7 +53,7 @@ export async function grantOffer(data:FormData){
 
 export async function saveRule(data:FormData){
   const admin=await requireRole('admin');const db=serviceClient();
-  const rule=ruleInput.parse({commercial_id:data.get('commercial_id'),offer_id:data.get('offer_id')||null,fixed_cents:Number(data.get('fixed_cents')),percentage_bps:Number(data.get('percentage_bps')),applies_to:data.get('applies_to'),max_months:Number(data.get('max_months')),effective_at:new Date(String(data.get('effective_at'))).toISOString()});
+  const rule=ruleInput.parse({commercial_id:data.get('commercial_id'),offer_id:data.get('offer_id')||null,fixed_cents:Number(data.get('fixed_cents')),percentage_bps:Number(data.get('percentage_bps')),performance_bonus_cents:Number(data.get('performance_bonus_cents')),applies_to:data.get('applies_to'),max_months:Number(data.get('max_months')),effective_at:new Date(String(data.get('effective_at'))).toISOString()});
   const {data:created,error}=await db.from('commission_rules').insert({...rule,created_by:admin.id}).select('id').single();if(error)throw error;
   await audit(admin.id,'commission_rule',created.id,'created',{commercial_id:rule.commercial_id});revalidatePath('/admin');
 }
