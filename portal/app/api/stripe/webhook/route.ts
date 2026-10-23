@@ -3,6 +3,16 @@ import { stripe } from '@/lib/stripe';import { serviceClient } from '@/lib/supab
 import type Stripe from 'stripe';
 
 export const runtime='nodejs';
+async function updateSubscription(subscription:Stripe.Subscription){
+  const quoteId=subscription.metadata.quote_id;if(!quoteId)throw new Error('Subscription without quote reference');
+  const db=serviceClient();const {data:q}=await db.from('quotes').select('commercial_id').eq('id',quoteId).eq('status','accepted').single();
+  if(!q)throw new Error('Unknown subscription quote');
+  const allowed=['incomplete','trialing','active','past_due','unpaid','paused','canceled'];
+  const status=allowed.includes(subscription.status)?subscription.status:'other';
+  const {error}=await db.from('subscriptions').upsert({id:subscription.id,quote_id:quoteId,commercial_id:q.commercial_id,status,updated_at:new Date().toISOString()},{onConflict:'id'});
+  if(error)throw error;
+  await audit(null,'subscription',subscription.id,'status_changed',{status,quote_id:quoteId}).catch(()=>{});
+}
 async function handleInvoice(invoice:Stripe.Invoice){
   const db=serviceClient();const parent=invoice.parent;
   if(parent?.type!=='subscription_details'||!parent.subscription_details?.subscription)throw new Error('Subscription invoice missing');
@@ -37,8 +47,12 @@ export async function POST(request:NextRequest){
   if(!claimed)return NextResponse.json({duplicate:true});
   try{
     if(event.type==='invoice.paid')await handleInvoice(event.data.object as Stripe.Invoice);
-    if(event.type==='invoice.payment_failed')await audit(null,'invoice',(event.data.object as Stripe.Invoice).id,'payment_failed');
-    if(event.type==='customer.subscription.deleted')await audit(null,'subscription',(event.data.object as Stripe.Subscription).id,'cancelled');
+    if(event.type==='invoice.payment_failed'){
+      const failed=event.data.object as Stripe.Invoice;
+      await audit(null,'invoice',failed.id,'payment_failed');
+      await notify(`invoice:${failed.id}:failed`,process.env.PORTAL_ADMIN_EMAIL!,'Échec de paiement Ortek',`Le paiement de la facture Stripe ${failed.id} a échoué. Vérifiez le dossier dans Stripe.`).catch(()=>{});
+    }
+    if(event.type==='customer.subscription.created'||event.type==='customer.subscription.updated'||event.type==='customer.subscription.deleted')await updateSubscription(event.data.object as Stripe.Subscription);
     await db.from('stripe_events').update({status:'processed',processed_at:new Date().toISOString()}).eq('id',event.id);
     return NextResponse.json({received:true});
   }catch(e){await db.from('stripe_events').update({status:'failed'}).eq('id',event.id);return new NextResponse('Traitement différé',{status:500});}

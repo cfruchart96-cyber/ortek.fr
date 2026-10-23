@@ -26,12 +26,12 @@ Offres relevées dans `index.html` : Présence 590 € + 19,90 €/mois, Vitrine
 
 ## Mise en place **en test uniquement**
 
-1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001`, `002`, `003`, `004` et vérifier le bucket privé `quotes`.
+1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001` à `005` et vérifier le bucket privé `quotes`.
 2. Créer le compte administrateur dans Supabase Auth, puis ajouter **manuellement** sa ligne `profiles` avec son UUID, `role='admin'` et `status='active'`. Ne pas inclure d'email réel ou de secret dans Git.
 3. Configurer le SMTP Supabase pour l'envoi des invitations, les URL de redirection vers `/auth/callback?activate=1` et l'authentification MFA TOTP.
 4. Copier `.env.example` vers `.env.local` hors Git, renseigner les clés de **test** Supabase/Stripe, un domaine d'envoi vérifié, l'email administrateur et l'URL du portail. Ne pas utiliser de clés Stripe de production pour les essais.
 5. `npm ci`, `npm test`, `npm run typecheck`, `npm run build`, puis `npm run dev`.
-6. Configurer un endpoint webhook Stripe de test vers `/api/stripe/webhook` avec au minimum `invoice.paid`, `invoice.payment_failed`, `customer.subscription.deleted` ; renseigner le secret de signature reçu.
+6. Configurer un endpoint webhook Stripe de test vers `/api/stripe/webhook` avec au minimum `invoice.paid`, `invoice.payment_failed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted` ; renseigner le secret de signature reçu.
 7. Configurer une tâche planifiée qui appelle `POST /api/cron/notifications` avec `Authorization: Bearer <CRON_SECRET>`.
 8. Compléter et faire valider l'identité légale, la mention TVA et les conditions contractuelles dans `/admin` avant le premier devis.
 
@@ -41,7 +41,7 @@ Cette branche est un socle fonctionnel, **pas un portail prêt à ouvrir aux com
 
 - Exécuter les tests de parcours de bout en bout avec deux commerciaux, un admin MFA, Supabase et Stripe **en mode test** ; vérifier concrètement RLS, invitation, PDF, paiement, renouvellement, échec, remboursement et redirection.
 - Faire une revue de sécurité indépendante et une revue juridique du devis/consentement, du mandat commercial, de la conservation des données et des conditions de vente.
-- Gérer les remboursements et avoirs (dont remboursements partiels), impayés, annulations et statuts d'abonnement dans le grand livre ; créer une réconciliation périodique Stripe et une procédure de litige. Pour le moment ces événements ne doivent pas déclencher de régularisation financière automatique.
+- Gérer les remboursements et avoirs (dont remboursements partiels), la régularisation des impayés et annulations dans le grand livre ; créer une réconciliation périodique Stripe et une procédure de litige. Les statuts d'abonnement sont suivis, mais ces événements ne déclenchent pas encore de régularisation financière automatique.
 - Ajouter les notifications d'échec/résiliation/versement, les exports de relevés, filtres et recherche, une pagination complète, les statuts de production modifiables et des primes de performance conditionnelles.
 - Prévoir sauvegardes, restauration testée, rétention/suppression des données, surveillance des erreurs de webhook et de la file email, ainsi qu'un hébergeur et son coût réel.
 - Pour les offres « dès ... sur devis », prévoir une approbation du prix personnalisé avant la génération du PDF.
