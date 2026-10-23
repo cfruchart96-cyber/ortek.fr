@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { sha256 } from '@/lib/quote';import { serviceClient } from '@/lib/supabase';import { stripe } from '@/lib/stripe';
 export async function GET(request:NextRequest,{params}:{params:Promise<{token:string}>}){
   const {token}=await params;const db=serviceClient();
-  const {data:q}=await db.from('quotes').select('id,status,expires_at,snapshot').eq('token_hash',sha256(token)).single();
+  const {data:q}=await db.from('quotes').select('id,commercial_id,status,expires_at,snapshot').eq('token_hash',sha256(token)).single();
   if(!q||q.status!=='accepted')return new NextResponse('Devis non accepté',{status:403});
   const {data:paid}=await db.from('payments').select('id').eq('quote_id',q.id).eq('type','setup').eq('status','paid').maybeSingle();
   if(paid)return NextResponse.redirect(new URL(`/quote/${token}?paid=1`,request.url));
@@ -17,7 +17,7 @@ export async function GET(request:NextRequest,{params}:{params:Promise<{token:st
   }
   if(existing)await db.from('checkout_sessions').delete().eq('quote_id',q.id).lt('expires_at',new Date().toISOString());
   const expiration=Math.floor(Date.now()/1000)+1800;
-  const {error:claimError}=await db.from('checkout_sessions').insert({quote_id:q.id,expires_at:new Date(expiration*1000).toISOString()});
+  const {error:claimError}=await db.from('checkout_sessions').insert({quote_id:q.id,commercial_id:q.commercial_id,expires_at:new Date(expiration*1000).toISOString()});
   if(claimError)return new NextResponse('Session déjà en cours de préparation.',{status:409});
   const offer=q.snapshot.offer;
   if(!offer?.monthly_cents||offer.currency!=='eur')return new NextResponse('Offre non disponible',{status:400});

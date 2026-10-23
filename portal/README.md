@@ -24,11 +24,12 @@ Offres relevées dans `index.html` : Présence 590 € + 19,90 €/mois, Vitrine
 - Import CSV de prospects (colonnes `company,city,website,phone,email,place_id`), répartition exclusive, réattribution et conversion ; unicité des emails de prospects.
 - Devis PDF versionné avec identité légale obligatoire, acceptation explicite horodatée et empreinte PDF.
 - Checkout d'abonnement en mode test ou réel selon la clé fournie ; webhook signé et idempotent ; publication du dossier prêt pour production seulement après facture effectivement payée.
+- Suivi distinct des étapes : devis envoyé, accepté électroniquement, lien de paiement créé, tentative échouée et facture Stripe payée. Une tentative échouée peut être régularisée par Stripe sans créer deux commissions.
 - Tableau de bord et historique de commissions, email en file d'attente, reprise de la file par une tâche planifiée protégée par `CRON_SECRET`.
 
 ## Mise en place **en test uniquement**
 
-1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001` à `005` et vérifier le bucket privé `quotes`.
+1. Créer un projet Supabase de test, appliquer les migrations SQL dans l'ordre `001` à `006` et vérifier le bucket privé `quotes`.
 2. Créer le compte administrateur dans Supabase Auth, puis ajouter **manuellement** sa ligne `profiles` avec son UUID, `role='admin'` et `status='active'`. Ne pas inclure d'email réel ou de secret dans Git.
 3. Configurer le SMTP Supabase pour l'envoi des invitations, les URL de redirection vers `/auth/callback?activate=1` et l'authentification MFA TOTP.
 4. Copier `.env.example` vers `.env.local` hors Git, renseigner les clés de **test** Supabase/Stripe, un domaine d'envoi vérifié, l'email administrateur et l'URL du portail. Ne pas utiliser de clés Stripe de production pour les essais.
@@ -36,6 +37,10 @@ Offres relevées dans `index.html` : Présence 590 € + 19,90 €/mois, Vitrine
 6. Configurer un endpoint webhook Stripe de test vers `/api/stripe/webhook` avec au minimum `invoice.paid`, `invoice.payment_failed`, `customer.subscription.created`, `customer.subscription.updated`, `customer.subscription.deleted` ; renseigner le secret de signature reçu.
 7. Configurer une tâche planifiée qui appelle `POST /api/cron/notifications` avec `Authorization: Bearer <CRON_SECRET>`.
 8. Compléter et faire valider l'identité légale, la mention TVA et les conditions contractuelles dans `/admin` avant le premier devis.
+
+## Créer un espace commercial
+
+Après configuration de Supabase et du SMTP, l'administrateur ouvre `/admin`, saisit le nom et l'email du commercial dans « Inviter un commercial » et envoie l'invitation. L'email sert d'identifiant ; le commercial définit son mot de passe sur la page d'activation. L'administrateur lui autorise ensuite les offres et crée sa règle de commission. Le portefeuille CSV peut lui être attribué ou réattribué depuis `/admin`. Dans `/commercial`, le commercial voit ses devis, les statuts de factures Stripe et les commissions effectivement acquises. La validation d'un devis seule ne déclenche aucune commission ; une facture payée et vérifiée par webhook est nécessaire.
 
 ## À terminer avant un usage réel
 
